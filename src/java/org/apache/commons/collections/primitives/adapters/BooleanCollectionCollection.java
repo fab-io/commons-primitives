@@ -28,8 +28,8 @@ import org.apache.commons.collections.primitives.BooleanCollection;
  * org.apache.commons.collections.primitives.BooleanCollection
  * BooleanCollection} implementation in the "obvious" way.
  * 
- * @since Commons Primitives 1.2
- * @version $Revision: 1.1 $
+ * @since Commons Primitives 1.1
+ * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
  */
 final public class BooleanCollectionCollection extends
         AbstractBooleanCollectionCollection implements Serializable

@@ -22,8 +22,8 @@ import org.apache.commons.collections.primitives.BooleanCollection;
 
 
 /**
- * @since Commons Collections 1.2
- * @version $Revision: 1.1 $
+ * @since Commons Primitives 1.1
+ * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
  */
 abstract class AbstractCollectionBooleanCollection
         implements BooleanCollection {

@@ -21,8 +21,8 @@ import java.io.Serializable;
  * An {@link BooleanList} backed by an array of <code>boolean</code>s.
  * This implementation supports all optional methods.
  * 
- * @since Commons Primitives 1.2
- * @version $Revision: 1.1 $ $Date: 2004/04/13 23:19:37 $
+ * @since Commons Primitives 1.1
+ * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
  */
 public class ArrayBooleanList extends RandomAccessBooleanList
         implements BooleanList, Serializable {

@@ -27,8 +27,8 @@ import org.apache.commons.collections.primitives.BooleanIterator;
  * org.apache.commons.collections.primitives.BooleanIterator BooleanIterator}
  * implementation in the "obvious" way.
  *
- * @since Commons Primitives 1.2
- * @version $Revision: 1.1 $ $Date: 2004/04/13 23:19:37 $
+ * @since Commons Primitives 1.1
+ * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
  */
 public class BooleanIteratorIterator implements Iterator {
     
