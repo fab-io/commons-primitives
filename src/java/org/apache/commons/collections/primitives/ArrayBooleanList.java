@@ -15,6 +15,9 @@
  */
 package org.apache.commons.collections.primitives;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
@@ -22,7 +25,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision: 1.3 $ $Date: 2004/07/12 18:29:44 $
  */
 public class ArrayBooleanList extends RandomAccessBooleanList
         implements BooleanList, Serializable {
@@ -185,6 +188,22 @@ public class ArrayBooleanList extends RandomAccessBooleanList
     // private methods
     //-------------------------------------------------------------------------
 
+    private void writeObject(ObjectOutputStream out) throws IOException{
+        out.defaultWriteObject();
+        out.writeInt(_data.length);
+        for(int i=0;i<_size;i++) {
+            out.writeBoolean(_data[i]);
+        }
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        _data = new boolean[in.readInt()];
+        for(int i=0;i<_size;i++) {
+            _data[i] = in.readBoolean();
+        }
+    }
+    
     private final void checkRange(int index) {
         if(index < 0 || index >= _size) {
             throw new IndexOutOfBoundsException(

@@ -22,7 +22,7 @@ import junit.framework.TestSuite;
 /**
  * Test this package.
  * 
- * @version $Revision: 1.10 $ $Date: 2004/04/14 22:42:08 $
+ * @version $Revision: 1.11 $ $Date: 2004/07/12 18:29:43 $
  * @author Rodney Waldhoff
  */
 public class PackageTestSuite extends TestCase {
@@ -38,6 +38,9 @@ public class PackageTestSuite extends TestCase {
     public static Test suite() {
         TestSuite suite = new TestSuite();
 
+        suite.addTest(TestAbstractBooleanCollection.suite());
+        suite.addTest(TestRandomAccessBooleanList.suite());
+        suite.addTest(TestArrayBooleanList.suite());
         suite.addTest(TestBooleanStack.suite());
         
         suite.addTest(TestByteCollections.suite());

@@ -30,7 +30,7 @@ import java.util.NoSuchElementException;
  * more efficient implementation.
  * 
  * @since Commons Primitives 1.2
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
 public abstract class RandomAccessBooleanList extends
         AbstractBooleanCollection implements BooleanList {
@@ -150,14 +150,10 @@ public abstract class RandomAccessBooleanList extends
         }        
     }
 
-    /**
-     * @todo Trouble here: implement it!
-     * @return
-     */
     public int hashCode() {
         int hash = 1;
         for(BooleanIterator iter = iterator(); iter.hasNext(); ) {
-            //hash = 31*hash + ((int)(iter.next()));
+            hash = 31*hash + (iter.next() ? 1231 : 1237);
         }
         return hash;
     }
