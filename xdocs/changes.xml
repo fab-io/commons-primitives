@@ -23,12 +23,16 @@
 
   <release version="1.1" date="in CVS">
 
+    <action dev="rwaldhoff" type="add">
+      Add BooleanXxx adapters.
+    </action>              
+
     <action dev="akarasulu" type="add">
-      Add XXXStack collections. 
+      Add XxxStack collections. 
     </action>              
    
     <action dev="akarasulu" type="add">
-      Add BooleanXXX collections. 
+      Add BooleanXxx collections. 
     </action>              
     
     <action dev="rwaldhoff" type="add">
@@ -38,7 +42,7 @@
     </action>              
     
     <action dev="rwaldhoff" type="update">
-      Override clear() in ArrayXXXList for better performance.
+      Override clear() in ArrayXxxList for better performance.
     </action>              
     
   </release>
