@@ -3,7 +3,7 @@
 
 <!--
         "Primitives" component of the Jakarta Commons Subproject
-        $Id: build.xml,v 1.4 2003/10/16 20:48:17 scolebourne Exp $
+        $Id: build.xml,v 1.5 2003/10/27 17:35:24 rwaldhoff Exp $
 -->
 
 
@@ -19,8 +19,8 @@
 
 
   <!-- The directory containing your binary distribution of JUnit,
-       version 3.7 or later -->
-  <property name="junit.home"              value="/usr/local/junit3.7"/>
+       version 3.8.1 or later -->
+  <property name="junit.home"              value="/usr/local/junit3.8.1"/>
 
 
 <!-- ========== Derived Values ============================================ -->
@@ -197,7 +197,7 @@
                 version="true"
                doctitle="&lt;h1&gt;${component.title}&lt;/h1&gt;"
             windowtitle="${component.title} (Version ${component.version})"
-                 bottom="Copyright (c) 2003 - Apache Software Foundation">
+                 bottom="Copyright (c) 2002-2003 - Apache Software Foundation">
       <classpath refid="compile.classpath"/>
     </javadoc>
   </target>
