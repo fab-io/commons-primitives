@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.4 2003/10/29 18:57:15 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/BaseProxyShortList.java,v 1.1 2003/10/29 18:57:15 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,56 +54,68 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.commons.collections.primitives.ShortCollection;
+import org.apache.commons.collections.primitives.ShortList;
+import org.apache.commons.collections.primitives.ShortListIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.4 $ $Date: 2003/10/29 18:57:15 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:57:15 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+abstract class BaseProxyShortList extends BaseProxyShortCollection implements ShortList {
+    protected abstract ShortList getProxiedList();
+
+    protected final ShortCollection getProxiedCollection() {
+        return getProxiedList();
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    protected BaseProxyShortList() {
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyShortCollection.suite());
-        suite.addTest(TestBaseProxyShortList.suite());
-        suite.addTest(TestUnmodifiableShortList.suite());
-        suite.addTest(TestUnmodifiableShortIterator.suite());
-        suite.addTest(TestUnmodifiableShortListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public void add(int index, short element) {
+        getProxiedList().add(index,element);
     }
+
+    public boolean addAll(int index, ShortCollection collection) {        
+        return getProxiedList().addAll(index,collection);
+    }
+
+    public short get(int index) {
+        return getProxiedList().get(index);
+    }
+
+    public int indexOf(short element) {
+        return getProxiedList().indexOf(element);
+    }
+
+    public int lastIndexOf(short element) {
+        return getProxiedList().lastIndexOf(element);
+    }
+
+    public ShortListIterator listIterator() {
+        return getProxiedList().listIterator();
+    }
+
+    public ShortListIterator listIterator(int index) {
+        return getProxiedList().listIterator(index);
+    }
+
+    public short removeElementAt(int index) {
+        return getProxiedList().removeElementAt(index);
+    }
+
+    public short set(int index, short element) {
+        return getProxiedList().set(index,element);
+    }
+
+    public ShortList subList(int fromIndex, int toIndex) {
+        return getProxiedList().subList(fromIndex,toIndex);
+    }
+
 }
-

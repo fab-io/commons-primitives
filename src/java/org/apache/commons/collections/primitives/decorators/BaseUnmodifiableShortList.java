@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.4 2003/10/29 18:57:15 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/BaseUnmodifiableShortList.java,v 1.1 2003/10/29 18:57:15 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,56 +54,77 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.commons.collections.primitives.ShortCollection;
+import org.apache.commons.collections.primitives.ShortIterator;
+import org.apache.commons.collections.primitives.ShortList;
+import org.apache.commons.collections.primitives.ShortListIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.4 $ $Date: 2003/10/29 18:57:15 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:57:15 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+abstract class BaseUnmodifiableShortList extends BaseProxyShortList {
+
+    public final void add(int index, short element) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    public final boolean addAll(int index, ShortCollection collection) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyShortCollection.suite());
-        suite.addTest(TestBaseProxyShortList.suite());
-        suite.addTest(TestUnmodifiableShortList.suite());
-        suite.addTest(TestUnmodifiableShortIterator.suite());
-        suite.addTest(TestUnmodifiableShortListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public final short removeElementAt(int index) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
     }
+
+    public final short set(int index, short element) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
+    }
+
+    public final boolean add(short element) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
+    }
+
+    public final boolean addAll(ShortCollection c) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
+    }
+
+    public final void clear() {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
+    }
+
+    public final boolean removeAll(ShortCollection c) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
+    }
+
+    public final boolean removeElement(short element) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
+    }
+
+    public final boolean retainAll(ShortCollection c) {
+        throw new UnsupportedOperationException("This ShortList is not modifiable.");
+    }    
+    
+    public final ShortList subList(int fromIndex, int toIndex) {
+        return UnmodifiableShortList.wrap(getProxiedList().subList(fromIndex,toIndex));
+    }
+
+    public final ShortIterator iterator() {
+        return UnmodifiableShortIterator.wrap(getProxiedList().iterator());
+    }
+    
+    public ShortListIterator listIterator() {
+        return UnmodifiableShortListIterator.wrap(getProxiedList().listIterator());
+    }
+
+    public ShortListIterator listIterator(int index) {
+        return UnmodifiableShortListIterator.wrap(getProxiedList().listIterator(index));
+    }
+
 }
-

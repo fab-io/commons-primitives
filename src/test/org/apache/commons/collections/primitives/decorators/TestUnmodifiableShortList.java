@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.4 2003/10/29 18:57:15 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/TestUnmodifiableShortList.java,v 1.1 2003/10/29 18:57:15 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,56 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
+import java.io.Serializable;
+
 import junit.framework.Test;
-import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import org.apache.commons.collections.primitives.ShortList;
+
 /**
- * Test this package.
- * 
- * @version $Revision: 1.4 $ $Date: 2003/10/29 18:57:15 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:57:15 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public class TestUnmodifiableShortList extends BaseUnmodifiableShortListTest {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public TestUnmodifiableShortList(String testName) {
         super(testName);
     }
-
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
-    }
+    
 
     public static Test suite() {
-        TestSuite suite = new TestSuite();
+        return new TestSuite(TestUnmodifiableShortList.class);
+    }
 
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
+    // framework
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestBaseProxyShortCollection.suite());
-        suite.addTest(TestBaseProxyShortList.suite());
-        suite.addTest(TestUnmodifiableShortList.suite());
-        suite.addTest(TestUnmodifiableShortIterator.suite());
-        suite.addTest(TestUnmodifiableShortListIterator.suite());
+    protected ShortList makeUnmodifiableShortList() {
+        return UnmodifiableShortList.wrap(makeShortList());
+    }
 
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
+    // tests
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
+    public void testWrapNull() {
+        assertNull(UnmodifiableShortList.wrap(null));
+    }
 
-        return suite;
+    public void testWrapUnmodifiableShortList() {
+        ShortList list = makeUnmodifiableShortList();
+        assertSame(list,UnmodifiableShortList.wrap(list));
+    }
+
+    public void testWrapSerializableShortList() {
+        ShortList list = makeShortList();
+        assertTrue(list instanceof Serializable);
+        assertTrue(UnmodifiableShortList.wrap(list) instanceof Serializable);
+    }
+
+    public void testWrapNonSerializableShortList() {
+        ShortList list = makeShortList();
+        ShortList ns = list.subList(0,list.size());
+        assertTrue(!(ns instanceof Serializable));
+        assertTrue(!(UnmodifiableShortList.wrap(ns) instanceof Serializable));
     }
 }
-
