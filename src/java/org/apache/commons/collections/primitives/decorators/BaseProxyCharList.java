@@ -1,9 +1,9 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/PackageTestSuite.java,v 1.5 2003/10/29 19:20:07 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/BaseProxyCharList.java,v 1.1 2003/10/29 19:20:07 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2002-2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,68 +54,68 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.commons.collections.primitives;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+package org.apache.commons.collections.primitives.decorators;
+
+import org.apache.commons.collections.primitives.CharCollection;
+import org.apache.commons.collections.primitives.CharList;
+import org.apache.commons.collections.primitives.CharListIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.5 $ $Date: 2003/10/29 19:20:07 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 19:20:07 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+abstract class BaseProxyCharList extends BaseProxyCharCollection implements CharList {
+    protected abstract CharList getProxiedList();
+
+    protected final CharCollection getProxiedCollection() {
+        return getProxiedList();
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    protected BaseProxyCharList() {
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestByteCollections.suite());
-        suite.addTest(TestAbstractByteCollection.suite());
-        suite.addTest(TestRandomAccessByteList.suite());
-        suite.addTest(TestArrayByteList.suite());
-
-        suite.addTest(TestShortCollections.suite());
-        suite.addTest(TestAbstractShortCollection.suite());
-        suite.addTest(TestRandomAccessShortList.suite());
-        suite.addTest(TestArrayShortList.suite());
-        suite.addTest(TestArrayUnsignedByteList.suite());
-
-        suite.addTest(TestCharCollections.suite());
-        suite.addTest(TestAbstractCharCollection.suite());
-        suite.addTest(TestRandomAccessCharList.suite());
-        suite.addTest(TestArrayCharList.suite());
-
-        suite.addTest(TestIntCollections.suite());
-        suite.addTest(TestAbstractIntCollection.suite());
-        suite.addTest(TestRandomAccessIntList.suite());
-        suite.addTest(TestArrayIntList.suite());
-        suite.addTest(TestArrayUnsignedShortList.suite());
-
-        suite.addTest(TestLongCollections.suite());
-		suite.addTest(TestAbstractLongCollection.suite());
-		suite.addTest(TestRandomAccessLongList.suite());
-        suite.addTest(TestArrayLongList.suite());
-        suite.addTest(TestArrayUnsignedIntList.suite());
-
-        suite.addTest(TestAbstractFloatCollection.suite());
-        suite.addTest(TestRandomAccessFloatList.suite());
-        suite.addTest(TestArrayFloatList.suite());
-
-        suite.addTest(TestAbstractDoubleCollection.suite());
-        suite.addTest(TestRandomAccessDoubleList.suite());
-        suite.addTest(TestArrayDoubleList.suite());
-
-        return suite;
+    public void add(int index, char element) {
+        getProxiedList().add(index,element);
     }
+
+    public boolean addAll(int index, CharCollection collection) {        
+        return getProxiedList().addAll(index,collection);
+    }
+
+    public char get(int index) {
+        return getProxiedList().get(index);
+    }
+
+    public int indexOf(char element) {
+        return getProxiedList().indexOf(element);
+    }
+
+    public int lastIndexOf(char element) {
+        return getProxiedList().lastIndexOf(element);
+    }
+
+    public CharListIterator listIterator() {
+        return getProxiedList().listIterator();
+    }
+
+    public CharListIterator listIterator(int index) {
+        return getProxiedList().listIterator(index);
+    }
+
+    public char removeElementAt(int index) {
+        return getProxiedList().removeElementAt(index);
+    }
+
+    public char set(int index, char element) {
+        return getProxiedList().set(index,element);
+    }
+
+    public CharList subList(int fromIndex, int toIndex) {
+        return getProxiedList().subList(fromIndex,toIndex);
+    }
+
 }
-

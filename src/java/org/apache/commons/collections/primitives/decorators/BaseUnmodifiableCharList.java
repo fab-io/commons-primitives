@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.5 2003/10/29 19:20:07 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/BaseUnmodifiableCharList.java,v 1.1 2003/10/29 19:20:07 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,62 +54,77 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.commons.collections.primitives.CharCollection;
+import org.apache.commons.collections.primitives.CharIterator;
+import org.apache.commons.collections.primitives.CharList;
+import org.apache.commons.collections.primitives.CharListIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.5 $ $Date: 2003/10/29 19:20:07 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 19:20:07 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+abstract class BaseUnmodifiableCharList extends BaseProxyCharList {
+
+    public final void add(int index, char element) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    public final boolean addAll(int index, CharCollection collection) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyCharCollection.suite());
-        suite.addTest(TestBaseProxyCharList.suite());
-        suite.addTest(TestUnmodifiableCharList.suite());
-        suite.addTest(TestUnmodifiableCharIterator.suite());
-        suite.addTest(TestUnmodifiableCharListIterator.suite());
-
-        suite.addTest(TestBaseProxyShortCollection.suite());
-        suite.addTest(TestBaseProxyShortList.suite());
-        suite.addTest(TestUnmodifiableShortList.suite());
-        suite.addTest(TestUnmodifiableShortIterator.suite());
-        suite.addTest(TestUnmodifiableShortListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public final char removeElementAt(int index) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
     }
+
+    public final char set(int index, char element) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
+    }
+
+    public final boolean add(char element) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
+    }
+
+    public final boolean addAll(CharCollection c) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
+    }
+
+    public final void clear() {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
+    }
+
+    public final boolean removeAll(CharCollection c) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
+    }
+
+    public final boolean removeElement(char element) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
+    }
+
+    public final boolean retainAll(CharCollection c) {
+        throw new UnsupportedOperationException("This CharList is not modifiable.");
+    }    
+    
+    public final CharList subList(int fromIndex, int toIndex) {
+        return UnmodifiableCharList.wrap(getProxiedList().subList(fromIndex,toIndex));
+    }
+
+    public final CharIterator iterator() {
+        return UnmodifiableCharIterator.wrap(getProxiedList().iterator());
+    }
+    
+    public CharListIterator listIterator() {
+        return UnmodifiableCharListIterator.wrap(getProxiedList().listIterator());
+    }
+
+    public CharListIterator listIterator(int index) {
+        return UnmodifiableCharListIterator.wrap(getProxiedList().listIterator(index));
+    }
+
 }
-

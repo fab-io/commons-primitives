@@ -1,9 +1,9 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/PackageTestSuite.java,v 1.5 2003/10/29 19:20:07 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/TestUnmodifiableCharList.java,v 1.1 2003/10/29 19:20:07 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2002-2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,68 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.commons.collections.primitives;
+
+package org.apache.commons.collections.primitives.decorators;
+
+import java.io.Serializable;
 
 import junit.framework.Test;
-import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import org.apache.commons.collections.primitives.CharList;
+
 /**
- * Test this package.
- * 
- * @version $Revision: 1.5 $ $Date: 2003/10/29 19:20:07 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 19:20:07 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public class TestUnmodifiableCharList extends BaseUnmodifiableCharListTest {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public TestUnmodifiableCharList(String testName) {
         super(testName);
     }
-
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
-    }
+    
 
     public static Test suite() {
-        TestSuite suite = new TestSuite();
+        return new TestSuite(TestUnmodifiableCharList.class);
+    }
 
-        suite.addTest(TestByteCollections.suite());
-        suite.addTest(TestAbstractByteCollection.suite());
-        suite.addTest(TestRandomAccessByteList.suite());
-        suite.addTest(TestArrayByteList.suite());
+    // framework
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestShortCollections.suite());
-        suite.addTest(TestAbstractShortCollection.suite());
-        suite.addTest(TestRandomAccessShortList.suite());
-        suite.addTest(TestArrayShortList.suite());
-        suite.addTest(TestArrayUnsignedByteList.suite());
+    protected CharList makeUnmodifiableCharList() {
+        return UnmodifiableCharList.wrap(makeCharList());
+    }
 
-        suite.addTest(TestCharCollections.suite());
-        suite.addTest(TestAbstractCharCollection.suite());
-        suite.addTest(TestRandomAccessCharList.suite());
-        suite.addTest(TestArrayCharList.suite());
+    // tests
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestIntCollections.suite());
-        suite.addTest(TestAbstractIntCollection.suite());
-        suite.addTest(TestRandomAccessIntList.suite());
-        suite.addTest(TestArrayIntList.suite());
-        suite.addTest(TestArrayUnsignedShortList.suite());
+    public void testWrapNull() {
+        assertNull(UnmodifiableCharList.wrap(null));
+    }
 
-        suite.addTest(TestLongCollections.suite());
-		suite.addTest(TestAbstractLongCollection.suite());
-		suite.addTest(TestRandomAccessLongList.suite());
-        suite.addTest(TestArrayLongList.suite());
-        suite.addTest(TestArrayUnsignedIntList.suite());
+    public void testWrapUnmodifiableCharList() {
+        CharList list = makeUnmodifiableCharList();
+        assertSame(list,UnmodifiableCharList.wrap(list));
+    }
 
-        suite.addTest(TestAbstractFloatCollection.suite());
-        suite.addTest(TestRandomAccessFloatList.suite());
-        suite.addTest(TestArrayFloatList.suite());
+    public void testWrapSerializableCharList() {
+        CharList list = makeCharList();
+        assertTrue(list instanceof Serializable);
+        assertTrue(UnmodifiableCharList.wrap(list) instanceof Serializable);
+    }
 
-        suite.addTest(TestAbstractDoubleCollection.suite());
-        suite.addTest(TestRandomAccessDoubleList.suite());
-        suite.addTest(TestArrayDoubleList.suite());
-
-        return suite;
+    public void testWrapNonSerializableCharList() {
+        CharList list = makeCharList();
+        CharList ns = list.subList(0,list.size());
+        assertTrue(!(ns instanceof Serializable));
+        assertTrue(!(UnmodifiableCharList.wrap(ns) instanceof Serializable));
     }
 }
-

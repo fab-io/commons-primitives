@@ -1,9 +1,9 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/PackageTestSuite.java,v 1.5 2003/10/29 19:20:07 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/ProxyCharIterator.java,v 1.1 2003/10/29 19:20:07 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2002-2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,68 +54,29 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.commons.collections.primitives;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+package org.apache.commons.collections.primitives.decorators;
+
+import org.apache.commons.collections.primitives.CharIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.5 $ $Date: 2003/10/29 19:20:07 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 19:20:07 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+abstract class ProxyCharIterator implements CharIterator {
+    ProxyCharIterator() {
+    }
+    
+    public boolean hasNext() {
+        return getIterator().hasNext();
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    public char next() {
+        return getIterator().next();
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestByteCollections.suite());
-        suite.addTest(TestAbstractByteCollection.suite());
-        suite.addTest(TestRandomAccessByteList.suite());
-        suite.addTest(TestArrayByteList.suite());
-
-        suite.addTest(TestShortCollections.suite());
-        suite.addTest(TestAbstractShortCollection.suite());
-        suite.addTest(TestRandomAccessShortList.suite());
-        suite.addTest(TestArrayShortList.suite());
-        suite.addTest(TestArrayUnsignedByteList.suite());
-
-        suite.addTest(TestCharCollections.suite());
-        suite.addTest(TestAbstractCharCollection.suite());
-        suite.addTest(TestRandomAccessCharList.suite());
-        suite.addTest(TestArrayCharList.suite());
-
-        suite.addTest(TestIntCollections.suite());
-        suite.addTest(TestAbstractIntCollection.suite());
-        suite.addTest(TestRandomAccessIntList.suite());
-        suite.addTest(TestArrayIntList.suite());
-        suite.addTest(TestArrayUnsignedShortList.suite());
-
-        suite.addTest(TestLongCollections.suite());
-		suite.addTest(TestAbstractLongCollection.suite());
-		suite.addTest(TestRandomAccessLongList.suite());
-        suite.addTest(TestArrayLongList.suite());
-        suite.addTest(TestArrayUnsignedIntList.suite());
-
-        suite.addTest(TestAbstractFloatCollection.suite());
-        suite.addTest(TestRandomAccessFloatList.suite());
-        suite.addTest(TestArrayFloatList.suite());
-
-        suite.addTest(TestAbstractDoubleCollection.suite());
-        suite.addTest(TestRandomAccessDoubleList.suite());
-        suite.addTest(TestArrayDoubleList.suite());
-
-        return suite;
-    }
+    protected abstract CharIterator getIterator();    
 }
-
