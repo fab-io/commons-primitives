@@ -1,4 +1,8 @@
-<project default="java:jar"
-  xmlns:j="jelly:core">
+<project default="java:jar" xmlns:j="jelly:core">
 
+    <postGoal name="xdoc:register-reports"> 
+        <attainGoal name="maven-checkstyle-plugin:deregister"/> 
+        <attainGoal name="maven-linkcheck-plugin:deregister"/> 
+    </postGoal> 
+    
 </project>

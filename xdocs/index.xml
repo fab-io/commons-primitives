@@ -3,7 +3,7 @@
 <document>
 
  <properties>
-  <title>Commons</title>
+  <title>Apache Jakarta Commons Primitives</title>
   <author email="commons-dev@jakarta.apache.org">Commons Documentation Team</author>
  </properties>
 
@@ -11,27 +11,26 @@
 
 <section name="The Primitives Component">
 <p>
-The Java language has a fundamental distinction between primitive and object types.
-The JDK provides many methods and utilities that work with objects, including the widely used
-<a href="http://java.sun.com/products/jdk/1.2/docs/guide/collections/">Collections API</a>.
-There are relatively few classes for working with primitive types however.
-</p>
-<p>
-The <i>primitives</i> component fills the gaps left by the JDK.
-Specialised implementations of Collections and Lists for primitive types are provided.
-Further development aims to produce Maps and other utility code.
+Apache Jakarta Commons Primitives provides a collection of types and utilities optimized
+for working with Java primitives (boolean, byte, char, double, float, int, long, short).
+Generally, the Commons-Primitives classes are faster, smaller and easier to work with than
+their purely Object based alternatives.
+</p><p>
+For more information on Commons Primitives, you might like to visit the 
+<a href="./apidocs/index.html">JavaDocs</a>, 
+<a href="./project-info.html">project info</a>
+or <a href="./maven-reports.html">project reports</a> pages.
 </p>
 </section>
 
 <section name="Status">
 <p>
-The primitives component starts with a stable implementation of primitive Collection and List
-classes previously unreleased in the collections component. These classes will be released
-in the near future.
-</p>
-<p>
-There is plenty of scope for new additions to primitives. So, if you feel like voluntering
-please contact the commons-dev mailing list and prefix emails by [primitives].
+Currently Commons Primitives contains with a stable implementation of 
+primitive Collection and List classes previously unreleased from the 
+Commons Collections component.
+</p><p>
+There is plenty of scope for new additions to primitives. If you'd like to help,
+please contact the commons-dev mailing list and prefix emails with "[primitives]".
 </p>
 </section>
 

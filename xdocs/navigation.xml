@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <!DOCTYPE project [
-<!ENTITY commons-nav SYSTEM "../incl_nav.xml">
+<!ENTITY commons-nav SYSTEM "../../incl_nav.xml">
 ]>
-
 <project name="Primitives">
-
   <title>Primitives</title>
-  <organizationLogo href="/images/jakarta-logo-blue.gif">
-   Jakarta
-  </organizationLogo>
-
+  <organizationLogo href="/images/jakarta-logo-blue.gif">Jakarta</organizationLogo>
   <body>
     <menu name="Commons Primitives">
-      <item name="Overview"
-            href="/index.html"/>
-          
+      <item name="Overview" href="/index.html"/>
     </menu>
-    
     &commons-nav;
-
   </body>
 </project>
