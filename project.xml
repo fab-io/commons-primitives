@@ -90,6 +90,11 @@
       <id>matth</id>
       <email>matth@apache.org</email>
     </developer>
+    <developer>
+      <name>Alex Karasulu</name>
+      <id>akarasulu</id>
+      <email>akarasulu@apache.org</email>
+    </developer>
   </developers>
 
   <contributors>
