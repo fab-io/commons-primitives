@@ -1,0 +1,20 @@
+$Id: RELEASE-NOTES.txt,v 1.1 2003/10/13 22:43:49 scolebourne Exp $
+
+			 Commons Primitives Package
+			   Version 0.1
+			    Release Notes
+
+
+INTRODUCTION:
+
+This is the first release of the Commons Primitives package.
+
+
+NEW FEATURES:
+
+* 
+
+
+BUG FIXES:
+
+

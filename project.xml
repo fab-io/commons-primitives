@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<project>
+  <extend>../project.xml</extend>
+  <id>commons-primitives</id>
+  <name>Commons Primitives</name>
+  <currentVersion>0.1-dev</currentVersion>
+  <inceptionYear>2003</inceptionYear>
+  
+  <description>
+    Commons Primitives is a set of collection and utility classes for primitive types.
+    The Java language has a clear distinction between Object and primitive types.
+    A lot of functionality is provided for Object types, including the Java Collection Framework.
+    Relatively little functionality is provided by the JDK for primitives.
+    This package addresses this by providing a set of utility and collection classes for primiives.
+  </description>
+  
+  <shortDescription>Apache Jakarta Commons Primitives</shortDescription>
+
+  <developers>
+    <developer>
+      <name>Stephen Colebourne</name>
+      <id>scolebourne</id>
+      <email>scolebourne@apache.org</email>
+      <organization>SITA ATS Ltd</organization>
+    </developer>
+    <developer>
+      <name>Rodney Waldhoff</name>
+      <id>rwaldhoff</id>
+      <email>rwaldhoff@apache.org</email>
+      <organization></organization>
+    </developer>
+  </developers>
+
+  <contributors>
+  </contributors>
+  
+  <!-- Primitives should depend on very little -->
+  <dependencies>
+    <dependency><!-- compile time -->
+      <id>junit</id>
+      <version>3.7</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <unitTest>
+      <includes>
+        <include>**/AllTestSuite.java</include>
+      </includes>
+      <excludes>
+      </excludes>
+    </unitTest>
+  </build>
+
+</project>
+
