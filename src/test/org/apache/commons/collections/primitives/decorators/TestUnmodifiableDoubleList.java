@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.6 2003/10/29 19:39:13 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/TestUnmodifiableDoubleList.java,v 1.1 2003/10/29 19:39:13 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,68 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
+import java.io.Serializable;
+
 import junit.framework.Test;
-import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import org.apache.commons.collections.primitives.DoubleList;
+
 /**
- * Test this package.
- * 
- * @version $Revision: 1.6 $ $Date: 2003/10/29 19:39:13 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 19:39:13 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public class TestUnmodifiableDoubleList extends BaseUnmodifiableDoubleListTest {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public TestUnmodifiableDoubleList(String testName) {
         super(testName);
     }
-
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
-    }
+    
 
     public static Test suite() {
-        TestSuite suite = new TestSuite();
+        return new TestSuite(TestUnmodifiableDoubleList.class);
+    }
 
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
+    // framework
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestBaseProxyCharCollection.suite());
-        suite.addTest(TestBaseProxyCharList.suite());
-        suite.addTest(TestUnmodifiableCharList.suite());
-        suite.addTest(TestUnmodifiableCharIterator.suite());
-        suite.addTest(TestUnmodifiableCharListIterator.suite());
+    protected DoubleList makeUnmodifiableDoubleList() {
+        return UnmodifiableDoubleList.wrap(makeDoubleList());
+    }
 
-        suite.addTest(TestBaseProxyDoubleCollection.suite());
-        suite.addTest(TestBaseProxyDoubleList.suite());
-        suite.addTest(TestUnmodifiableDoubleList.suite());
-        suite.addTest(TestUnmodifiableDoubleIterator.suite());
-        suite.addTest(TestUnmodifiableDoubleListIterator.suite());
+    // tests
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestBaseProxyShortCollection.suite());
-        suite.addTest(TestBaseProxyShortList.suite());
-        suite.addTest(TestUnmodifiableShortList.suite());
-        suite.addTest(TestUnmodifiableShortIterator.suite());
-        suite.addTest(TestUnmodifiableShortListIterator.suite());
+    public void testWrapNull() {
+        assertNull(UnmodifiableDoubleList.wrap(null));
+    }
 
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
+    public void testWrapUnmodifiableDoubleList() {
+        DoubleList list = makeUnmodifiableDoubleList();
+        assertSame(list,UnmodifiableDoubleList.wrap(list));
+    }
 
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
+    public void testWrapSerializableDoubleList() {
+        DoubleList list = makeDoubleList();
+        assertTrue(list instanceof Serializable);
+        assertTrue(UnmodifiableDoubleList.wrap(list) instanceof Serializable);
+    }
 
-        return suite;
+    public void testWrapNonSerializableDoubleList() {
+        DoubleList list = makeDoubleList();
+        DoubleList ns = list.subList(0,list.size());
+        assertTrue(!(ns instanceof Serializable));
+        assertTrue(!(UnmodifiableDoubleList.wrap(ns) instanceof Serializable));
     }
 }
-

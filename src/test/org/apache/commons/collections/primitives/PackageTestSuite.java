@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/PackageTestSuite.java,v 1.5 2003/10/29 19:20:07 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/PackageTestSuite.java,v 1.6 2003/10/29 19:39:13 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -63,7 +63,7 @@ import junit.framework.TestSuite;
 /**
  * Test this package.
  * 
- * @version $Revision: 1.5 $ $Date: 2003/10/29 19:20:07 $
+ * @version $Revision: 1.6 $ $Date: 2003/10/29 19:39:13 $
  * @author Rodney Waldhoff
  */
 public class PackageTestSuite extends TestCase {
@@ -111,6 +111,7 @@ public class PackageTestSuite extends TestCase {
         suite.addTest(TestRandomAccessFloatList.suite());
         suite.addTest(TestArrayFloatList.suite());
 
+        suite.addTest(TestDoubleCollections.suite());
         suite.addTest(TestAbstractDoubleCollection.suite());
         suite.addTest(TestRandomAccessDoubleList.suite());
         suite.addTest(TestArrayDoubleList.suite());

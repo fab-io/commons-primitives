@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.6 2003/10/29 19:39:13 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/BaseUnmodifiableDoubleIteratorTest.java,v 1.1 2003/10/29 19:39:13 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,68 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+import org.apache.commons.collections.primitives.ArrayDoubleList;
+import org.apache.commons.collections.primitives.DoubleIterator;
+import org.apache.commons.collections.primitives.DoubleList;
 
 /**
- * Test this package.
- * 
- * @version $Revision: 1.6 $ $Date: 2003/10/29 19:39:13 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 19:39:13 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public abstract class BaseUnmodifiableDoubleIteratorTest extends TestCase {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public BaseUnmodifiableDoubleIteratorTest(String testName) {
         super(testName);
     }
+    
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    // framework
+    // ------------------------------------------------------------------------
+    protected abstract DoubleIterator makeUnmodifiableDoubleIterator();
+
+    protected DoubleIterator makeDoubleIterator() {
+        DoubleList list = new ArrayDoubleList();
+        for(double i=0;i<10;i++) {
+            list.add(i);
+        }
+        return list.iterator();
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
+    // tests
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyCharCollection.suite());
-        suite.addTest(TestBaseProxyCharList.suite());
-        suite.addTest(TestUnmodifiableCharList.suite());
-        suite.addTest(TestUnmodifiableCharIterator.suite());
-        suite.addTest(TestUnmodifiableCharListIterator.suite());
-
-        suite.addTest(TestBaseProxyDoubleCollection.suite());
-        suite.addTest(TestBaseProxyDoubleList.suite());
-        suite.addTest(TestUnmodifiableDoubleList.suite());
-        suite.addTest(TestUnmodifiableDoubleIterator.suite());
-        suite.addTest(TestUnmodifiableDoubleListIterator.suite());
-
-        suite.addTest(TestBaseProxyShortCollection.suite());
-        suite.addTest(TestBaseProxyShortList.suite());
-        suite.addTest(TestUnmodifiableShortList.suite());
-        suite.addTest(TestUnmodifiableShortIterator.suite());
-        suite.addTest(TestUnmodifiableShortListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public final void testDoubleIteratorNotModifiable() {
+        DoubleIterator iter = makeUnmodifiableDoubleIterator();
+        assertTrue(iter.hasNext());
+        iter.next();
+        try {
+            iter.remove();
+            fail("Expected UnsupportedOperationException");
+        } catch(UnsupportedOperationException e) {
+            // expected
+        }
     }
+
+    public final void testIterateDoubleIterator() {        
+        DoubleIterator iter = makeUnmodifiableDoubleIterator();
+        for(DoubleIterator expected = makeDoubleIterator(); expected.hasNext(); ) {
+            assertTrue(iter.hasNext());
+            assertEquals(expected.next(),iter.next(),(double)0);
+        }
+        assertTrue(! iter.hasNext() );
+    }
+
 }
-

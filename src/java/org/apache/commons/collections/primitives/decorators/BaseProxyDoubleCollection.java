@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.6 2003/10/29 19:39:13 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/BaseProxyDoubleCollection.java,v 1.1 2003/10/29 19:39:12 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,68 +54,89 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.commons.collections.primitives.DoubleCollection;
+import org.apache.commons.collections.primitives.DoubleIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.6 $ $Date: 2003/10/29 19:39:13 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 19:39:12 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+abstract class BaseProxyDoubleCollection implements DoubleCollection {
+    protected abstract DoubleCollection getProxiedCollection();
+
+    protected BaseProxyDoubleCollection() {
+    }
+    
+    public boolean add(double element) {
+        return getProxiedCollection().add(element);
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    public boolean addAll(DoubleCollection c) {
+        return getProxiedCollection().addAll(c);
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyCharCollection.suite());
-        suite.addTest(TestBaseProxyCharList.suite());
-        suite.addTest(TestUnmodifiableCharList.suite());
-        suite.addTest(TestUnmodifiableCharIterator.suite());
-        suite.addTest(TestUnmodifiableCharListIterator.suite());
-
-        suite.addTest(TestBaseProxyDoubleCollection.suite());
-        suite.addTest(TestBaseProxyDoubleList.suite());
-        suite.addTest(TestUnmodifiableDoubleList.suite());
-        suite.addTest(TestUnmodifiableDoubleIterator.suite());
-        suite.addTest(TestUnmodifiableDoubleListIterator.suite());
-
-        suite.addTest(TestBaseProxyShortCollection.suite());
-        suite.addTest(TestBaseProxyShortList.suite());
-        suite.addTest(TestUnmodifiableShortList.suite());
-        suite.addTest(TestUnmodifiableShortIterator.suite());
-        suite.addTest(TestUnmodifiableShortListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public void clear() {
+        getProxiedCollection().clear();
     }
+
+    public boolean contains(double element) {
+        return getProxiedCollection().contains(element);
+    }
+
+    public boolean containsAll(DoubleCollection c) {
+        return getProxiedCollection().containsAll(c);
+    }
+
+    public boolean isEmpty() {
+        return getProxiedCollection().isEmpty();
+    }
+
+    public DoubleIterator iterator() {
+        return getProxiedCollection().iterator();
+    }
+
+    public boolean removeAll(DoubleCollection c) {
+        return getProxiedCollection().removeAll(c);
+    }
+
+    public boolean removeElement(double element) {
+        return getProxiedCollection().removeElement(element);
+    }
+
+    public boolean retainAll(DoubleCollection c) {
+        return getProxiedCollection().retainAll(c);
+    }
+
+    public int size() {
+        return getProxiedCollection().size();
+    }
+
+    public double[] toArray() {
+        return getProxiedCollection().toArray();
+    }
+
+    public double[] toArray(double[] a) {
+        return getProxiedCollection().toArray(a);
+    }
+
+    // TODO: Add note about possible contract violations here.
+    
+    public boolean equals(Object obj) {
+        return getProxiedCollection().equals(obj);
+    }
+
+    public int hashCode() {
+        return getProxiedCollection().hashCode();
+    }
+
+    public String toString() {
+        return getProxiedCollection().toString();
+    }
+
 }
-
