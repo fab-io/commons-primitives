@@ -6,4 +6,4 @@ junit.home = /usr/local/junit3.7
 junit.jar = ${junit.home}/junit.jar
 
 # The pathname of the collections-testframework.jar
-collections-testframework.jar = ${junit.home}/commons-collections-testframework.jar
+collections-testframework.jar=../target/commons-collections-testframework.jar
