@@ -9,6 +9,7 @@
     <menu name="Commons Primitives">
       <item name="Overview" href="/index.html"/>
       <item name="FAQ" href="/faq.html"/>
+      <item name="Status&#xA0;File"        href="http://cvs.apache.org/viewcvs.cgi/*checkout*/jakarta-commons/primitives/STATUS.txt"/>
     </menu>
     &commons-nav;
   </body>
