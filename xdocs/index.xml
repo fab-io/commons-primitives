@@ -20,12 +20,12 @@ their purely Object based alternatives.
 
 <section name="Status">
 <p>
-Commons Primitives has not yet had a formal release.
+The most recent stable release is version 1.0, released 5 November 2003.  
+<a href="http://jakarta.apache.org/site/binindex.cgi#commons-primitives">Binary</a> and
+<a href="http://jakarta.apache.org/site/sourceindex.cgi#commons-primitives">source</a> distributions are available.
+</p><p>
 Daily builds and tarballs are available from
 <a href="http://cvs.apache.org/builds/jakarta-commons/nightly/commons-primitives/">http://cvs.apache.org/builds/jakarta-commons/nightly/commons-primitives/</a>.
-</p><p>
-The current codebase is stable and <a href="./clover">well-tested</a>
-nevertheless.  A 1.0 release is expected "real soon now".
 </p>
 </section>
 
