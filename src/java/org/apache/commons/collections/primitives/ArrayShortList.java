@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2004 The Apache Software Foundation
+ * Copyright 2002-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.0
- * @version $Revision: 1.5 $ $Date: 2004/02/25 20:46:25 $
+ * @version $Revision: 1.6 $ $Date: 2005/01/03 23:20:42 $
  * 
  * @author Rodney Waldhoff 
  */
@@ -155,6 +155,30 @@ public class ArrayShortList extends RandomAccessShortList implements ShortList, 
     public void clear() {
         incrModCount();
         _size = 0;
+    }
+
+    public boolean addAll(ShortCollection collection) {
+        return addAll(size(), collection);
+    }
+
+    public boolean addAll(int index, ShortCollection collection) {
+        if (collection.size() == 0) {
+            return false;
+        }
+        checkRangeIncludingEndpoint(index);
+        incrModCount();
+        ensureCapacity(_size + collection.size());
+        if (index != _size) {
+            // Need to move some elements
+            System.arraycopy(_data, index, _data, index + collection.size(), _size - index);
+        }
+        int ptr = index;
+        for (ShortIterator it = collection.iterator(); it.hasNext();) {
+            _data[index] = it.next();
+            index++;
+        }
+        _size += collection.size();
+        return true;
     }
 
     // capacity methods
