@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/Adapt.java,v 1.1 2003/12/04 22:57:19 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/Adapt.java,v 1.2 2003/12/04 23:19:23 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -95,13 +95,16 @@ import org.apache.commons.collections.primitives.ShortListIterator;
  * Convenience methods for constructing adapters.
  *  
  * @since Commons Primitives 1.1
- * @version $Revision: 1.1 $ $Date: 2003/12/04 22:57:19 $
+ * @version $Revision: 1.2 $ $Date: 2003/12/04 23:19:23 $
  * @author Rodney Waldhoff 
  */
 public final class Adapt {
     public Adapt() {
     }
     
+    // to object based
+    //---------------------------------------------------------------
+
     public static final Collection toCollection(ByteCollection c) {
         return ByteCollectionCollection.wrap(c);
     }
@@ -214,4 +217,136 @@ public final class Adapt {
         return ShortListIteratorListIterator.wrap(c);
     }
 
+    // to byte based
+    //---------------------------------------------------------------
+    
+    public static final ByteCollection toByteCollection(Collection c) {
+        return CollectionByteCollection.wrap(c);
+    }
+
+    public static final ByteList toByteList(List c) {
+        return ListByteList.wrap(c);
+    }
+
+    public static final ByteIterator toByteIterator(Iterator c) {
+        return IteratorByteIterator.wrap(c);
+    }
+
+    public static final ByteListIterator toByteListIterator(ListIterator c) {
+        return ListIteratorByteListIterator.wrap(c);
+    }
+
+    // to char based
+    //---------------------------------------------------------------
+    
+    public static final CharCollection toCharCollection(Collection c) {
+        return CollectionCharCollection.wrap(c);
+    }
+
+    public static final CharList toCharList(List c) {
+        return ListCharList.wrap(c);
+    }
+
+    public static final CharIterator toCharIterator(Iterator c) {
+        return IteratorCharIterator.wrap(c);
+    }
+
+    public static final CharListIterator toCharListIterator(ListIterator c) {
+        return ListIteratorCharListIterator.wrap(c);
+    }
+
+    // to double based
+    //---------------------------------------------------------------
+    
+    public static final DoubleCollection toDoubleCollection(Collection c) {
+        return CollectionDoubleCollection.wrap(c);
+    }
+
+    public static final DoubleList toDoubleList(List c) {
+        return ListDoubleList.wrap(c);
+    }
+
+    public static final DoubleIterator toDoubleIterator(Iterator c) {
+        return IteratorDoubleIterator.wrap(c);
+    }
+
+    public static final DoubleListIterator toDoubleListIterator(ListIterator c) {
+        return ListIteratorDoubleListIterator.wrap(c);
+    }
+    
+    // to float based
+    //---------------------------------------------------------------
+    
+    public static final FloatCollection toFloatCollection(Collection c) {
+        return CollectionFloatCollection.wrap(c);
+    }
+
+    public static final FloatList toFloatList(List c) {
+        return ListFloatList.wrap(c);
+    }
+
+    public static final FloatIterator toFloatIterator(Iterator c) {
+        return IteratorFloatIterator.wrap(c);
+    }
+
+    public static final FloatListIterator toFloatListIterator(ListIterator c) {
+        return ListIteratorFloatListIterator.wrap(c);
+    }
+    
+    // to int based
+    //---------------------------------------------------------------
+    
+    public static final IntCollection toIntCollection(Collection c) {
+        return CollectionIntCollection.wrap(c);
+    }
+
+    public static final IntList toIntList(List c) {
+        return ListIntList.wrap(c);
+    }
+
+    public static final IntIterator toIntIterator(Iterator c) {
+        return IteratorIntIterator.wrap(c);
+    }
+
+    public static final IntListIterator toIntListIterator(ListIterator c) {
+        return ListIteratorIntListIterator.wrap(c);
+    }
+    
+    // to long based
+    //---------------------------------------------------------------
+    
+    public static final LongCollection toLongCollection(Collection c) {
+        return CollectionLongCollection.wrap(c);
+    }
+
+    public static final LongList toLongList(List c) {
+        return ListLongList.wrap(c);
+    }
+
+    public static final LongIterator toLongIterator(Iterator c) {
+        return IteratorLongIterator.wrap(c);
+    }
+
+    public static final LongListIterator toLongListIterator(ListIterator c) {
+        return ListIteratorLongListIterator.wrap(c);
+    }
+    
+    // to short based
+    //---------------------------------------------------------------
+    
+    public static final ShortCollection toShortCollection(Collection c) {
+        return CollectionShortCollection.wrap(c);
+    }
+
+    public static final ShortList toShortList(List c) {
+        return ListShortList.wrap(c);
+    }
+
+    public static final ShortIterator toShortIterator(Iterator c) {
+        return IteratorShortIterator.wrap(c);
+    }
+
+    public static final ShortListIterator toShortListIterator(ListIterator c) {
+        return ListIteratorShortListIterator.wrap(c);
+    }
 }

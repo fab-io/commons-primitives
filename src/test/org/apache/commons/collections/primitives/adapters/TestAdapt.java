@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestAdapt.java,v 1.1 2003/12/04 22:57:19 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestAdapt.java,v 1.2 2003/12/04 23:19:22 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -57,6 +57,7 @@
 
 package org.apache.commons.collections.primitives.adapters;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -73,23 +74,37 @@ import org.apache.commons.collections.primitives.ArrayFloatList;
 import org.apache.commons.collections.primitives.ArrayIntList;
 import org.apache.commons.collections.primitives.ArrayLongList;
 import org.apache.commons.collections.primitives.ArrayShortList;
+import org.apache.commons.collections.primitives.ByteCollection;
 import org.apache.commons.collections.primitives.ByteIterator;
+import org.apache.commons.collections.primitives.ByteList;
 import org.apache.commons.collections.primitives.ByteListIterator;
+import org.apache.commons.collections.primitives.CharCollection;
 import org.apache.commons.collections.primitives.CharIterator;
+import org.apache.commons.collections.primitives.CharList;
 import org.apache.commons.collections.primitives.CharListIterator;
+import org.apache.commons.collections.primitives.DoubleCollection;
 import org.apache.commons.collections.primitives.DoubleIterator;
+import org.apache.commons.collections.primitives.DoubleList;
 import org.apache.commons.collections.primitives.DoubleListIterator;
+import org.apache.commons.collections.primitives.FloatCollection;
 import org.apache.commons.collections.primitives.FloatIterator;
+import org.apache.commons.collections.primitives.FloatList;
 import org.apache.commons.collections.primitives.FloatListIterator;
+import org.apache.commons.collections.primitives.IntCollection;
 import org.apache.commons.collections.primitives.IntIterator;
+import org.apache.commons.collections.primitives.IntList;
 import org.apache.commons.collections.primitives.IntListIterator;
+import org.apache.commons.collections.primitives.LongCollection;
 import org.apache.commons.collections.primitives.LongIterator;
+import org.apache.commons.collections.primitives.LongList;
 import org.apache.commons.collections.primitives.LongListIterator;
+import org.apache.commons.collections.primitives.ShortCollection;
 import org.apache.commons.collections.primitives.ShortIterator;
+import org.apache.commons.collections.primitives.ShortList;
 import org.apache.commons.collections.primitives.ShortListIterator;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/12/04 22:57:19 $
+ * @version $Revision: 1.2 $ $Date: 2003/12/04 23:19:22 $
  * @author Rodney Waldhoff
  */
 public class TestAdapt extends TestCase {
@@ -111,6 +126,9 @@ public class TestAdapt extends TestCase {
     public void testHasPublicConstructorForReflectionBasedAPIs() {
         assertNotNull(new Adapt());
     }
+    
+    // to object based
+    //---------------------------------------------------------------
     
     public void testToCollection() {
         assertNull(Adapt.toCollection((ArrayByteList)null));
@@ -178,5 +196,124 @@ public class TestAdapt extends TestCase {
         assertTrue(Adapt.toListIterator(new ArrayLongList().listIterator()) instanceof ListIterator);
         assertNull(Adapt.toListIterator((ShortListIterator)null));
         assertTrue(Adapt.toListIterator(new ArrayShortList().listIterator()) instanceof ListIterator);
+    }
+
+    // to byte based
+    //---------------------------------------------------------------
+    
+    public void testToByteType() {
+        assertTrue(Adapt.toByteCollection(new ArrayList()) instanceof ByteCollection);
+        assertTrue(Adapt.toByteList(new ArrayList()) instanceof ByteList);
+        assertTrue(Adapt.toByteIterator(new ArrayList().iterator()) instanceof ByteIterator);
+        assertTrue(Adapt.toByteListIterator(new ArrayList().listIterator()) instanceof ByteListIterator);
+    }
+
+    public void testToByteTypeFromNull() {
+        assertNull(Adapt.toByteCollection(null));
+        assertNull(Adapt.toByteList(null));
+        assertNull(Adapt.toByteIterator(null));
+        assertNull(Adapt.toByteListIterator(null));
+    }
+
+    // to char based
+    //---------------------------------------------------------------
+    
+    public void testToCharType() {
+        assertTrue(Adapt.toCharCollection(new ArrayList()) instanceof CharCollection);
+        assertTrue(Adapt.toCharList(new ArrayList()) instanceof CharList);
+        assertTrue(Adapt.toCharIterator(new ArrayList().iterator()) instanceof CharIterator);
+        assertTrue(Adapt.toCharListIterator(new ArrayList().listIterator()) instanceof CharListIterator);
+    }
+
+    public void testToCharTypeFromNull() {
+        assertNull(Adapt.toCharCollection(null));
+        assertNull(Adapt.toCharList(null));
+        assertNull(Adapt.toCharIterator(null));
+        assertNull(Adapt.toCharListIterator(null));
+    }
+
+    // to double based
+    //---------------------------------------------------------------
+    
+    public void testToDoubleType() {
+        assertTrue(Adapt.toDoubleCollection(new ArrayList()) instanceof DoubleCollection);
+        assertTrue(Adapt.toDoubleList(new ArrayList()) instanceof DoubleList);
+        assertTrue(Adapt.toDoubleIterator(new ArrayList().iterator()) instanceof DoubleIterator);
+        assertTrue(Adapt.toDoubleListIterator(new ArrayList().listIterator()) instanceof DoubleListIterator);
+    }
+
+    public void testToDoubleTypeFromNull() {
+        assertNull(Adapt.toDoubleCollection(null));
+        assertNull(Adapt.toDoubleList(null));
+        assertNull(Adapt.toDoubleIterator(null));
+        assertNull(Adapt.toDoubleListIterator(null));
+    }
+
+    // to float based
+    //---------------------------------------------------------------
+    
+    public void testToFloatType() {
+        assertTrue(Adapt.toFloatCollection(new ArrayList()) instanceof FloatCollection);
+        assertTrue(Adapt.toFloatList(new ArrayList()) instanceof FloatList);
+        assertTrue(Adapt.toFloatIterator(new ArrayList().iterator()) instanceof FloatIterator);
+        assertTrue(Adapt.toFloatListIterator(new ArrayList().listIterator()) instanceof FloatListIterator);
+    }
+
+    public void testToFloatTypeFromNull() {
+        assertNull(Adapt.toFloatCollection(null));
+        assertNull(Adapt.toFloatList(null));
+        assertNull(Adapt.toFloatIterator(null));
+        assertNull(Adapt.toFloatListIterator(null));
+    }
+
+    // to int based
+    //---------------------------------------------------------------
+    
+    public void testToIntType() {
+        assertTrue(Adapt.toIntCollection(new ArrayList()) instanceof IntCollection);
+        assertTrue(Adapt.toIntList(new ArrayList()) instanceof IntList);
+        assertTrue(Adapt.toIntIterator(new ArrayList().iterator()) instanceof IntIterator);
+        assertTrue(Adapt.toIntListIterator(new ArrayList().listIterator()) instanceof IntListIterator);
+    }
+
+    public void testToIntTypeFromNull() {
+        assertNull(Adapt.toIntCollection(null));
+        assertNull(Adapt.toIntList(null));
+        assertNull(Adapt.toIntIterator(null));
+        assertNull(Adapt.toIntListIterator(null));
+    }
+
+    // to long based
+    //---------------------------------------------------------------
+    
+    public void testToLongType() {
+        assertTrue(Adapt.toLongCollection(new ArrayList()) instanceof LongCollection);
+        assertTrue(Adapt.toLongList(new ArrayList()) instanceof LongList);
+        assertTrue(Adapt.toLongIterator(new ArrayList().iterator()) instanceof LongIterator);
+        assertTrue(Adapt.toLongListIterator(new ArrayList().listIterator()) instanceof LongListIterator);
+    }
+
+    public void testToLongTypeFromNull() {
+        assertNull(Adapt.toLongCollection(null));
+        assertNull(Adapt.toLongList(null));
+        assertNull(Adapt.toLongIterator(null));
+        assertNull(Adapt.toLongListIterator(null));
+    }
+
+    // to short based
+    //---------------------------------------------------------------
+    
+    public void testToShortType() {
+        assertTrue(Adapt.toShortCollection(new ArrayList()) instanceof ShortCollection);
+        assertTrue(Adapt.toShortList(new ArrayList()) instanceof ShortList);
+        assertTrue(Adapt.toShortIterator(new ArrayList().iterator()) instanceof ShortIterator);
+        assertTrue(Adapt.toShortListIterator(new ArrayList().listIterator()) instanceof ShortListIterator);
+    }
+
+    public void testToShortTypeFromNull() {
+        assertNull(Adapt.toShortCollection(null));
+        assertNull(Adapt.toShortList(null));
+        assertNull(Adapt.toShortIterator(null));
+        assertNull(Adapt.toShortListIterator(null));
     }
 }
