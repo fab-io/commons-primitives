@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.1 $ $Date: 2004/04/14 22:42:08 $
+ * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
  */
 public class TestByteStack extends TestCase
 {
@@ -43,7 +43,7 @@ public class TestByteStack extends TestCase
     }
 
     public static TestSuite suite() {
-        return new TestSuite(TestBooleanStack.class);
+        return new TestSuite(TestByteStack.class);
     }
 
     

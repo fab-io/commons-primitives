@@ -26,9 +26,8 @@ import junit.framework.TestSuite;
 /**
  * Tests the ShortStack class.
  *
- * @author <a href="mailto:directory-dev@incubator.apache.org">
- * Apache Directory Project</a>
- * @version $Rev: 9968 $
+ * @author <a href="mailto:directory-dev@incubator.apache.org">Apache Directory Project</a>
+ * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
  */
 public class TestShortStack extends TestCase
 {
@@ -46,7 +45,7 @@ public class TestShortStack extends TestCase
     }
 
     public static TestSuite suite() {
-        return new TestSuite(TestBooleanStack.class);
+        return new TestSuite(TestShortStack.class);
     }
 
     
