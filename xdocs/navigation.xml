@@ -14,9 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<!DOCTYPE project [
-<!ENTITY commons-nav SYSTEM "../../commons-build/incl_nav.xml">
-]>
+<!DOCTYPE org.apache.commons.menus SYSTEM '../../commons-build/menus/menus.dtd'>
 <project name="Primitives">
   <title>Primitives</title>
   <organizationLogo href="/images/jakarta-logo-blue.gif">Jakarta</organizationLogo>
@@ -33,6 +31,6 @@
       <item name="Team" href="/team-list.html"/>
       <item name="CVS" href="http://cvs.apache.org/viewcvs/jakarta-commons/primitives/"/>
     </menu>
-    &commons-nav;
+    &common-menus;
   </body>
 </project>
