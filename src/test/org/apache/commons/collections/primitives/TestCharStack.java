@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
+ * @version $Revision: 1.3 $ $Date: 2004/07/13 19:57:02 $
  */
 public class TestCharStack extends TestCase
 {
@@ -149,5 +149,22 @@ public class TestCharStack extends TestCase
         stack.push( ( char ) 0 ) ;
         assertTrue( 3 == stack.search( ( char ) 1 ) ) ;
         assertTrue( -1 == stack.search( ( char ) 44 ) ) ;
+    }
+
+    public void testArrayConstructor() {
+        char[] array = { 1, 2, 3, 4 };
+        stack  = new CharStack(array);
+        assertEquals(array.length,stack.size());
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.pop());
+        }
+    }
+    
+    public void testPeekN() {
+        char[] array = { 1, 2, 3, 4 };
+        stack  = new CharStack(array);
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.peek((array.length-1)-i));
+        }
     }
 }

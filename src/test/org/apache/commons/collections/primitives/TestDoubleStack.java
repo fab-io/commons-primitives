@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
+ * @version $Revision: 1.3 $ $Date: 2004/07/13 19:57:02 $
  */
 public class TestDoubleStack extends TestCase
 {
@@ -150,4 +150,22 @@ public class TestDoubleStack extends TestCase
         assertTrue( 3 == stack.search( ( double ) 1 ) ) ;
         assertTrue( -1 == stack.search( ( double ) 44 ) ) ;
     }
+
+    public void testArrayConstructor() {
+        double[] array = { 1.0, 2.0, 3.0, 4.0 };
+        stack  = new DoubleStack(array);
+        assertEquals(array.length,stack.size());
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.pop(),0.0d);
+        }
+    }
+    
+    public void testPeekN() {
+        double[] array = { 1.0, 2.0, 3.0, 4.0 };
+        stack  = new DoubleStack(array);
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.peek((array.length-1)-i),0.0d);
+        }
+    }
+
 }

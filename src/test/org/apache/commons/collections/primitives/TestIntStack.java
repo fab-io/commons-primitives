@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
+ * @version $Revision: 1.3 $ $Date: 2004/07/13 19:57:02 $
  */
 public class TestIntStack extends TestCase
 {
@@ -149,5 +149,22 @@ public class TestIntStack extends TestCase
         stack.push( 0 ) ;
         assertEquals( 3, stack.search( 1 ) ) ;
         assertEquals( -1, stack.search( 44 ) ) ;
+    }
+
+    public void testArrayConstructor() {
+        int[] array = { 1, 2, 3, 4 };
+        stack  = new IntStack(array);
+        assertEquals(array.length,stack.size());
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.pop());
+        }
+    }
+    
+    public void testPeekN() {
+        int[] array = { 1, 2, 3, 4 };
+        stack  = new IntStack(array);
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.peek((array.length-1)-i));
+        }
     }
 }

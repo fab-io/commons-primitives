@@ -27,7 +27,7 @@ import junit.framework.TestSuite;
  * Tests the ShortStack class.
  *
  * @author <a href="mailto:directory-dev@incubator.apache.org">Apache Directory Project</a>
- * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
+ * @version $Revision: 1.3 $ $Date: 2004/07/13 19:57:02 $
  */
 public class TestShortStack extends TestCase
 {
@@ -151,5 +151,22 @@ public class TestShortStack extends TestCase
         stack.push( ( short ) 0 ) ;
         assertTrue( 3 == stack.search( ( short ) 1 ) ) ;
         assertTrue( -1 == stack.search( ( short ) 44 ) ) ;
+    }
+
+    public void testArrayConstructor() {
+        short[] array = { 1, 2, 3, 4 };
+        stack  = new ShortStack(array);
+        assertEquals(array.length,stack.size());
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.pop());
+        }
+    }
+    
+    public void testPeekN() {
+        short[] array = { 1, 2, 3, 4 };
+        stack  = new ShortStack(array);
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.peek((array.length-1)-i));
+        }
     }
 }

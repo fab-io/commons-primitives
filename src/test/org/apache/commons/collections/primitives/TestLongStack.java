@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
+ * @version $Revision: 1.3 $ $Date: 2004/07/13 19:57:02 $
  */
 public class TestLongStack extends TestCase
 {
@@ -150,4 +150,22 @@ public class TestLongStack extends TestCase
         assertTrue( 3L == stack.search( 1L ) ) ;
         assertTrue( -1L == stack.search( 44L ) ) ;
     }
+
+    public void testArrayConstructor() {
+        long[] array = { 1, 2, 3, 4 };
+        stack  = new LongStack(array);
+        assertEquals(array.length,stack.size());
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.pop());
+        }
+    }
+    
+    public void testPeekN() {
+        long[] array = { 1, 2, 3, 4 };
+        stack  = new LongStack(array);
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.peek((array.length-1)-i));
+        }
+    }
 }
+

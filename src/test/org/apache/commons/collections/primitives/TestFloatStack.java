@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/07/12 16:33:47 $
+ * @version $Revision: 1.3 $ $Date: 2004/07/13 19:57:02 $
  */
 public class TestFloatStack extends TestCase
 {
@@ -150,4 +150,22 @@ public class TestFloatStack extends TestCase
         assertTrue( 3 == stack.search( ( float ) 1 ) ) ;
         assertTrue( -1 == stack.search( ( float ) 44 ) ) ;
     }
+    
+    public void testArrayConstructor() {
+        float[] array = { 1.0f, 2.0f, 3.0f, 4.0f };
+        stack  = new FloatStack(array);
+        assertEquals(array.length,stack.size());
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.pop(),0.0f);
+        }
+    }
+    
+    public void testPeekN() {
+        float[] array = { 1.0f, 2.0f, 3.0f, 4.0f };
+        stack  = new FloatStack(array);
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.peek((array.length-1)-i),0.0f);
+        }
+    }
+    
 }

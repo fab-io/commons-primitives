@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.1 $ $Date: 2004/04/14 22:42:08 $
+ * @version $Revision: 1.2 $ $Date: 2004/07/13 19:57:02 $
  */
 public class TestBooleanStack extends TestCase
 {
@@ -184,4 +184,22 @@ public class TestBooleanStack extends TestCase
         stack.push( false ) ;
         assertTrue( 3 == stack.search( true ) ) ;
     }
+    
+    public void testArrayConstructor() {
+        boolean[] array = { true, false, true, true };
+        stack  = new BooleanStack(array);
+        assertEquals(array.length,stack.size());
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.pop());
+        }
+    }
+    
+    public void testPeekN() {
+        boolean[] array = { true, false, true, true };
+        stack  = new BooleanStack(array);
+        for(int i=array.length-1;i>=0;i--) {
+            assertEquals(array[i],stack.peek((array.length-1)-i));
+        }
+    }
+    
 }
