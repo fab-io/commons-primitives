@@ -1,20 +1,28 @@
-$Id: RELEASE-NOTES.txt,v 1.1 2003/10/13 22:43:49 scolebourne Exp $
+$Id: RELEASE-NOTES.txt,v 1.2 2003/10/14 19:40:42 scolebourne Exp $
 
-			 Commons Primitives Package
-			   Version 0.1
-			    Release Notes
+           Commons Primitives Package
+                 Version 0.1
+                Release Notes
 
 
 INTRODUCTION:
 
-This is the first release of the Commons Primitives package.
+This is a first development release of the Commons Primitives package.
 
 
 NEW FEATURES:
 
-* 
+Interface for each primitive type:
+- Collection
+- List
+- Iterator
+- ListIterator
 
+Implementation for each primitive type:
+- List
+- Iterator
+- ListIterator
 
-BUG FIXES:
-
+Adaptors to the object-based Java Collections Framework
+Decorators for some classes.
 

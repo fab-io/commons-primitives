@@ -3,7 +3,7 @@
   <extend>../project.xml</extend>
   <id>commons-primitives</id>
   <name>Commons Primitives</name>
-  <currentVersion>0.1-dev</currentVersion>
+  <currentVersion>0.1</currentVersion>
   <inceptionYear>2003</inceptionYear>
   
   <description>
@@ -11,7 +11,7 @@
     The Java language has a clear distinction between Object and primitive types.
     A lot of functionality is provided for Object types, including the Java Collection Framework.
     Relatively little functionality is provided by the JDK for primitives.
-    This package addresses this by providing a set of utility and collection classes for primiives.
+    This package addresses this by providing a set of utility and collection classes for primitives.
   </description>
   
   <shortDescription>Apache Jakarta Commons Primitives</shortDescription>
@@ -21,13 +21,11 @@
       <name>Stephen Colebourne</name>
       <id>scolebourne</id>
       <email>scolebourne@apache.org</email>
-      <organization>SITA ATS Ltd</organization>
     </developer>
     <developer>
       <name>Rodney Waldhoff</name>
       <id>rwaldhoff</id>
       <email>rwaldhoff@apache.org</email>
-      <organization></organization>
     </developer>
   </developers>
 

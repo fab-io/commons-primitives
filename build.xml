@@ -3,7 +3,7 @@
 
 <!--
         "Primitives" component of the Jakarta Commons Subproject
-        $Id: build.xml,v 1.1 2003/10/13 22:43:09 scolebourne Exp $
+        $Id: build.xml,v 1.2 2003/10/14 19:40:42 scolebourne Exp $
 -->
 
 
@@ -43,7 +43,7 @@
   <property name="component.title"         value="Primitive type utilities"/>
 
   <!-- The current version number of this component -->
-  <property name="component.version"       value="0.1-dev"/>
+  <property name="component.version"       value="0.1"/>
 
   <!-- The base directory for compilation targets -->
   <property name="build.home"              value="target"/>
@@ -204,7 +204,7 @@
     <mkdir      dir="${build.home}/classes/META-INF"/>
     <copy      file="LICENSE.txt"
              tofile="${build.home}/classes/META-INF/LICENSE.txt"/>
-    <jar    jarfile="${dist.home}/commons-${component.name}-collections.jar"
+    <jar    jarfile="${dist.home}/commons-${component.name}.jar"
             basedir="${build.home}/classes"
            manifest="${build.home}/conf/MANIFEST.MF"/>
   </target>
