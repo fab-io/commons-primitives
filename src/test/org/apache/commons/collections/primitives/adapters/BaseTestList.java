@@ -15,13 +15,16 @@
  */
 package org.apache.commons.collections.primitives.adapters;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
+import org.apache.commons.collections.BulkTest;
 import org.apache.commons.collections.list.AbstractTestList;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:29 $
+ * @version $Revision: 1.4 $ $Date: 2004/07/29 22:30:55 $
  * @author Rodney Waldhoff
  */
 public abstract class BaseTestList extends AbstractTestList {
@@ -56,4 +59,111 @@ public abstract class BaseTestList extends AbstractTestList {
         assertFalse(iter.hasNext());
     }
 
+    /**
+     * Override to change assertSame to assertEquals.
+     */
+    public void testListListIteratorPreviousRemove() {
+        if (isRemoveSupported() == false) return;
+        resetFull();
+        ListIterator it = getList().listIterator();
+        Object zero = it.next();
+        Object one = it.next();
+        Object two = it.next();
+        Object two2 = it.previous();
+        Object one2 = it.previous();
+        assertEquals(one, one2);
+        assertEquals(two, two2);
+        assertEquals(zero, getList().get(0));
+        assertEquals(one, getList().get(1));
+        assertEquals(two, getList().get(2));
+        it.remove();
+        assertEquals(zero, getList().get(0));
+        assertEquals(two, getList().get(1));
+    }
+
+    /**
+     * Override to change assertSame to assertEquals.
+     */
+    public BulkTest bulkTestSubList() {
+        if (getFullElements().length - 6 < 10) return null;
+        return new PrimitiveBulkTestSubList(this);
+    }
+
+
+    /**
+     * Whole class copied as sub list constructor was package scoped in 3.1.
+     */
+    public static class PrimitiveBulkTestSubList extends BaseTestList {
+        private BaseTestList outer;
+    
+        PrimitiveBulkTestSubList(BaseTestList outer) {
+            super("");
+            this.outer = outer;
+        }
+    
+        public Object[] getFullElements() {
+            List l = Arrays.asList(outer.getFullElements());
+            return l.subList(3, l.size() - 3).toArray();
+        }
+        public Object[] getOtherElements() {
+            return outer.getOtherElements();
+        }
+        public boolean isAddSupported() {
+            return outer.isAddSupported();
+        }
+        public boolean isSetSupported() {
+            return outer.isSetSupported();
+        }
+        public boolean isRemoveSupported() {
+            return outer.isRemoveSupported();
+        }
+    
+        public List makeEmptyList() {
+            return outer.makeFullList().subList(4, 4);
+        }
+        public List makeFullList() {
+            int size = getFullElements().length;
+            return outer.makeFullList().subList(3, size - 3);
+        }
+        public void resetEmpty() {
+            outer.resetFull();
+            this.collection = outer.getList().subList(4, 4);
+            this.confirmed = outer.getConfirmedList().subList(4, 4);
+        }
+        public void resetFull() {
+            outer.resetFull();
+            int size = outer.confirmed.size();
+            this.collection = outer.getList().subList(3, size - 3);
+            this.confirmed = outer.getConfirmedList().subList(3, size - 3);
+        }
+        public void verify() {
+            super.verify();
+            outer.verify();
+        }
+        public boolean isTestSerialization() {
+            return false;
+        }
+        /**
+         * Override to change assertSame to assertEquals.
+         */
+        public void testListListIteratorPreviousRemove() {
+            if (isRemoveSupported() == false)
+                return;
+            resetFull();
+            ListIterator it = getList().listIterator();
+            Object zero = it.next();
+            Object one = it.next();
+            Object two = it.next();
+            Object two2 = it.previous();
+            Object one2 = it.previous();
+            assertEquals(one, one2);
+            assertEquals(two, two2);
+            assertEquals(zero, getList().get(0));
+            assertEquals(one, getList().get(1));
+            assertEquals(two, getList().get(2));
+            it.remove();
+            assertEquals(zero, getList().get(0));
+            assertEquals(two, getList().get(1));
+        }
+    }
 }
