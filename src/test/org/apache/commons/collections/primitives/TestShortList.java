@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/TestShortList.java,v 1.1 2003/10/13 22:46:55 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/TestShortList.java,v 1.2 2003/10/27 18:36:29 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -59,14 +59,15 @@ package org.apache.commons.collections.primitives;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 import org.apache.commons.collections.AbstractTestList;
-import org.apache.commons.collections.primitives.adapters.ShortListList;
 import org.apache.commons.collections.primitives.adapters.ListShortList;
+import org.apache.commons.collections.primitives.adapters.ShortListList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:55 $
+ * @version $Revision: 1.2 $ $Date: 2003/10/27 18:36:29 $
  * @author Rodney Waldhoff
  */
 public abstract class TestShortList extends AbstractTestList {
@@ -139,6 +140,38 @@ public abstract class TestShortList extends AbstractTestList {
 
     // tests
     // ------------------------------------------------------------------------
+
+    public void testExceptionOnConcurrentModification() {
+        ShortList list = makeFullShortList();
+        ShortIterator iter = list.iterator();
+        iter.next();
+        list.add((short)3);
+        try {
+            iter.next();
+            fail("Expected ConcurrentModificationException");
+        } catch(ConcurrentModificationException e) {
+            // expected
+        }
+    }
+    
+    public void testAddAllAtIndex() {
+        ShortList source = makeFullShortList();
+        ShortList dest = makeFullShortList();
+        dest.addAll(1,source);
+        
+        ShortIterator iter = dest.iterator();
+        assertTrue(iter.hasNext());
+        assertEquals(source.get(0),iter.next());
+        for(int i=0;i<source.size();i++) {
+            assertTrue(iter.hasNext());
+            assertEquals(source.get(i),iter.next());
+        }
+        for(int i=1;i<source.size();i++) {
+            assertTrue(iter.hasNext());
+            assertEquals(source.get(i),iter.next());
+        }
+        assertFalse(iter.hasNext());
+    }
 
     public void testToJustBigEnoughShortArray() {
         ShortList list = makeFullShortList();

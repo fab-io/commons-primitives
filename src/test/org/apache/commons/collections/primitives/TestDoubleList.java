@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/TestDoubleList.java,v 1.1 2003/10/13 22:46:56 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/TestDoubleList.java,v 1.2 2003/10/27 18:36:29 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -59,6 +59,7 @@ package org.apache.commons.collections.primitives;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 import org.apache.commons.collections.AbstractTestList;
@@ -66,7 +67,7 @@ import org.apache.commons.collections.primitives.adapters.DoubleListList;
 import org.apache.commons.collections.primitives.adapters.ListDoubleList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:56 $
+ * @version $Revision: 1.2 $ $Date: 2003/10/27 18:36:29 $
  * @author Rodney Waldhoff
  */
 public abstract class TestDoubleList extends AbstractTestList {
@@ -139,6 +140,38 @@ public abstract class TestDoubleList extends AbstractTestList {
 
     // tests
     // ------------------------------------------------------------------------
+
+    public void testExceptionOnConcurrentModification() {
+        DoubleList list = makeFullDoubleList();
+        DoubleIterator iter = list.iterator();
+        iter.next();
+        list.add((double)3);
+        try {
+            iter.next();
+            fail("Expected ConcurrentModificationException");
+        } catch(ConcurrentModificationException e) {
+            // expected
+        }
+    }
+    
+    public void testAddAllAtIndex() {
+        DoubleList source = makeFullDoubleList();
+        DoubleList dest = makeFullDoubleList();
+        dest.addAll(1,source);
+        
+        DoubleIterator iter = dest.iterator();
+        assertTrue(iter.hasNext());
+        assertEquals(source.get(0),iter.next(),0d);
+        for(int i=0;i<source.size();i++) {
+            assertTrue(iter.hasNext());
+            assertEquals(source.get(i),iter.next(),0d);
+        }
+        for(int i=1;i<source.size();i++) {
+            assertTrue(iter.hasNext());
+            assertEquals(source.get(i),iter.next(),0d);
+        }
+        assertFalse(iter.hasNext());
+    }
 
     public void testToJustBigEnoughDoubleArray() {
         DoubleList list = makeFullDoubleList();
