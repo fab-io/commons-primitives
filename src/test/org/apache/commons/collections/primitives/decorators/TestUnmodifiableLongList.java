@@ -1,9 +1,9 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/PackageTestSuite.java,v 1.2 2003/10/27 23:46:31 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/TestUnmodifiableLongList.java,v 1.1 2003/10/27 23:46:31 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2002-2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,65 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.commons.collections.primitives;
+
+package org.apache.commons.collections.primitives.decorators;
+
+import java.io.Serializable;
 
 import junit.framework.Test;
-import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import org.apache.commons.collections.primitives.LongList;
+
 /**
- * Test this package.
- * 
- * @version $Revision: 1.2 $ $Date: 2003/10/27 23:46:31 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/27 23:46:31 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public class TestUnmodifiableLongList extends BaseUnmodifiableLongListTest {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public TestUnmodifiableLongList(String testName) {
         super(testName);
     }
-
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
-    }
+    
 
     public static Test suite() {
-        TestSuite suite = new TestSuite();
+        return new TestSuite(TestUnmodifiableLongList.class);
+    }
 
-        suite.addTest(TestAbstractByteCollection.suite());
-        suite.addTest(TestRandomAccessByteList.suite());
-        suite.addTest(TestArrayByteList.suite());
+    // framework
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestAbstractShortCollection.suite());
-        suite.addTest(TestRandomAccessShortList.suite());
-        suite.addTest(TestArrayShortList.suite());
-        suite.addTest(TestArrayUnsignedByteList.suite());
+    protected LongList makeUnmodifiableLongList() {
+        return UnmodifiableLongList.wrap(makeLongList());
+    }
 
-        suite.addTest(TestAbstractCharCollection.suite());
-        suite.addTest(TestRandomAccessCharList.suite());
-        suite.addTest(TestArrayCharList.suite());
+    // tests
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestIntCollections.suite());
-        suite.addTest(TestAbstractIntCollection.suite());
-        suite.addTest(TestRandomAccessIntList.suite());
-        suite.addTest(TestArrayIntList.suite());
-        suite.addTest(TestArrayUnsignedShortList.suite());
+    public void testWrapNull() {
+        assertNull(UnmodifiableLongList.wrap(null));
+    }
 
-        suite.addTest(TestLongCollections.suite());
-		suite.addTest(TestAbstractLongCollection.suite());
-		suite.addTest(TestRandomAccessLongList.suite());
-        suite.addTest(TestArrayLongList.suite());
-        suite.addTest(TestArrayUnsignedIntList.suite());
+    public void testWrapUnmodifiableLongList() {
+        LongList list = makeUnmodifiableLongList();
+        assertSame(list,UnmodifiableLongList.wrap(list));
+    }
 
-        suite.addTest(TestAbstractFloatCollection.suite());
-        suite.addTest(TestRandomAccessFloatList.suite());
-        suite.addTest(TestArrayFloatList.suite());
+    public void testWrapSerializableLongList() {
+        LongList list = makeLongList();
+        assertTrue(list instanceof Serializable);
+        assertTrue(UnmodifiableLongList.wrap(list) instanceof Serializable);
+    }
 
-        suite.addTest(TestAbstractDoubleCollection.suite());
-        suite.addTest(TestRandomAccessDoubleList.suite());
-        suite.addTest(TestArrayDoubleList.suite());
-
-        return suite;
+    public void testWrapNonSerializableLongList() {
+        LongList list = makeLongList();
+        LongList ns = list.subList(0,list.size());
+        assertTrue(!(ns instanceof Serializable));
+        assertTrue(!(UnmodifiableLongList.wrap(ns) instanceof Serializable));
     }
 }
-

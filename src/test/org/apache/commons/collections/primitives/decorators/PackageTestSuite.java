@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.1 2003/10/13 22:46:58 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.2 2003/10/27 23:46:31 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -63,7 +63,7 @@ import junit.framework.TestSuite;
 /**
  * Test this package.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:58 $
+ * @version $Revision: 1.2 $ $Date: 2003/10/27 23:46:31 $
  * @author Rodney Waldhoff
  */
 public class PackageTestSuite extends TestCase {
@@ -84,6 +84,12 @@ public class PackageTestSuite extends TestCase {
         suite.addTest(TestUnmodifiableIntList.suite());
         suite.addTest(TestUnmodifiableIntIterator.suite());
         suite.addTest(TestUnmodifiableIntListIterator.suite());
+
+        suite.addTest(TestBaseProxyLongCollection.suite());
+        suite.addTest(TestBaseProxyLongList.suite());
+        suite.addTest(TestUnmodifiableLongList.suite());
+        suite.addTest(TestUnmodifiableLongIterator.suite());
+        suite.addTest(TestUnmodifiableLongListIterator.suite());
 
         return suite;
     }
