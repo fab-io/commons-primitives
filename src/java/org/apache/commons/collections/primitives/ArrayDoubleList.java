@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/ArrayDoubleList.java,v 1.3 2003/10/16 20:49:36 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/ArrayDoubleList.java,v 1.4 2003/11/17 16:48:08 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -67,7 +67,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.0
- * @version $Revision: 1.3 $ $Date: 2003/10/16 20:49:36 $
+ * @version $Revision: 1.4 $ $Date: 2003/11/17 16:48:08 $
  * 
  * @author Rodney Waldhoff 
  */
@@ -192,6 +192,11 @@ public class ArrayDoubleList extends RandomAccessDoubleList implements DoubleLis
         System.arraycopy(_data,index,_data,index+1,numtomove);
         _data[index] = element;
         _size++;
+    }
+
+    public void clear() {
+        incrModCount();
+        _size = 0;
     }
 
     // capacity methods
