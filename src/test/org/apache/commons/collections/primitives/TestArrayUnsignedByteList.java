@@ -21,7 +21,7 @@ import junit.framework.TestSuite;
 import org.apache.commons.collections.BulkTest;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:30 $
+ * @version $Revision: 1.3 $ $Date$
  * @author Rodney Waldhoff
  */
 public class TestArrayUnsignedByteList extends TestShortList {
@@ -70,6 +70,16 @@ public class TestArrayUnsignedByteList extends TestShortList {
     // tests
     // ------------------------------------------------------------------------
 
+    public void testArrayConstructor() {
+        short[] data = new short[] { 1, 2, 3 };
+        ShortList list = new ArrayUnsignedByteList(data);
+        for(int i=0;i<data.length;i++) {
+            assertEquals(data[i],list.get(i));
+        }
+        data[0] = 17;
+        assertEquals(1,list.get(0));
+    }
+    
     // @TODO need to add serialized form to cvs
     public void testCanonicalEmptyCollectionExists() {
         // XXX FIX ME XXX
@@ -134,7 +144,7 @@ public class TestArrayUnsignedByteList extends TestShortList {
 
     public void testCopyConstructorWithNull() {
         try {
-            new ArrayUnsignedByteList(null);
+            new ArrayUnsignedByteList((ShortList)null);
             fail("Expected NullPointerException");
         } catch(NullPointerException e) {
             // expected

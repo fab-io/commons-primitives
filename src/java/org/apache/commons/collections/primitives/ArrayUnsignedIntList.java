@@ -34,7 +34,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.0
- * @version $Revision: 1.5 $ $Date: 2004/02/25 20:46:25 $
+ * @version $Revision: 1.5 $ $Date$
  * 
  * @author Rodney Waldhoff 
  */
@@ -78,6 +78,20 @@ public class ArrayUnsignedIntList extends RandomAccessLongList implements LongLi
         addAll(that);
     }    
 
+    /**
+     * Constructs a list by copying the specified array.
+     * 
+     * @param array  the array to initialize the collection with
+     * @throws NullPointerException if the array is <code>null</code>
+     */
+    public ArrayUnsignedIntList(long[] array) { 
+        this(array.length);
+        for(int i=0;i<array.length;i++) {
+            _data[i] = fromLong(array[i]);
+        }
+        _size = array.length;
+    }
+    
     // IntList methods
     //-------------------------------------------------------------------------
 
