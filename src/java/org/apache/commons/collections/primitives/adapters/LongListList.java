@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/LongListList.java,v 1.1 2003/10/13 22:46:47 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/LongListList.java,v 1.2 2003/10/14 20:04:18 scolebourne Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -70,8 +70,8 @@ import org.apache.commons.collections.primitives.LongList;
  * to the provided {@link LongList LongList} 
  * implementation in the "obvious" way.
  *
- * @since Commons Collections 2.2
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:47 $
+ * @since Commons Primitives 0.1
+ * @version $Revision: 1.2 $ $Date: 2003/10/14 20:04:18 $
  * @author Rodney Waldhoff 
  */
 final public class LongListList extends AbstractLongListList implements Serializable {

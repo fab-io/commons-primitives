@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/AbstractLongCollection.java,v 1.1 2003/10/13 22:46:51 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/AbstractLongCollection.java,v 1.2 2003/10/14 20:04:26 scolebourne Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -68,8 +68,8 @@ package org.apache.commons.collections.primitives;
  * derived from these.  Subclasses may choose to override 
  * these methods to provide a more efficient implementation. 
  * 
- * @since Commons Collections 2.2
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:51 $
+ * @since Commons Primitives 0.1
+ * @version $Revision: 1.2 $ $Date: 2003/10/14 20:04:26 $
  * 
  * @author Rodney Waldhoff 
  */

@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/NonSerializableCollectionByteCollection.java,v 1.1 2003/10/13 22:46:48 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/NonSerializableCollectionByteCollection.java,v 1.2 2003/10/14 20:04:18 scolebourne Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -60,8 +60,8 @@ package org.apache.commons.collections.primitives.adapters;
 import java.util.Collection;
 
 /**
- * @since Commons Collections 2.2
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:48 $
+ * @since Commons Primitives 0.1
+ * @version $Revision: 1.2 $ $Date: 2003/10/14 20:04:18 $
  * @author Rodney Waldhoff 
  */
 final class NonSerializableCollectionByteCollection extends AbstractCollectionByteCollection {
