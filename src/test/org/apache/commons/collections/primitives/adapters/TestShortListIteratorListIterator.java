@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestShortListIteratorListIterator.java,v 1.1 2003/10/13 22:46:54 scolebourne Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.adapters;
 
 import java.util.Iterator;
@@ -69,7 +65,7 @@ import org.apache.commons.collections.primitives.ArrayShortList;
 import org.apache.commons.collections.primitives.ShortList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:54 $
+ * @version $Revision: 1.2 $ $Date: 2004/01/04 17:23:28 $
  * @author Rodney Waldhoff
  */
 public class TestShortListIteratorListIterator extends AbstractTestListIterator {
@@ -113,7 +109,7 @@ public class TestShortListIteratorListIterator extends AbstractTestListIterator 
         return new short[] { (short)0, (short)1, (short)2, (short)3, (short)4, (short)5, (short)6, (short)7, (short)8, (short)9 };
     }
     
-    protected Object addSetValue() {
+    public Object addSetValue() {
         return new Short((short)1);
     }
 

@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestListIteratorFloatListIterator.java,v 1.1 2003/10/13 22:46:54 scolebourne Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.adapters;
 
 import java.util.ArrayList;
@@ -67,7 +63,7 @@ import org.apache.commons.collections.primitives.FloatListIterator;
 import org.apache.commons.collections.primitives.TestFloatListIterator;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:54 $
+ * @version $Revision: 1.2 $ $Date: 2004/01/04 17:23:28 $
  * @author Rodney Waldhoff
  */
 public class TestListIteratorFloatListIterator extends TestFloatListIterator {
@@ -94,7 +90,7 @@ public class TestListIteratorFloatListIterator extends TestFloatListIterator {
         return ListIteratorFloatListIterator.wrap(makeFullList().listIterator());
     }
 
-    protected List makeEmptyList() {
+    public List makeEmptyList() {
         return new ArrayList();
     }
     

@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestByteListList.java,v 1.3 2003/10/27 18:50:55 rwaldhoff Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.adapters;
 
 import java.io.Serializable;
@@ -68,7 +64,7 @@ import org.apache.commons.collections.primitives.ArrayByteList;
 import org.apache.commons.collections.primitives.RandomAccessByteList;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2003/10/27 18:50:55 $
+ * @version $Revision: 1.4 $ $Date: 2004/01/04 17:23:29 $
  * @author Rodney Waldhoff
  */
 public class TestByteListList extends BaseTestList {
@@ -88,11 +84,11 @@ public class TestByteListList extends BaseTestList {
     // collections testing framework
     // ------------------------------------------------------------------------
 
-    protected List makeEmptyList() {
+    public List makeEmptyList() {
         return new ByteListList(new ArrayByteList());
     }
         
-    protected Object[] getFullElements() {
+    public Object[] getFullElements() {
         Byte[] elts = new Byte[10];
         for(int i=0;i<elts.length;i++) {
             elts[i] = new Byte((byte)i);
@@ -100,7 +96,7 @@ public class TestByteListList extends BaseTestList {
         return elts;
     }
 
-    protected Object[] getOtherElements() {
+    public Object[] getOtherElements() {
         Byte[] elts = new Byte[10];
         for(int i=0;i<elts.length;i++) {
             elts[i] = new Byte((byte)(10 + i));

@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestFloatListIteratorListIterator.java,v 1.1 2003/10/13 22:46:53 scolebourne Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.adapters;
 
 import java.util.Iterator;
@@ -69,7 +65,7 @@ import org.apache.commons.collections.primitives.ArrayFloatList;
 import org.apache.commons.collections.primitives.FloatList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:53 $
+ * @version $Revision: 1.2 $ $Date: 2004/01/04 17:23:28 $
  * @author Rodney Waldhoff
  */
 public class TestFloatListIteratorListIterator extends AbstractTestListIterator {
@@ -113,7 +109,7 @@ public class TestFloatListIteratorListIterator extends AbstractTestListIterator 
         return new float[] { (float)0, (float)1, (float)2, (float)3, (float)4, (float)5, (float)6, (float)7, (float)8, (float)9 };
     }
     
-    protected Object addSetValue() {
+    public Object addSetValue() {
         return new Float((float)1);
     }
 

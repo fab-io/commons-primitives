@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestLongListIteratorListIterator.java,v 1.1 2003/10/13 22:46:54 scolebourne Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.adapters;
 
 import java.util.Iterator;
@@ -69,7 +65,7 @@ import org.apache.commons.collections.primitives.ArrayLongList;
 import org.apache.commons.collections.primitives.LongList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:54 $
+ * @version $Revision: 1.2 $ $Date: 2004/01/04 17:23:29 $
  * @author Rodney Waldhoff
  */
 public class TestLongListIteratorListIterator extends AbstractTestListIterator {
@@ -113,7 +109,7 @@ public class TestLongListIteratorListIterator extends AbstractTestListIterator {
         return new long[] { (long)0, (long)1, (long)2, (long)3, (long)4, (long)5, (long)6, (long)7, (long)8, (long)9 };
     }
     
-    protected Object addSetValue() {
+    public Object addSetValue() {
         return new Long((long)1);
     }
 

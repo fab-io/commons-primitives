@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/BaseTestList.java,v 1.1 2003/10/27 18:50:32 rwaldhoff Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,18 +50,16 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.adapters;
 
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.collections.AbstractTestList;
+import org.apache.commons.collections.list.AbstractTestList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/27 18:50:32 $
+ * @version $Revision: 1.2 $ $Date: 2004/01/04 17:23:29 $
  * @author Rodney Waldhoff
  */
 public abstract class BaseTestList extends AbstractTestList {

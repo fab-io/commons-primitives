@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/TestIntList.java,v 1.3 2003/10/27 18:50:31 rwaldhoff Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2002-2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2002-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives;
 
 import java.io.Serializable;
@@ -67,7 +63,7 @@ import org.apache.commons.collections.primitives.adapters.IntListList;
 import org.apache.commons.collections.primitives.adapters.ListIntList;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2003/10/27 18:50:31 $
+ * @version $Revision: 1.4 $ $Date: 2004/01/04 17:23:31 $
  * @author Rodney Waldhoff
  */
 public abstract class TestIntList extends BaseTestList {
@@ -115,15 +111,15 @@ public abstract class TestIntList extends BaseTestList {
     // collections testing framework: inherited
     // ------------------------------------------------------------------------
 
-    protected List makeEmptyList() {
+    public List makeEmptyList() {
         return new IntListList(makeEmptyIntList());
     }
         
-    protected Object[] getFullElements() {
+    public Object[] getFullElements() {
         return wrapArray(getFullIntegers());
     }
 
-    protected Object[] getOtherElements() {
+    public Object[] getOtherElements() {
         return wrapArray(getOtherIntegers());
     }
 

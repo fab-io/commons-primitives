@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/TestBaseProxyDoubleList.java,v 1.1 2003/10/29 19:39:13 rwaldhoff Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.decorators;
 
 import junit.framework.Test;
@@ -66,7 +62,7 @@ import org.apache.commons.collections.primitives.DoubleList;
 import org.apache.commons.collections.primitives.DoubleListIterator;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/29 19:39:13 $
+ * @version $Revision: 1.2 $ $Date: 2004/01/04 17:23:33 $
  * @author Rodney Waldhoff
  */
 public class TestBaseProxyDoubleList extends TestCase {

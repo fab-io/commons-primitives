@@ -1,9 +1,7 @@
-/*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestShortListList.java,v 1.2 2003/10/27 18:50:32 rwaldhoff Exp $
- * ====================================================================
+/* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003-2004 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,9 +50,7 @@
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
  * <http://www.apache.org/>.
- *
  */
-
 package org.apache.commons.collections.primitives.adapters;
 
 import java.io.Serializable;
@@ -68,7 +64,7 @@ import org.apache.commons.collections.primitives.ArrayShortList;
 import org.apache.commons.collections.primitives.RandomAccessShortList;
 
 /**
- * @version $Revision: 1.2 $ $Date: 2003/10/27 18:50:32 $
+ * @version $Revision: 1.3 $ $Date: 2004/01/04 17:23:28 $
  * @author Rodney Waldhoff
  */
 public class TestShortListList extends BaseTestList {
@@ -88,11 +84,11 @@ public class TestShortListList extends BaseTestList {
     // collections testing framework
     // ------------------------------------------------------------------------
 
-    protected List makeEmptyList() {
+    public List makeEmptyList() {
         return new ShortListList(new ArrayShortList());
     }
         
-    protected Object[] getFullElements() {
+    public Object[] getFullElements() {
         Short[] elts = new Short[10];
         for(int i=0;i<elts.length;i++) {
             elts[i] = new Short((short)i);
@@ -100,7 +96,7 @@ public class TestShortListList extends BaseTestList {
         return elts;
     }
 
-    protected Object[] getOtherElements() {
+    public Object[] getOtherElements() {
         Short[] elts = new Short[10];
         for(int i=0;i<elts.length;i++) {
             elts[i] = new Short((short)(10 + i));
