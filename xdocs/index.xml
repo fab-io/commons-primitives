@@ -15,70 +15,23 @@ Apache Jakarta Commons Primitives provides a collection of types and utilities o
 for working with Java primitives (boolean, byte, char, double, float, int, long, short).
 Generally, the Commons-Primitives classes are faster, smaller and easier to work with than
 their purely Object based alternatives.
+</p><p>
+For more information on Commons Primitives, you might like to visit the 
+<a href="./apidocs/index.html">JavaDocs</a>, 
+<a href="./project-info.html">project info</a>
+or <a href="./maven-reports.html">project reports</a> pages.
 </p>
 </section>
 
 <section name="Status">
 <p>
-Commons Primitives has not yet had a formal release.
-Daily builds and tarballs are available from
-<a href="http://cvs.apache.org/builds/jakarta-commons/nightly/commons-primitives/">http://cvs.apache.org/builds/jakarta-commons/nightly/commons-primitives/</a>.
+Currently Commons Primitives contains a stable and <a href="./clover">well-tested</a>
+implementation of primitive Collection and List classes previously unreleased from the 
+Commons Collections component.  
 </p><p>
-The current codebase is stable and <a href="./clover">well-tested</a>
-nevertheless.  A 1.0 release is expected "real soon now".
+Additional Collection-related and utility classes are planned.
+If you'd like to help, please contact the commons-dev mailing list and prefix emails with "[primitives]".
 </p>
-</section>
-
-<section name="Overview">
-<p>
-Currently Commons Primitives is primarily composed of implementations of the 
-java.util collections adapted for the primitive types.
-</p>
-<blockquote>
-<dl>
-<dt>org.apache.commons.collections.primitives</dt>
-<dd>
-<p>Contains interfaces, base classes and concrete implementations for primitive collections.</p>
-<dl>
-<dt>&lt;Type&gt;Collection</dt><dd>The java.util.Collection interface adapted for the primitive type &lt;Type&gt;</dd>
-<dt>&lt;Type&gt;Iterator</dt><dd>The java.util.Iterator interface adapted for the primitive type &lt;Type&gt;</dd>
-<dt>&lt;Type&gt;List</dt><dd>The java.util.List interface adapted for the primitive type &lt;Type&gt;</dd>
-<dt>&lt;Type&gt;ListIterator</dt><dd>The java.util.ListIterator interface adapted for the primitive type &lt;Type&gt;</dd>
-<dt>Abstract&lt;Type&gt;Collection</dt><dd>An abstract base for &lt;Type&gt;Collection implementations</dd>
-<dt>RandomAccess&lt;Type&gt;List</dt><dd>An abstract base for &lt;Type&gt;List implementations backed by random access data structures like arrays</dd>
-<dt>Array&lt;Type&gt;List</dt><dd>A &lt;Type&gt;List backed by an array</dd>
-<dt>&lt;Type&gt;Collections</dt><dd>Static utility methods for working with &lt;Type&gt;Collection instances</dd>
-</dl>  	
-</dd>
-
-<dt>org.apache.commons.collections.primitives.adapters</dt>
-<dd>
-<p>Contains adapters between the Object-based and primitive collections.</p>
-</dd>
-
-<dt>org.apache.commons.collections.primitives.adapters.io</dt>
-<dd>
-<p>Contains adapters that convert between I/O Streams/Readers and byte/char iterators.</p>
-</dd>
-
-<dt>org.apache.commons.collections.primitives.decorators</dt>
-<dd>
-<dl>
-<dt>Umodifiable&lt;Type&gt;List</dt><dd>Makes a &lt;Type&gt;List unmodifiable</dd>
-<dt>Umodifiable&lt;Type&gt;Iterator</dt><dd>Makes a &lt;Type&gt;Iterator unmodifiable</dd>
-<dt>Umodifiable&lt;Type&gt;ListIterator</dt><dd>Makes a &lt;Type&gt;ListIterator unmodifiable</dd>
-</dl>
-</dd>
-
-</dl>
-</blockquote>
-
-<p>
-For more information on Commons Primitives, you might like to visit the 
-<a href="./apidocs/index.html">JavaDocs</a>, <a href="./project-info.html">project information</a>
-or <a href="./maven-reports.html">project reports</a>.
-</p>
-
 </section>
 
 </body>
