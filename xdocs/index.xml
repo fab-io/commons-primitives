@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<document>
+
+ <properties>
+  <title>Commons</title>
+  <author email="commons-dev@jakarta.apache.org">Commons Documentation Team</author>
+ </properties>
+
+ <body>
+
+<section name="The Primitives Component">
+<p>
+The Java language has a fundamental distinction between primitive and object types.
+The JDK provides many methods and utilities that work with objects, including the widely used
+<a href="http://java.sun.com/products/jdk/1.2/docs/guide/collections/">Collections API</a>.
+There are relatively few classes for working with primitive types however.
+</p>
+<p>
+The <i>primitives</i> component fills the gaps left by the JDK.
+Specialised implementations of Collections and Lists for primitive types are provided.
+Further development aims to produce Maps and other utility code.
+</p>
+</section>
+
+<section name="Status">
+<p>
+The primitives component starts with a stable implementation of primitive Collection and List
+classes previously unreleased in the collections component. These classes will be released
+in the near future.
+</p>
+<p>
+There is plenty of scope for new additions to primitives. So, if you feel like voluntering
+please contact the commons-dev mailing list and prefix emails by [primitives].
+</p>
+</section>
+
+</body>
+</document>
+
+
+
+
+
+
