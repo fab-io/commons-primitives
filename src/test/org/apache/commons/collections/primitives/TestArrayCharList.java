@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2004 The Apache Software Foundation
+ * Copyright 2002-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import junit.framework.TestSuite;
 import org.apache.commons.collections.BulkTest;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:30 $
+ * @version $Revision: 1.4 $ $Date: 2005/01/03 23:41:05 $
  * @author Rodney Waldhoff
  */
 public class TestArrayCharList extends TestCharList {
@@ -122,9 +122,28 @@ public class TestArrayCharList extends TestCharList {
 
     public void testCopyConstructorWithNull() {
         try {
-            new ArrayCharList(null);
+            new ArrayCharList((CharCollection) null);
             fail("Expected NullPointerException");
         } catch(NullPointerException e) {
+            // expected
+        }
+    }
+
+    public void testArrayConstructor() {
+        ArrayCharList expected = new ArrayCharList();
+        for (int i = 0; i < 10; i++) {
+            expected.add((char) i);
+        }
+        ArrayCharList list = new ArrayCharList(expected.toArray());
+        assertEquals(10, list.size());
+        assertEquals(expected, list);
+    }
+
+    public void testArrayConstructorWithNull() {
+        try {
+            new ArrayCharList((char[]) null);
+            fail("Expected NullPointerException");
+        } catch (NullPointerException e) {
             // expected
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2004 The Apache Software Foundation
+ * Copyright 2002-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import junit.framework.TestSuite;
 import org.apache.commons.collections.BulkTest;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2004/07/12 18:29:43 $
+ * @version $Revision: 1.2 $ $Date: 2005/01/03 23:41:05 $
  * @author Rodney Waldhoff
  */
 public class TestArrayBooleanList extends TestBooleanList {
@@ -114,9 +114,28 @@ public class TestArrayBooleanList extends TestBooleanList {
 
     public void testCopyConstructorWithNull() {
         try {
-            new ArrayBooleanList(null);
+            new ArrayBooleanList((BooleanCollection) null);
             fail("Expected NullPointerException");
         } catch(NullPointerException e) {
+            // expected
+        }
+    }
+
+    public void testArrayConstructor() {
+        ArrayBooleanList expected = new ArrayBooleanList();
+        for (int i = 0; i < 10; i++) {
+            expected.add(i % 2 == 0);
+        }
+        ArrayBooleanList list = new ArrayBooleanList(expected.toArray());
+        assertEquals(10, list.size());
+        assertEquals(expected, list);
+    }
+
+    public void testArrayConstructorWithNull() {
+        try {
+            new ArrayBooleanList((boolean[]) null);
+            fail("Expected NullPointerException");
+        } catch (NullPointerException e) {
             // expected
         }
     }

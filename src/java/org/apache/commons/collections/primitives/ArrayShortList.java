@@ -25,7 +25,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.0
- * @version $Revision: 1.6 $ $Date: 2005/01/03 23:20:42 $
+ * @version $Revision: 1.7 $ $Date: 2005/01/03 23:41:04 $
  * 
  * @author Rodney Waldhoff 
  */
@@ -68,6 +68,18 @@ public class ArrayShortList extends RandomAccessShortList implements ShortList, 
         this(that.size());
         addAll(that);
     }    
+
+    /**
+     * Constructs a list by copying the specified array.
+     * 
+     * @param array  the array to initialize the collection with
+     * @throws NullPointerException if the array is <code>null</code>
+     */
+    public ArrayShortList(short[] array) { 
+        this(array.length);
+        System.arraycopy(array, 0, _data, 0, array.length);
+        _size = array.length;
+    }
 
     // ShortList methods
     //-------------------------------------------------------------------------
