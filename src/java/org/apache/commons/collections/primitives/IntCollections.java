@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/IntCollections.java,v 1.1 2003/10/13 22:46:51 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/IntCollections.java,v 1.2 2003/10/27 23:21:14 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -65,10 +65,10 @@ import org.apache.commons.collections.primitives.decorators.UnmodifiableIntListI
  * This class consists exclusively of static methods that operate on or
  * return IntCollections.
  * <p>
- * The methods of this class all throw a NullPointerException is the 
- * provided collections are null.
+ * The methods of this class all throw a NullPointerException if the 
+ * provided collection is null.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:51 $
+ * @version $Revision: 1.2 $ $Date: 2003/10/27 23:21:14 $
  * 
  * @author Rodney Waldhoff 
  */
