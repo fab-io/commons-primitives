@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.adapters.BooleanListList;
 import org.apache.commons.collections.primitives.adapters.ListBooleanList;
 
 /**
- * @version $Revision: 1.2 $ $Date: 2004/07/12 19:51:16 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public abstract class TestBooleanList extends BaseTestList {

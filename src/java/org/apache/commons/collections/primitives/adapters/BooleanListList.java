@@ -29,7 +29,7 @@ import org.apache.commons.collections.primitives.BooleanList;
  * implementation in the "obvious" way.
  *
  * @since Commons Primitives 1.1
- * @version $Revision: 1.1 $ $Date: 2004/07/12 18:29:43 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 final public class BooleanListList extends AbstractBooleanListList implements Serializable {

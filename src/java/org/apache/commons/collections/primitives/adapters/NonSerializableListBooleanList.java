@@ -20,7 +20,7 @@ import java.util.List;
 /**
  *
  * @since Commons Primitives 1.1
- * @version $Revision: 1.1 $ $Date: 2004/07/12 18:29:43 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 final class NonSerializableListBooleanList extends AbstractListBooleanList {

@@ -19,7 +19,7 @@ import java.util.Collection;
 
 /**
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision$ $Date$
  */
 final class NonSerializableCollectionBooleanCollection
         extends AbstractCollectionBooleanCollection

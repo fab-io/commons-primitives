@@ -25,7 +25,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.0
- * @version $Revision: 1.7 $ $Date$
+ * @version $Revision$ $Date$
  * 
  * @author Rodney Waldhoff
  * @author Robert Fischer

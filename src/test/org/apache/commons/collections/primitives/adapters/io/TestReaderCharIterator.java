@@ -26,7 +26,7 @@ import org.apache.commons.collections.primitives.CharIterator;
 import org.apache.commons.collections.primitives.TestCharIterator;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:26 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestReaderCharIterator extends TestCharIterator {

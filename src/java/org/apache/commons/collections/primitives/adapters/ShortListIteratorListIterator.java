@@ -28,7 +28,7 @@ import org.apache.commons.collections.primitives.ShortListIterator;
  * implementation in the "obvious" way.
  *
  * @since Commons Collections 2.2
- * @version $Revision: 1.2 $ $Date: 2004/02/25 20:46:20 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 public class ShortListIteratorListIterator implements ListIterator {

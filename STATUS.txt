@@ -1,5 +1,5 @@
 Commons Primitives Status
-$Revision: 1.1 $ $Date: 2003/12/04 23:31:42 $
+$Revision$ $Date$
 http://jakarta.apache.org/commons/primitives/
 
 Summary:

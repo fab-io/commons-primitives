@@ -27,7 +27,7 @@ import org.apache.commons.collections.primitives.ArrayDoubleList;
 import org.apache.commons.collections.primitives.DoubleList;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:29 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestDoubleListIteratorListIterator extends AbstractTestListIterator {

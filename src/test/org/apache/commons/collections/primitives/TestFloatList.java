@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.adapters.FloatListList;
 import org.apache.commons.collections.primitives.adapters.ListFloatList;
 
 /**
- * @version $Revision: 1.5 $ $Date: 2004/02/25 20:46:30 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public abstract class TestFloatList extends BaseTestList {

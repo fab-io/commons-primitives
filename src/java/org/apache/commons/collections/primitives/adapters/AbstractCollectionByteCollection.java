@@ -22,7 +22,7 @@ import org.apache.commons.collections.primitives.ByteIterator;
 
 /**
  * @since Commons Collections 2.2
- * @version $Revision: 1.2 $ $Date: 2004/02/25 20:46:21 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 abstract class AbstractCollectionByteCollection implements ByteCollection {

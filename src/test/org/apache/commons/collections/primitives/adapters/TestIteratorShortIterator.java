@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.ShortIterator;
 import org.apache.commons.collections.primitives.TestShortIterator;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:29 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestIteratorShortIterator extends TestShortIterator {

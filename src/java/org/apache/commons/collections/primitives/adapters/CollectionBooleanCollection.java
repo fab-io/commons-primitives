@@ -30,7 +30,7 @@ import org.apache.commons.collections.primitives.BooleanCollection;
  * {@link java.util.Collection Collection} implementation in the "obvious" way.
  * 
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision$ $Date$
  */
 final public class CollectionBooleanCollection
         extends AbstractCollectionBooleanCollection implements Serializable {

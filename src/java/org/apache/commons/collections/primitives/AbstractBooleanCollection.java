@@ -25,7 +25,7 @@ package org.apache.commons.collections.primitives;
  * choose to override these methods to provide a more efficient implementation.
  * 
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision$ $Date$
  */
 public abstract class AbstractBooleanCollection implements BooleanCollection {
     public abstract BooleanIterator iterator();

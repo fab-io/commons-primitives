@@ -23,7 +23,7 @@ import junit.framework.TestSuite;
 import org.apache.commons.collections.primitives.IntList;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:32 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestUnmodifiableIntList extends BaseUnmodifiableIntListTest {

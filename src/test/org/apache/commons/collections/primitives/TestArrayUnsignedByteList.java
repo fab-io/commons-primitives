@@ -21,7 +21,7 @@ import junit.framework.TestSuite;
 import org.apache.commons.collections.BulkTest;
 
 /**
- * @version $Revision: 1.3 $ $Date$
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestArrayUnsignedByteList extends TestShortList {

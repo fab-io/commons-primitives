@@ -30,7 +30,7 @@ import org.apache.commons.collections.primitives.ByteCollection;
  * implementation in the "obvious" way.
  * 
  * @since Commons Primitives 1.0
- * @version $Revision: 1.4 $ $Date: 2004/02/25 20:46:20 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 final public class CollectionByteCollection extends AbstractCollectionByteCollection implements Serializable {

@@ -26,7 +26,7 @@ import org.apache.commons.collections.primitives.ArrayFloatList;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision$ $Date$
  */
 public class FloatStack
 {

@@ -53,7 +53,7 @@ import org.apache.commons.collections.primitives.ShortListIterator;
  * Convenience methods for constructing adapters.
  *  
  * @since Commons Primitives 1.1
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:21 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 public final class Adapt {

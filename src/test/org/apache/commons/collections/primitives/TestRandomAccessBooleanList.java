@@ -20,7 +20,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2004/07/12 18:29:43 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestRandomAccessBooleanList extends TestCase {

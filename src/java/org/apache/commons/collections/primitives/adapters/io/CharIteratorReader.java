@@ -22,7 +22,7 @@ import org.apache.commons.collections.primitives.CharIterator;
 /**
  * Adapts a {@link CharIterator} to the {@link Reader} interface.
  * 
- * @version $Revision: 1.2 $ $Date: 2004/02/25 20:46:34 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class CharIteratorReader extends Reader {

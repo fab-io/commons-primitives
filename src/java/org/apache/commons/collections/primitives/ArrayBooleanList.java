@@ -25,7 +25,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.1
- * @version $Revision: 1.5 $ $Date$
+ * @version $Revision$ $Date$
  */
 public class ArrayBooleanList extends RandomAccessBooleanList
         implements BooleanList, Serializable {

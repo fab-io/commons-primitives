@@ -27,7 +27,7 @@ import junit.framework.TestSuite;
  * Tests the ShortStack class.
  *
  * @author <a href="mailto:directory-dev@incubator.apache.org">Apache Directory Project</a>
- * @version $Revision: 1.3 $ $Date: 2004/07/13 19:57:02 $
+ * @version $Revision$ $Date$
  */
 public class TestShortStack extends TestCase
 {

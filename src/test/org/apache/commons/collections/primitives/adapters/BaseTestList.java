@@ -24,7 +24,7 @@ import org.apache.commons.collections.BulkTest;
 import org.apache.commons.collections.list.AbstractTestList;
 
 /**
- * @version $Revision: 1.4 $ $Date: 2004/07/29 22:30:55 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public abstract class BaseTestList extends AbstractTestList {

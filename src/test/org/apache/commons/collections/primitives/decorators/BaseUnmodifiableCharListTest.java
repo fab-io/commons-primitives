@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.CharList;
 import org.apache.commons.collections.primitives.CharListIterator;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:32 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public abstract class BaseUnmodifiableCharListTest extends TestCase {

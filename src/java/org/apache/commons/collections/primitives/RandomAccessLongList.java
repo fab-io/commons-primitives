@@ -32,7 +32,7 @@ import java.util.NoSuchElementException;
  * to provide a more efficient implementation.
  * 
  * @since Commons Primitives 0.1
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:25 $
+ * @version $Revision$ $Date$
  * 
  * @author Rodney Waldhoff 
  */

@@ -26,7 +26,7 @@ import org.apache.commons.collections.primitives.ArrayLongList;
 import org.apache.commons.collections.primitives.RandomAccessLongList;
 
 /**
- * @version $Revision: 1.4 $ $Date: 2004/02/25 20:46:29 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestLongListList extends BaseTestList {

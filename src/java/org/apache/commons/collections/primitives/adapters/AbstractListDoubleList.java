@@ -26,7 +26,7 @@ import org.apache.commons.collections.primitives.DoubleListIterator;
 /**
  *
  * @since Commons Primitives 1.0
- * @version $Revision: 1.4 $ $Date: 2004/02/25 20:46:21 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 abstract class AbstractListDoubleList extends AbstractCollectionDoubleCollection implements DoubleList {

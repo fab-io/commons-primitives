@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.LongList;
 import org.apache.commons.collections.primitives.LongListIterator;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:32 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public abstract class BaseUnmodifiableLongListTest extends TestCase {

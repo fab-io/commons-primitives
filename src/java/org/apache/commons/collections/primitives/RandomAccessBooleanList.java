@@ -30,7 +30,7 @@ import java.util.NoSuchElementException;
  * more efficient implementation.
  * 
  * @since Commons Primitives 1.2
- * @version $Revision: 1.2 $
+ * @version $Revision$
  */
 public abstract class RandomAccessBooleanList extends
         AbstractBooleanCollection implements BooleanList {

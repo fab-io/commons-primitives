@@ -28,7 +28,7 @@ import org.apache.commons.collections.primitives.BooleanIterator;
  * java.util.Iterator Iterator} implementation in the "obvious" way.
  *
  * @since Commons Primitives 1.2
- * @version $Revision: 1.1 $
+ * @version $Revision$
  */
 public class IteratorBooleanIterator implements BooleanIterator {
     

@@ -26,7 +26,7 @@ import org.apache.commons.collections.primitives.decorators.UnmodifiableFloatLis
  * The methods of this class all throw a NullPoFloaterException if the 
  * provided collection is null.
  * 
- * @version $Revision: 1.2 $ $Date: 2004/02/25 20:46:25 $
+ * @version $Revision$ $Date$
  * 
  * @author Rodney Waldhoff 
  */

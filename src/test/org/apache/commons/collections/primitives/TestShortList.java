@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.adapters.ListShortList;
 import org.apache.commons.collections.primitives.adapters.ShortListList;
 
 /**
- * @version $Revision: 1.5 $ $Date: 2004/02/25 20:46:30 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public abstract class TestShortList extends BaseTestList {

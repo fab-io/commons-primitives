@@ -26,7 +26,7 @@ import org.apache.commons.collections.primitives.BooleanListIterator;
 /**
  *
  * @since Commons Primitives 1.1
- * @version $Revision: 1.1 $ $Date: 2004/07/12 18:29:43 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff 
  */
 abstract class AbstractListBooleanList extends AbstractCollectionBooleanCollection implements BooleanList {

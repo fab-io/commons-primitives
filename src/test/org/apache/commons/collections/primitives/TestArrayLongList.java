@@ -21,7 +21,7 @@ import junit.framework.TestSuite;
 import org.apache.commons.collections.BulkTest;
 
 /**
- * @version $Revision: 1.4 $ $Date: 2005/01/03 23:41:05 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestArrayLongList extends TestLongList {

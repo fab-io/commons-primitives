@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.CharCollection;
 import org.apache.commons.collections.primitives.CharIterator;
 
 /**
- * @version $Revision: 1.3 $ $Date: 2004/02/25 20:46:32 $
+ * @version $Revision$ $Date$
  * @author Rodney Waldhoff
  */
 public class TestBaseProxyCharCollection extends TestCase {

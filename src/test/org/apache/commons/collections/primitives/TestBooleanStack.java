@@ -25,7 +25,7 @@ import junit.framework.TestSuite;
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/07/13 19:57:02 $
+ * @version $Revision$ $Date$
  */
 public class TestBooleanStack extends TestCase
 {

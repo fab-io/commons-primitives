@@ -22,7 +22,7 @@ package org.apache.commons.collections.primitives;
  * @see org.apache.commons.collections.primitives.adapters.BooleanByteList
  *
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision$ $Date$
  */
 public interface BooleanList extends BooleanCollection {
     /** 
