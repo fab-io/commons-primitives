@@ -37,18 +37,23 @@
   <contributors>
   </contributors>
 
-  <!-- Primitives should depend on very little -->
   <dependencies>
     <dependency><!-- compile time -->
       <id>junit</id>
-      <version>3.7</version>
+      <version>3.8.1</version>
+      <url>http://www.junit.org/</url>
+    </dependency>
+    <dependency><!-- compile time -->
+      <id>commons-collections:commons-collections-testframework</id>
+      <version>SNAPSHOT</version>
+      <url>http://jakarta.apache.org/commons/collections/</url>
     </dependency>
   </dependencies>
 
   <build>
     <unitTest>
       <includes>
-        <include>**/AllTestSuite.java</include>
+        <include>org/apache/commons/collections/primitives/AllTestSuite.java</include>
       </includes>
       <excludes>
       </excludes>
