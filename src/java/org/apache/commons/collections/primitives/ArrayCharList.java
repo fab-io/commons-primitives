@@ -25,7 +25,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.0
- * @version $Revision: 1.7 $ $Date: 2005/01/03 23:41:04 $
+ * @version $Revision: 1.7 $ $Date$
  * 
  * @author Rodney Waldhoff 
  */
@@ -184,7 +184,6 @@ public class ArrayCharList extends RandomAccessCharList implements CharList, Ser
             // Need to move some elements
             System.arraycopy(_data, index, _data, index + collection.size(), _size - index);
         }
-        int ptr = index;
         for (CharIterator it = collection.iterator(); it.hasNext();) {
             _data[index] = it.next();
             index++;

@@ -25,7 +25,7 @@ import java.io.Serializable;
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.1
- * @version $Revision: 1.5 $ $Date: 2005/01/03 23:41:04 $
+ * @version $Revision: 1.5 $ $Date$
  */
 public class ArrayBooleanList extends RandomAccessBooleanList
         implements BooleanList, Serializable {
@@ -181,7 +181,6 @@ public class ArrayBooleanList extends RandomAccessBooleanList
             // Need to move some elements
             System.arraycopy(_data, index, _data, index + collection.size(), _size - index);
         }
-        int ptr = index;
         for (BooleanIterator it = collection.iterator(); it.hasNext();) {
             _data[index] = it.next();
             index++;
