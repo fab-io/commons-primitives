@@ -4,7 +4,7 @@
   <id>commons-primitives</id>
   <name>Commons Primitives</name>
   <currentVersion>1.0-dev</currentVersion>
-  <inceptionYear>2003</inceptionYear>
+  <inceptionYear>2002</inceptionYear>
 
   <description>
     Commons Primitives is a set of collection and utility classes for primitive types.
