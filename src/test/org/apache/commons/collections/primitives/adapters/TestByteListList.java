@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestByteListList.java,v 1.1 2003/10/13 22:46:54 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestByteListList.java,v 1.2 2003/10/27 18:50:32 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -58,21 +58,21 @@
 package org.apache.commons.collections.primitives.adapters;
 
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.List;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
 import org.apache.commons.collections.BulkTest;
-import org.apache.commons.collections.AbstractTestList;
-import org.apache.commons.collections.primitives.RandomAccessByteList;
 import org.apache.commons.collections.primitives.ArrayByteList;
+import org.apache.commons.collections.primitives.RandomAccessByteList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:54 $
+ * @version $Revision: 1.2 $ $Date: 2003/10/27 18:50:32 $
  * @author Rodney Waldhoff
  */
-public class TestByteListList extends AbstractTestList {
+public class TestByteListList extends BaseTestList {
 
     // conventional
     // ------------------------------------------------------------------------

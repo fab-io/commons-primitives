@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestLongListList.java,v 1.1 2003/10/13 22:46:53 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestLongListList.java,v 1.2 2003/10/27 18:50:32 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -64,15 +64,14 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 
 import org.apache.commons.collections.BulkTest;
-import org.apache.commons.collections.AbstractTestList;
-import org.apache.commons.collections.primitives.RandomAccessLongList;
 import org.apache.commons.collections.primitives.ArrayLongList;
+import org.apache.commons.collections.primitives.RandomAccessLongList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:53 $
+ * @version $Revision: 1.2 $ $Date: 2003/10/27 18:50:32 $
  * @author Rodney Waldhoff
  */
-public class TestLongListList extends AbstractTestList {
+public class TestLongListList extends BaseTestList {
 
     // conventional
     // ------------------------------------------------------------------------

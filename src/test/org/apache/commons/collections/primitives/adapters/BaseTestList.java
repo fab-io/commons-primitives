@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/TestDoubleListList.java,v 1.2 2003/10/27 18:50:32 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/BaseTestList.java,v 1.1 2003/10/27 18:50:32 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -57,98 +57,45 @@
 
 package org.apache.commons.collections.primitives.adapters;
 
-import java.io.Serializable;
+import java.util.Iterator;
 import java.util.List;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-
-import org.apache.commons.collections.BulkTest;
-import org.apache.commons.collections.primitives.ArrayDoubleList;
-import org.apache.commons.collections.primitives.RandomAccessDoubleList;
+import org.apache.commons.collections.AbstractTestList;
 
 /**
- * @version $Revision: 1.2 $ $Date: 2003/10/27 18:50:32 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/27 18:50:32 $
  * @author Rodney Waldhoff
  */
-public class TestDoubleListList extends BaseTestList {
+public abstract class BaseTestList extends AbstractTestList {
 
     // conventional
     // ------------------------------------------------------------------------
 
-    public TestDoubleListList(String testName) {
+    public BaseTestList(String testName) {
         super(testName);
-    }
-
-    public static Test suite() {
-        TestSuite suite = BulkTest.makeSuite(TestDoubleListList.class);
-        return suite;
-    }
-
-    // collections testing framework
-    // ------------------------------------------------------------------------
-
-    protected List makeEmptyList() {
-        return new DoubleListList(new ArrayDoubleList());
-    }
-        
-    protected Object[] getFullElements() {
-        Double[] elts = new Double[10];
-        for(int i=0;i<elts.length;i++) {
-            elts[i] = new Double((double)i);
-        }
-        return elts;
-    }
-
-    protected Object[] getOtherElements() {
-        Double[] elts = new Double[10];
-        for(int i=0;i<elts.length;i++) {
-            elts[i] = new Double((double)(10 + i));
-        }
-        return elts;
     }
 
     // tests
     // ------------------------------------------------------------------------
 
-    /** @TODO need to add serialized form to cvs */
-
-    public void testCanonicalEmptyCollectionExists() {
-        // XXX FIX ME XXX
-        // need to add a serialized form to cvs
+    public final void testAddAllAtIndex() {
+        List source = makeFullList();
+        List dest = makeFullList();
+        
+        dest.addAll(1,source);
+         
+        Iterator iter = dest.iterator();
+        assertTrue(iter.hasNext());
+        assertEquals(source.get(0),iter.next());
+        for(int i=0;i<source.size();i++) {
+            assertTrue(iter.hasNext());
+            assertEquals(source.get(i),iter.next());
+        }
+        for(int i=1;i<source.size();i++) {
+            assertTrue(iter.hasNext());
+            assertEquals(source.get(i),iter.next());
+        }
+        assertFalse(iter.hasNext());
     }
 
-    public void testCanonicalFullCollectionExists() {
-        // XXX FIX ME XXX
-        // need to add a serialized form to cvs
-    }
-
-    public void testEmptyListCompatibility() {
-        // XXX FIX ME XXX
-        // need to add a serialized form to cvs
-    }
-
-    public void testFullListCompatibility() {
-        // XXX FIX ME XXX
-        // need to add a serialized form to cvs
-    }
-
-    public void testWrapNull() {
-        assertNull(DoubleListList.wrap(null));
-    }
-    
-    public void testWrapSerializable() {
-        List list = DoubleListList.wrap(new ArrayDoubleList());
-        assertNotNull(list);
-        assertTrue(list instanceof Serializable);
-    }
-    
-    public void testWrapNonSerializable() {
-        List list = DoubleListList.wrap(new RandomAccessDoubleList() { 
-            public double get(int i) { throw new IndexOutOfBoundsException(); } 
-            public int size() { return 0; } 
-        });
-        assertNotNull(list);
-        assertTrue(!(list instanceof Serializable));
-    }
 }
