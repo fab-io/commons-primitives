@@ -25,7 +25,7 @@ or <a href="./maven-reports.html">project reports</a> pages.
 
 <section name="Status">
 <p>
-Currently Commons Primitives contains with a stable and <a href="./clover">well-tested</a>
+Currently Commons Primitives contains a stable and <a href="./clover">well-tested</a>
 implementation of primitive Collection and List classes previously unreleased from the 
 Commons Collections component.  
 </p><p>
