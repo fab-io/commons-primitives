@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project>
-  <extend>../project.xml</extend>
+  <extend>../commons-build/project.xml</extend>
   <id>commons-primitives</id>
   <name>Commons Primitives</name>
   <currentVersion>1.1-dev</currentVersion>
