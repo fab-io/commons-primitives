@@ -1,5 +1,8 @@
 .classpath
 .project
-velocity.log
+*.log
 bin
 build.properties
+eclipse
+target
+
