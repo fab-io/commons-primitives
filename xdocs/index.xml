@@ -25,12 +25,12 @@ or <a href="./maven-reports.html">project reports</a> pages.
 
 <section name="Status">
 <p>
-Currently Commons Primitives contains with a stable implementation of 
-primitive Collection and List classes previously unreleased from the 
-Commons Collections component.
+Currently Commons Primitives contains with a stable and <a href="./clover">well-tested</a>
+implementation of primitive Collection and List classes previously unreleased from the 
+Commons Collections component.  
 </p><p>
-There is plenty of scope for new additions to primitives. If you'd like to help,
-please contact the commons-dev mailing list and prefix emails with "[primitives]".
+Additional Collection-related and utility classes are planned.
+If you'd like to help, please contact the commons-dev mailing list and prefix emails with "[primitives]".
 </p>
 </section>
 
