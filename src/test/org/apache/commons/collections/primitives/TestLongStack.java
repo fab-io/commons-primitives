@@ -18,15 +18,16 @@ package org.apache.commons.collections.primitives;
 import java.util.EmptyStackException;
 
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
  * Tests the LongStack class.
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision: 1.1 $ $Date: 2004/04/14 22:42:08 $
  */
-public class LongStackTest extends TestCase
+public class TestLongStack extends TestCase
 {
     LongStack stack = null ;
     
@@ -38,7 +39,11 @@ public class LongStackTest extends TestCase
      */
     public static void main( String[] args )
     {
-        junit.textui.TestRunner.run( LongStackTest.class ) ;
+        junit.textui.TestRunner.run( TestLongStack.class ) ;
+    }
+
+    public static TestSuite suite() {
+        return new TestSuite(TestBooleanStack.class);
     }
 
     
@@ -56,7 +61,7 @@ public class LongStackTest extends TestCase
      * Constructor for IntStackTest.
      * @param arg0
      */
-    public LongStackTest( String arg0 )
+    public TestLongStack( String arg0 )
     {
         super( arg0 ) ;
     }

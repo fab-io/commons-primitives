@@ -18,15 +18,16 @@ package org.apache.commons.collections.primitives;
 import java.util.EmptyStackException;
 
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
  * Tests the ByteStack class.
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision: 1.1 $ $Date: 2004/04/14 22:42:08 $
  */
-public class ByteStackTest extends TestCase
+public class TestByteStack extends TestCase
 {
     ByteStack stack = null ;
     
@@ -38,7 +39,11 @@ public class ByteStackTest extends TestCase
      */
     public static void main( String[] args )
     {
-        junit.textui.TestRunner.run( ByteStackTest.class ) ;
+        junit.textui.TestRunner.run( TestByteStack.class ) ;
+    }
+
+    public static TestSuite suite() {
+        return new TestSuite(TestBooleanStack.class);
     }
 
     
@@ -56,7 +61,7 @@ public class ByteStackTest extends TestCase
      * Constructor for IntStackTest.
      * @param arg0
      */
-    public ByteStackTest( String arg0 )
+    public TestByteStack( String arg0 )
     {
         super( arg0 ) ;
     }

@@ -18,17 +18,18 @@ package org.apache.commons.collections.primitives;
 import java.util.EmptyStackException;
 
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
- * Tests the BooleanStack class.
+ * Tests the CharStack class.
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision: 1.1 $ $Date: 2004/04/14 22:42:08 $
  */
-public class BooleanStackTest extends TestCase
+public class TestCharStack extends TestCase
 {
-    BooleanStack stack = null ;
+    CharStack stack = null ;
     
     
     /**
@@ -38,7 +39,11 @@ public class BooleanStackTest extends TestCase
      */
     public static void main( String[] args )
     {
-        junit.textui.TestRunner.run( BooleanStackTest.class ) ;
+        junit.textui.TestRunner.run( TestCharStack.class ) ;
+    }
+
+    public static TestSuite suite() {
+        return new TestSuite(TestBooleanStack.class);
     }
 
     
@@ -48,7 +53,7 @@ public class BooleanStackTest extends TestCase
     protected void setUp() throws Exception
     {
         super.setUp() ;
-        stack = new BooleanStack() ;
+        stack = new CharStack() ;
     }
     
     
@@ -56,7 +61,7 @@ public class BooleanStackTest extends TestCase
      * Constructor for IntStackTest.
      * @param arg0
      */
-    public BooleanStackTest( String arg0 )
+    public TestCharStack( String arg0 )
     {
         super( arg0 ) ;
     }
@@ -65,7 +70,7 @@ public class BooleanStackTest extends TestCase
     public void testEmpty()
     {
         assertTrue( "Newly created stacks should be empty", stack.empty() ) ;
-        stack.push( true ) ;
+        stack.push( 'A' ) ;
         assertFalse( "Stack with item should not be empty", stack.empty() ) ;
         stack.pop() ;
         assertTrue( "Stack last int popped should be empty", stack.empty() ) ;
@@ -85,18 +90,10 @@ public class BooleanStackTest extends TestCase
             assertNotNull( "EmptyStackException should not be null", e ) ;
         }
         
-        for( int ii = 0; ii < 10; ii++ )
-        {
-            if ( ii % 2 == 0 )
-            {
-                stack.push( false ) ;
-                assertFalse( stack.peek() ) ;
-            }
-            else
-            {
-                stack.push( true ) ;
-                assertTrue( stack.peek() ) ;
-            }
+        for( char ii = 0; ii < 10; ii++ )
+        {    
+            stack.push( ii ) ;
+            assertTrue( ii == stack.peek() ) ;
         }
     }
 
@@ -114,69 +111,43 @@ public class BooleanStackTest extends TestCase
             assertNotNull( "EmptyStackException should not be null", e ) ;
         }
         
-        for( int ii = 0; ii < 10; ii++ )
+        for( char ii = 0; ii < 10; ii++ )
         {    
-            if ( ii % 2 == 0 )
-            {
-                stack.push( false ) ;
-                assertFalse( stack.pop() ) ;
-            }
-            else
-            {
-                stack.push( true ) ;
-                assertTrue( stack.pop() ) ;
-            }
+            stack.push( ii ) ;
+            assertTrue( ii == stack.pop() ) ;
         }
 
-        for( int ii = 0; ii < 10; ii++ )
+        for( char ii = 0; ii < 10; ii++ )
         {    
-            if ( ii % 2 == 0 )
-            {
-                stack.push( false ) ;
-            }
-            else
-            {
-                stack.push( true ) ;
-            }
+            stack.push( ii ) ;
         }
-
-        for( short ii = 10; ii < 0; ii-- )
+        for( char ii = 10; ii < 0; ii-- )
         {    
-            if ( ii % 2 == 0 )
-            {
-                stack.push( false ) ;
-                assertFalse( stack.pop() ) ;
-            }
-            else
-            {
-                stack.push( true ) ;
-                assertTrue( stack.pop() ) ;
-            }
+            stack.push( ( char ) ii ) ;
+            assertTrue( ii == stack.pop() ) ;
         }
     }
 
     
     public void testPush()
     {
-        stack.push( false ) ;
-        stack.push( false ) ;
-        stack.push( true ) ;
+        stack.push( ( char ) 0 ) ;
+        stack.push( ( char ) 0 ) ;
         assertFalse( stack.empty() ) ;
-        assertTrue( stack.pop() ) ;
-        assertFalse( stack.pop() ) ;
-        assertFalse( stack.pop() ) ;
+        assertTrue( 0 == stack.pop() ) ;
+        assertTrue( 0 == stack.pop() ) ;
     }
 
     
     public void testSearch()
     {
-        stack.push( false ) ;
-        assertTrue( -1 == stack.search( true ) ) ;
-        stack.push( true ) ;
-        assertTrue( 2 == stack.search( false ) ) ;
-        stack.push( false ) ;
-        assertTrue( 1 == stack.search( false ) ) ;
-        stack.push( false ) ;
-        assertTrue( 3 == stack.search( true ) ) ;
+        stack.push( ( char ) 0 ) ;
+        stack.push( ( char ) 1 ) ;
+        assertTrue( 2 == stack.search( ( char ) 0 ) ) ;
+        stack.push( ( char ) 0 ) ;
+        assertTrue( 1 == stack.search( ( char ) 0 ) ) ;
+        stack.push( ( char ) 0 ) ;
+        assertTrue( 3 == stack.search( ( char ) 1 ) ) ;
+        assertTrue( -1 == stack.search( ( char ) 44 ) ) ;
     }
 }

@@ -18,17 +18,18 @@ package org.apache.commons.collections.primitives;
 import java.util.EmptyStackException;
 
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 /**
- * Tests the IntStack class.
+ * Tests the DoubleStack class.
  *
  * @author Apache Directory Project
  * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @version $Revision: 1.1 $ $Date: 2004/04/14 22:42:08 $
  */
-public class IntStackTest extends TestCase
+public class TestDoubleStack extends TestCase
 {
-    IntStack stack = null ;
+    DoubleStack stack = null ;
     
     
     /**
@@ -38,7 +39,11 @@ public class IntStackTest extends TestCase
      */
     public static void main( String[] args )
     {
-        junit.textui.TestRunner.run( IntStackTest.class ) ;
+        junit.textui.TestRunner.run( TestDoubleStack.class ) ;
+    }
+
+    public static TestSuite suite() {
+        return new TestSuite(TestBooleanStack.class);
     }
 
     
@@ -48,7 +53,7 @@ public class IntStackTest extends TestCase
     protected void setUp() throws Exception
     {
         super.setUp() ;
-        stack = new IntStack() ;
+        stack = new DoubleStack() ;
     }
     
     
@@ -56,7 +61,7 @@ public class IntStackTest extends TestCase
      * Constructor for IntStackTest.
      * @param arg0
      */
-    public IntStackTest( String arg0 )
+    public TestDoubleStack( String arg0 )
     {
         super( arg0 ) ;
     }
@@ -65,7 +70,7 @@ public class IntStackTest extends TestCase
     public void testEmpty()
     {
         assertTrue( "Newly created stacks should be empty", stack.empty() ) ;
-        stack.push( 0 ) ;
+        stack.push( 0.3 ) ;
         assertFalse( "Stack with item should not be empty", stack.empty() ) ;
         stack.pop() ;
         assertTrue( "Stack last int popped should be empty", stack.empty() ) ;
@@ -87,8 +92,8 @@ public class IntStackTest extends TestCase
         
         for( int ii = 0; ii < 10; ii++ )
         {    
-            stack.push( ii ) ;
-            assertEquals( ii, stack.peek() ) ;
+            stack.push( ( double ) ii ) ;
+            assertTrue( ii == stack.peek() ) ;
         }
     }
 
@@ -106,43 +111,43 @@ public class IntStackTest extends TestCase
             assertNotNull( "EmptyStackException should not be null", e ) ;
         }
         
-        for( int ii = 0; ii < 10; ii++ )
+        for( double ii = 0; ii < 10; ii++ )
         {    
             stack.push( ii ) ;
-            assertEquals( ii, stack.pop() ) ;
+            assertTrue( ii == stack.pop() ) ;
         }
 
-        for( int ii = 0; ii < 10; ii++ )
+        for( double ii = 0; ii < 10; ii++ )
         {    
             stack.push( ii ) ;
         }
-        for( int ii = 10; ii < 0; ii-- )
+        for( double ii = 10; ii < 0; ii-- )
         {    
             stack.push( ii ) ;
-            assertEquals( ii, stack.pop() ) ;
+            assertTrue( ii == stack.pop() ) ;
         }
     }
 
     
     public void testPush()
     {
-        stack.push( 0 ) ;
-        stack.push( 0 ) ;
+        stack.push( ( double ) 0 ) ;
+        stack.push( ( double ) 0 ) ;
         assertFalse( stack.empty() ) ;
-        assertEquals( 0, stack.pop() ) ;
-        assertEquals( 0, stack.pop() ) ;
+        assertTrue( 0 == stack.pop() ) ;
+        assertTrue( 0 == stack.pop() ) ;
     }
 
     
     public void testSearch()
     {
-        stack.push( 0 ) ;
-        stack.push( 1 ) ;
-        assertEquals( 2, stack.search( 0 ) ) ;
-        stack.push( 0 ) ;
-        assertEquals( 1, stack.search( 0 ) ) ;
-        stack.push( 0 ) ;
-        assertEquals( 3, stack.search( 1 ) ) ;
-        assertEquals( -1, stack.search( 44 ) ) ;
+        stack.push( ( double ) 0 ) ;
+        stack.push( ( double ) 1 ) ;
+        assertTrue( 2 == stack.search( ( double ) 0 ) ) ;
+        stack.push( ( double ) 0 ) ;
+        assertTrue( 1 == stack.search( ( double ) 0 ) ) ;
+        stack.push( ( double ) 0 ) ;
+        assertTrue( 3 == stack.search( ( double ) 1 ) ) ;
+        assertTrue( -1 == stack.search( ( double ) 44 ) ) ;
     }
 }

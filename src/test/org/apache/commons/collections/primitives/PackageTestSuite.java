@@ -22,7 +22,7 @@ import junit.framework.TestSuite;
 /**
  * Test this package.
  * 
- * @version $Revision: 1.9 $ $Date: 2004/02/25 20:46:30 $
+ * @version $Revision: 1.10 $ $Date: 2004/04/14 22:42:08 $
  * @author Rodney Waldhoff
  */
 public class PackageTestSuite extends TestCase {
@@ -38,43 +38,52 @@ public class PackageTestSuite extends TestCase {
     public static Test suite() {
         TestSuite suite = new TestSuite();
 
+        suite.addTest(TestBooleanStack.suite());
+        
         suite.addTest(TestByteCollections.suite());
         suite.addTest(TestAbstractByteCollection.suite());
         suite.addTest(TestRandomAccessByteList.suite());
         suite.addTest(TestArrayByteList.suite());
+        suite.addTest(TestByteStack.suite());
 
         suite.addTest(TestShortCollections.suite());
         suite.addTest(TestAbstractShortCollection.suite());
         suite.addTest(TestRandomAccessShortList.suite());
         suite.addTest(TestArrayShortList.suite());
         suite.addTest(TestArrayUnsignedByteList.suite());
+        suite.addTest(TestShortStack.suite());
 
         suite.addTest(TestCharCollections.suite());
         suite.addTest(TestAbstractCharCollection.suite());
         suite.addTest(TestRandomAccessCharList.suite());
         suite.addTest(TestArrayCharList.suite());
+        suite.addTest(TestCharStack.suite());
 
         suite.addTest(TestIntCollections.suite());
         suite.addTest(TestAbstractIntCollection.suite());
         suite.addTest(TestRandomAccessIntList.suite());
         suite.addTest(TestArrayIntList.suite());
         suite.addTest(TestArrayUnsignedShortList.suite());
+        suite.addTest(TestIntStack.suite());
 
         suite.addTest(TestLongCollections.suite());
 		suite.addTest(TestAbstractLongCollection.suite());
 		suite.addTest(TestRandomAccessLongList.suite());
         suite.addTest(TestArrayLongList.suite());
         suite.addTest(TestArrayUnsignedIntList.suite());
+        suite.addTest(TestLongStack.suite());
 
         suite.addTest(TestFloatCollections.suite());
         suite.addTest(TestAbstractFloatCollection.suite());
         suite.addTest(TestRandomAccessFloatList.suite());
         suite.addTest(TestArrayFloatList.suite());
+        suite.addTest(TestFloatStack.suite());
 
         suite.addTest(TestDoubleCollections.suite());
         suite.addTest(TestAbstractDoubleCollection.suite());
         suite.addTest(TestRandomAccessDoubleList.suite());
         suite.addTest(TestArrayDoubleList.suite());
+        suite.addTest(TestDoubleStack.suite());
 
         return suite;
     }

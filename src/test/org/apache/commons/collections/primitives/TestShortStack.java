@@ -1,34 +1,38 @@
 /*
- * Copyright 2004 The Apache Software Foundation
+ *   Copyright 2004 The Apache Software Foundation
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *       http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
  */
-package org.apache.commons.collections.primitives;
+package org.apache.commons.collections.primitives ;
+
 
 import java.util.EmptyStackException;
 
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
 
 /**
- * Tests the DoubleStack class.
+ * Tests the ShortStack class.
  *
- * @author Apache Directory Project
- * @since Commons Primitives 1.1
- * @version $Revision: 1.2 $ $Date: 2004/04/14 22:23:40 $
+ * @author <a href="mailto:directory-dev@incubator.apache.org">
+ * Apache Directory Project</a>
+ * @version $Rev: 9968 $
  */
-public class DoubleStackTest extends TestCase
+public class TestShortStack extends TestCase
 {
-    DoubleStack stack = null ;
+    ShortStack stack = null ;
     
     
     /**
@@ -38,7 +42,11 @@ public class DoubleStackTest extends TestCase
      */
     public static void main( String[] args )
     {
-        junit.textui.TestRunner.run( DoubleStackTest.class ) ;
+        junit.textui.TestRunner.run( TestShortStack.class ) ;
+    }
+
+    public static TestSuite suite() {
+        return new TestSuite(TestBooleanStack.class);
     }
 
     
@@ -48,7 +56,7 @@ public class DoubleStackTest extends TestCase
     protected void setUp() throws Exception
     {
         super.setUp() ;
-        stack = new DoubleStack() ;
+        stack = new ShortStack() ;
     }
     
     
@@ -56,7 +64,7 @@ public class DoubleStackTest extends TestCase
      * Constructor for IntStackTest.
      * @param arg0
      */
-    public DoubleStackTest( String arg0 )
+    public TestShortStack( String arg0 )
     {
         super( arg0 ) ;
     }
@@ -65,7 +73,7 @@ public class DoubleStackTest extends TestCase
     public void testEmpty()
     {
         assertTrue( "Newly created stacks should be empty", stack.empty() ) ;
-        stack.push( 0.3 ) ;
+        stack.push( ( short ) 12342 ) ;
         assertFalse( "Stack with item should not be empty", stack.empty() ) ;
         stack.pop() ;
         assertTrue( "Stack last int popped should be empty", stack.empty() ) ;
@@ -87,7 +95,7 @@ public class DoubleStackTest extends TestCase
         
         for( int ii = 0; ii < 10; ii++ )
         {    
-            stack.push( ( double ) ii ) ;
+            stack.push( ( short ) ii ) ;
             assertTrue( ii == stack.peek() ) ;
         }
     }
@@ -106,17 +114,17 @@ public class DoubleStackTest extends TestCase
             assertNotNull( "EmptyStackException should not be null", e ) ;
         }
         
-        for( double ii = 0; ii < 10; ii++ )
+        for( short ii = 0; ii < 10; ii++ )
         {    
             stack.push( ii ) ;
             assertTrue( ii == stack.pop() ) ;
         }
 
-        for( double ii = 0; ii < 10; ii++ )
+        for( short ii = 0; ii < 10; ii++ )
         {    
             stack.push( ii ) ;
         }
-        for( double ii = 10; ii < 0; ii-- )
+        for( short ii = 10; ii < 0; ii-- )
         {    
             stack.push( ii ) ;
             assertTrue( ii == stack.pop() ) ;
@@ -126,8 +134,8 @@ public class DoubleStackTest extends TestCase
     
     public void testPush()
     {
-        stack.push( ( double ) 0 ) ;
-        stack.push( ( double ) 0 ) ;
+        stack.push( ( short ) 0 ) ;
+        stack.push( ( short ) 0 ) ;
         assertFalse( stack.empty() ) ;
         assertTrue( 0 == stack.pop() ) ;
         assertTrue( 0 == stack.pop() ) ;
@@ -136,13 +144,13 @@ public class DoubleStackTest extends TestCase
     
     public void testSearch()
     {
-        stack.push( ( double ) 0 ) ;
-        stack.push( ( double ) 1 ) ;
-        assertTrue( 2 == stack.search( ( double ) 0 ) ) ;
-        stack.push( ( double ) 0 ) ;
-        assertTrue( 1 == stack.search( ( double ) 0 ) ) ;
-        stack.push( ( double ) 0 ) ;
-        assertTrue( 3 == stack.search( ( double ) 1 ) ) ;
-        assertTrue( -1 == stack.search( ( double ) 44 ) ) ;
+        stack.push( ( short ) 0 ) ;
+        stack.push( ( short ) 1 ) ;
+        assertTrue( 2 == stack.search( ( short ) 0 ) ) ;
+        stack.push( ( short ) 0 ) ;
+        assertTrue( 1 == stack.search( ( short ) 0 ) ) ;
+        stack.push( ( short ) 0 ) ;
+        assertTrue( 3 == stack.search( ( short ) 1 ) ) ;
+        assertTrue( -1 == stack.search( ( short ) 44 ) ) ;
     }
 }
