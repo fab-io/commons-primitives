@@ -15,7 +15,7 @@
 <dd>
 <p>
 The main advantage of the primitive collections is that they are signficantly smaller than their java.util equivalents.
-How much smaller?  Well, consider this table:
+How much smaller?
 </p>
 <table border="1" cellspacing="0">
  <tr>
@@ -82,26 +82,30 @@ Object wrappers, and because there are fewer bytes to move around when copying o
 data.
 </p>
 <p>
-In the pre-autoboxing (JDK 1.5) world, you may also find the primitive collections easier 
+Finally, in the pre-autoboxing (JDK 1.5) world, you may also find the primitive collections easier 
 to work with, since you'll waste fewer keystrokes manually boxing and un-boxing the 
 primitives and their Object wrappers.  For instance, to sum an ArrayList of Integers, you 
 might write something like:
 </p>
-<pre>int sum = 0;
+<pre>
+int sum = 0;
 for(Iterator iter = list.iterator(); iter.hasNext(); ) {
   sum += ((Integer)(iter.next())).intValue();
-}</pre>
+}
+</pre>
 <p>
 The IntList equivalent would be:
 </p>
-<pre>int sum = 0;
+<pre>
+int sum = 0;
 for(IntIterator iter = list.iterator(); iter.hasNext(); ) {
   sum += iter.next();
-}</pre>
+}
+</pre>
 </dd>
 
-<dt>Q: But isn't this overkill?  Aren't the time and space efficiencies 
-insignificant for the size and number of collections used by most applications?</dt>
+<dt>Q: But aren't the time and space efficiencies insignificant for 
+the size and number of collections used by most applications?</dt>
 <dd>
 <p>
 Yes.

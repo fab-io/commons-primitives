@@ -8,6 +8,7 @@
   <body>
     <menu name="Commons Primitives">
       <item name="Overview" href="/index.html"/>
+      <item name="FAQ" href="/faq.html"/>
     </menu>
     &commons-nav;
   </body>
