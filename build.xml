@@ -3,7 +3,7 @@
 
 <!--
         "Primitives" component of the Jakarta Commons Subproject
-        $Id: build.xml,v 1.8 2003/11/06 01:06:58 rwaldhoff Exp $
+        $Id: build.xml,v 1.9 2003/12/04 22:57:19 rwaldhoff Exp $
 -->
 
 
@@ -43,7 +43,7 @@
   <property name="component.title"         value="Primitive type utilities"/>
 
   <!-- The current version number of this component -->
-  <property name="component.version"       value="2.0-dev"/>
+  <property name="component.version"       value="1.1-dev"/>
 
   <!-- The final name of the component -->
   <property name="final.name"              value="commons-${component.name}-${component.version}"/>

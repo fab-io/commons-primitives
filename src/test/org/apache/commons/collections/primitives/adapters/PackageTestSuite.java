@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/PackageTestSuite.java,v 1.1 2003/10/13 22:46:54 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/adapters/PackageTestSuite.java,v 1.2 2003/12/04 22:57:19 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -63,7 +63,7 @@ import junit.framework.TestSuite;
 /**
  * Test this package.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/10/13 22:46:54 $
+ * @version $Revision: 1.2 $ $Date: 2003/12/04 22:57:19 $
  * @author Rodney Waldhoff
  */
 public class PackageTestSuite extends TestCase {
@@ -78,6 +78,8 @@ public class PackageTestSuite extends TestCase {
 
     public static Test suite() {
         TestSuite suite = new TestSuite();
+
+        suite.addTest(TestAdapt.suite());
         
         suite.addTest(TestCollectionByteCollection.suite());
         suite.addTest(TestByteCollectionCollection.suite());

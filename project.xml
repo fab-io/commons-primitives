@@ -3,7 +3,7 @@
   <extend>../xdocs/maven/project-base.xml</extend>
   <id>commons-primitives</id>
   <name>Commons Primitives</name>
-  <currentVersion>2.0-dev</currentVersion>
+  <currentVersion>1.1-dev</currentVersion>
   <inceptionYear>2002</inceptionYear>
 
   <package>org.apache.commons.collections.primitives</package>
