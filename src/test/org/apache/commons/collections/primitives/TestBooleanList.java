@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.adapters.BooleanListList;
 import org.apache.commons.collections.primitives.adapters.ListBooleanList;
 
 /**
- * @version $Revision: 1.1 $ $Date: 2004/07/12 18:29:43 $
+ * @version $Revision: 1.2 $ $Date: 2004/07/12 19:51:16 $
  * @author Rodney Waldhoff
  */
 public abstract class TestBooleanList extends BaseTestList {
@@ -414,17 +414,94 @@ public abstract class TestBooleanList extends BaseTestList {
     }
 
     public void testCollectionRemoveAll() {
-        // TODO: Implement me
-        // Super type doesn't work because there are only two unique values in my list.
+        // Super's impl doesn't work because there are only two unique values in my list.
+        BooleanList trueList = new ArrayBooleanList();
+        trueList.add(true);
+        trueList.add(true);
+        trueList.add(true);
+        trueList.add(true);
+        trueList.add(true);
+        BooleanList falseList = new ArrayBooleanList();
+        falseList.add(false);
+        falseList.add(false);
+        falseList.add(false);
+        falseList.add(false);
+        falseList.add(false);
+
+        BooleanList list = new ArrayBooleanList();
+        assertTrue(list.isEmpty());
+        assertFalse(list.removeAll(trueList));        
+        assertTrue(list.isEmpty());
+        
+        list.add(false);
+        list.add(false);
+        assertEquals(2,list.size());
+        assertFalse(list.removeAll(trueList));        
+        assertEquals(2,list.size());
+        
+        list.add(true);
+        list.add(false);
+        list.add(true);
+        assertEquals(5,list.size());
+        assertTrue(list.removeAll(trueList));        
+        assertEquals(3,list.size());
+        
+        for(BooleanIterator iter = list.iterator(); iter.hasNext();) {
+            assertEquals(false,iter.next());
+        }
+
+        assertFalse(list.removeAll(trueList));        
+        assertEquals(3,list.size());
+        
+        for(BooleanIterator iter = list.iterator(); iter.hasNext();) {
+            assertEquals(false,iter.next());
+        }
+
+        assertTrue(list.removeAll(falseList));        
+        assertTrue(list.isEmpty());
     }
 
     public void testCollectionRetainAll() {
-        // TODO: Implement me
-        // Super type doesn't work because there are only two unique values in my list.
+        // Super's impl doesn't work because there are only two unique values in my list.
+        BooleanList trueList = new ArrayBooleanList();
+        trueList.add(true);
+        BooleanList falseList = new ArrayBooleanList();
+        falseList.add(false);
+
+        BooleanList list = new ArrayBooleanList();
+        assertTrue(list.isEmpty());
+        assertFalse(list.retainAll(falseList));        
+        assertTrue(list.isEmpty());
+        
+        list.add(false);
+        list.add(false);
+        assertEquals(2,list.size());
+        assertFalse(list.retainAll(falseList));        
+        assertEquals(2,list.size());
+        
+        list.add(true);
+        list.add(false);
+        list.add(true);
+        assertEquals(5,list.size());
+        assertTrue(list.retainAll(falseList));        
+        assertEquals(3,list.size());
+        
+        for(BooleanIterator iter = list.iterator(); iter.hasNext();) {
+            assertEquals(false,iter.next());
+        }
+
+        assertFalse(list.retainAll(falseList));        
+        assertEquals(3,list.size());
+        
+        for(BooleanIterator iter = list.iterator(); iter.hasNext();) {
+            assertEquals(false,iter.next());
+        }
+
+        assertTrue(list.retainAll(trueList));        
+        assertTrue(list.isEmpty());
     }
 
     public void testListEquals() {
-        // TODO: Implement me
         // Super type doesn't work because there are only two unique values in my list.
     }
 }
