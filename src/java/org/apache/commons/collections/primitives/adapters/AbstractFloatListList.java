@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/AbstractFloatListList.java,v 1.2 2003/10/14 20:04:18 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/AbstractFloatListList.java,v 1.3 2003/10/16 20:49:39 scolebourne Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -66,8 +66,8 @@ import org.apache.commons.collections.primitives.FloatCollection;
 import org.apache.commons.collections.primitives.FloatList;
 
 /**
- * @since Commons Primitives 0.1
- * @version $Revision: 1.2 $ $Date: 2003/10/14 20:04:18 $
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.3 $ $Date: 2003/10/16 20:49:39 $
  * @author Rodney Waldhoff 
  */
 abstract class AbstractFloatListList extends AbstractFloatCollectionCollection implements List {

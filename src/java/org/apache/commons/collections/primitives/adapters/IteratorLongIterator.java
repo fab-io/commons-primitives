@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/IteratorLongIterator.java,v 1.2 2003/10/14 20:04:18 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/adapters/IteratorLongIterator.java,v 1.3 2003/10/16 20:49:38 scolebourne Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -71,8 +71,8 @@ import org.apache.commons.collections.primitives.LongIterator;
  * to the provided {@link Iterator Iterator} 
  * implementation in the "obvious" way.
  *
- * @since Commons Primitives 0.1
- * @version $Revision: 1.2 $ $Date: 2003/10/14 20:04:18 $
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.3 $ $Date: 2003/10/16 20:49:38 $
  * @author Rodney Waldhoff 
  */
 public class IteratorLongIterator implements LongIterator {

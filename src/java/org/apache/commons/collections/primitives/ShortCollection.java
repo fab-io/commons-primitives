@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/ShortCollection.java,v 1.2 2003/10/14 20:04:26 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/ShortCollection.java,v 1.3 2003/10/16 20:49:36 scolebourne Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -63,8 +63,8 @@ package org.apache.commons.collections.primitives;
  * @see org.apache.commons.collections.primitives.adapters.ShortCollectionCollection
  * @see org.apache.commons.collections.primitives.adapters.CollectionShortCollection
  *
- * @since Commons Primitives 0.1
- * @version $Revision: 1.2 $ $Date: 2003/10/14 20:04:26 $
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.3 $ $Date: 2003/10/16 20:49:36 $
  * 
  * @author Rodney Waldhoff 
  */

@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/RandomAccessByteList.java,v 1.2 2003/10/14 20:04:25 scolebourne Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/RandomAccessByteList.java,v 1.3 2003/10/16 20:49:35 scolebourne Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -73,8 +73,8 @@ import java.util.NoSuchElementException;
  * these.  Subclasses may choose to override these methods
  * to provide a more efficient implementation.
  * 
- * @since Commons Primitives 0.1
- * @version $Revision: 1.2 $ $Date: 2003/10/14 20:04:25 $
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.3 $ $Date: 2003/10/16 20:49:35 $
  * 
  * @author Rodney Waldhoff 
  */
