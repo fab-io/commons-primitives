@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.3 2003/10/29 18:33:10 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/TestUnmodifiableByteListIterator.java,v 1.1 2003/10/29 18:33:10 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,50 +54,53 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
 import junit.framework.Test;
-import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import org.apache.commons.collections.primitives.ByteListIterator;
+
 /**
- * Test this package.
- * 
- * @version $Revision: 1.3 $ $Date: 2003/10/29 18:33:10 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:33:10 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public class TestUnmodifiableByteListIterator extends BaseUnmodifiableByteListIteratorTest {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public TestUnmodifiableByteListIterator(String testName) {
         super(testName);
     }
-
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
-    }
+    
 
     public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+        return new TestSuite(TestUnmodifiableByteListIterator.class);
     }
-}
 
+    // framework
+    // ------------------------------------------------------------------------
+
+    protected ByteListIterator makeUnmodifiableByteListIterator() {
+        return UnmodifiableByteListIterator.wrap(makeByteListIterator());
+    }
+
+    // tests
+    // ------------------------------------------------------------------------
+
+    public void testWrapNotNull() {
+        assertNotNull(UnmodifiableByteListIterator.wrap(makeByteListIterator()));
+    }
+
+    public void testWrapNull() {
+        assertNull(UnmodifiableByteListIterator.wrap(null));
+    }
+
+    public void testWrapUnmodifiableByteListIterator() {
+        ByteListIterator iter = makeUnmodifiableByteListIterator();
+        assertSame(iter,UnmodifiableByteListIterator.wrap(iter));
+    }
+
+}

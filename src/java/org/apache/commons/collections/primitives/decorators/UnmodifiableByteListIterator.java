@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.3 2003/10/29 18:33:10 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/UnmodifiableByteListIterator.java,v 1.1 2003/10/29 18:33:10 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,50 +54,49 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.commons.collections.primitives.ByteListIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.3 $ $Date: 2003/10/29 18:33:10 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:33:10 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+public final class UnmodifiableByteListIterator extends ProxyByteListIterator {
+    UnmodifiableByteListIterator(ByteListIterator iterator) {
+        this.proxied = iterator;
+    }
+    
+    public void remove() {
+        throw new UnsupportedOperationException("This ByteListIterator is not modifiable.");
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    public void add(byte value) {
+        throw new UnsupportedOperationException("This ByteListIterator is not modifiable.");
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public void set(byte value) {
+        throw new UnsupportedOperationException("This ByteListIterator is not modifiable.");
     }
+
+    protected ByteListIterator getListIterator() {
+        return proxied;   
+    }
+    
+    
+    public static final ByteListIterator wrap(ByteListIterator iterator) {
+        if(null == iterator) {
+            return null; 
+        } else if(iterator instanceof UnmodifiableByteListIterator) {
+            return iterator;
+        } else {
+            return new UnmodifiableByteListIterator(iterator);
+        }
+    }
+
+    private ByteListIterator proxied = null;    
 }
-

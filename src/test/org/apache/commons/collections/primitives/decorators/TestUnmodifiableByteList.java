@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.3 2003/10/29 18:33:10 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/TestUnmodifiableByteList.java,v 1.1 2003/10/29 18:33:10 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,50 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
+import java.io.Serializable;
+
 import junit.framework.Test;
-import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import org.apache.commons.collections.primitives.ByteList;
+
 /**
- * Test this package.
- * 
- * @version $Revision: 1.3 $ $Date: 2003/10/29 18:33:10 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:33:10 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public class TestUnmodifiableByteList extends BaseUnmodifiableByteListTest {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public TestUnmodifiableByteList(String testName) {
         super(testName);
     }
-
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
-    }
+    
 
     public static Test suite() {
-        TestSuite suite = new TestSuite();
+        return new TestSuite(TestUnmodifiableByteList.class);
+    }
 
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
+    // framework
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
+    protected ByteList makeUnmodifiableByteList() {
+        return UnmodifiableByteList.wrap(makeByteList());
+    }
 
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
+    // tests
+    // ------------------------------------------------------------------------
 
-        return suite;
+    public void testWrapNull() {
+        assertNull(UnmodifiableByteList.wrap(null));
+    }
+
+    public void testWrapUnmodifiableByteList() {
+        ByteList list = makeUnmodifiableByteList();
+        assertSame(list,UnmodifiableByteList.wrap(list));
+    }
+
+    public void testWrapSerializableByteList() {
+        ByteList list = makeByteList();
+        assertTrue(list instanceof Serializable);
+        assertTrue(UnmodifiableByteList.wrap(list) instanceof Serializable);
+    }
+
+    public void testWrapNonSerializableByteList() {
+        ByteList list = makeByteList();
+        ByteList ns = list.subList(0,list.size());
+        assertTrue(!(ns instanceof Serializable));
+        assertTrue(!(UnmodifiableByteList.wrap(ns) instanceof Serializable));
     }
 }
-

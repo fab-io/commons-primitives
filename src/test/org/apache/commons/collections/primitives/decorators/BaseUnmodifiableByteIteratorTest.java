@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.3 2003/10/29 18:33:10 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/BaseUnmodifiableByteIteratorTest.java,v 1.1 2003/10/29 18:33:10 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,50 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+import org.apache.commons.collections.primitives.ArrayByteList;
+import org.apache.commons.collections.primitives.ByteIterator;
+import org.apache.commons.collections.primitives.ByteList;
 
 /**
- * Test this package.
- * 
- * @version $Revision: 1.3 $ $Date: 2003/10/29 18:33:10 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:33:10 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public abstract class BaseUnmodifiableByteIteratorTest extends TestCase {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public BaseUnmodifiableByteIteratorTest(String testName) {
         super(testName);
     }
+    
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    // framework
+    // ------------------------------------------------------------------------
+    protected abstract ByteIterator makeUnmodifiableByteIterator();
+
+    protected ByteIterator makeByteIterator() {
+        ByteList list = new ArrayByteList();
+        for(byte i=0;i<10;i++) {
+            list.add(i);
+        }
+        return list.iterator();
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
+    // tests
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public final void testByteIteratorNotModifiable() {
+        ByteIterator iter = makeUnmodifiableByteIterator();
+        assertTrue(iter.hasNext());
+        iter.next();
+        try {
+            iter.remove();
+            fail("Expected UnsupportedOperationException");
+        } catch(UnsupportedOperationException e) {
+            // expected
+        }
     }
+
+    public final void testIterateByteIterator() {        
+        ByteIterator iter = makeUnmodifiableByteIterator();
+        for(ByteIterator expected = makeByteIterator(); expected.hasNext(); ) {
+            assertTrue(iter.hasNext());
+            assertEquals(expected.next(),iter.next());
+        }
+        assertTrue(! iter.hasNext() );
+    }
+
 }
-

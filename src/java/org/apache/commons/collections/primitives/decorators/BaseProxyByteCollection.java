@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.3 2003/10/29 18:33:10 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/java/org/apache/commons/collections/primitives/decorators/BaseProxyByteCollection.java,v 1.1 2003/10/29 18:33:10 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -54,50 +54,89 @@
  * <http://www.apache.org/>.
  *
  */
+
 package org.apache.commons.collections.primitives.decorators;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.apache.commons.collections.primitives.ByteCollection;
+import org.apache.commons.collections.primitives.ByteIterator;
 
 /**
- * Test this package.
  * 
- * @version $Revision: 1.3 $ $Date: 2003/10/29 18:33:10 $
- * @author Rodney Waldhoff
+ * @since Commons Primitives 1.0
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 18:33:10 $
+ * 
+ * @author Rodney Waldhoff 
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
-        super(testName);
+abstract class BaseProxyByteCollection implements ByteCollection {
+    protected abstract ByteCollection getProxiedCollection();
+
+    protected BaseProxyByteCollection() {
+    }
+    
+    public boolean add(byte element) {
+        return getProxiedCollection().add(element);
     }
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    public boolean addAll(ByteCollection c) {
+        return getProxiedCollection().addAll(c);
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
-
-        suite.addTest(TestBaseProxyByteCollection.suite());
-        suite.addTest(TestBaseProxyByteList.suite());
-        suite.addTest(TestUnmodifiableByteList.suite());
-        suite.addTest(TestUnmodifiableByteIterator.suite());
-        suite.addTest(TestUnmodifiableByteListIterator.suite());
-
-        suite.addTest(TestBaseProxyIntCollection.suite());
-        suite.addTest(TestBaseProxyIntList.suite());
-        suite.addTest(TestUnmodifiableIntList.suite());
-        suite.addTest(TestUnmodifiableIntIterator.suite());
-        suite.addTest(TestUnmodifiableIntListIterator.suite());
-
-        suite.addTest(TestBaseProxyLongCollection.suite());
-        suite.addTest(TestBaseProxyLongList.suite());
-        suite.addTest(TestUnmodifiableLongList.suite());
-        suite.addTest(TestUnmodifiableLongIterator.suite());
-        suite.addTest(TestUnmodifiableLongListIterator.suite());
-
-        return suite;
+    public void clear() {
+        getProxiedCollection().clear();
     }
+
+    public boolean contains(byte element) {
+        return getProxiedCollection().contains(element);
+    }
+
+    public boolean containsAll(ByteCollection c) {
+        return getProxiedCollection().containsAll(c);
+    }
+
+    public boolean isEmpty() {
+        return getProxiedCollection().isEmpty();
+    }
+
+    public ByteIterator iterator() {
+        return getProxiedCollection().iterator();
+    }
+
+    public boolean removeAll(ByteCollection c) {
+        return getProxiedCollection().removeAll(c);
+    }
+
+    public boolean removeElement(byte element) {
+        return getProxiedCollection().removeElement(element);
+    }
+
+    public boolean retainAll(ByteCollection c) {
+        return getProxiedCollection().retainAll(c);
+    }
+
+    public int size() {
+        return getProxiedCollection().size();
+    }
+
+    public byte[] toArray() {
+        return getProxiedCollection().toArray();
+    }
+
+    public byte[] toArray(byte[] a) {
+        return getProxiedCollection().toArray(a);
+    }
+
+    // TODO: Add note about possible contract violations here.
+    
+    public boolean equals(Object obj) {
+        return getProxiedCollection().equals(obj);
+    }
+
+    public int hashCode() {
+        return getProxiedCollection().hashCode();
+    }
+
+    public String toString() {
+        return getProxiedCollection().toString();
+    }
+
 }
-
