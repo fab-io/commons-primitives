@@ -5,7 +5,12 @@
 <project name="Primitives">
   <title>Primitives</title>
   <organizationLogo href="/images/jakarta-logo-blue.gif">Jakarta</organizationLogo>
-  <body>
+  <body> 
+    <links>
+      <item name="Jakarta Commons"                   
+            href="http://jakarta.apache.org/commons/"/>
+    </links>
+
     <menu name="Commons Primitives">
       <item name="Overview" href="/index.html"/>
       <item name="FAQ" href="/faq.html"/>

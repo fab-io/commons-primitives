@@ -4,7 +4,14 @@
   <id>commons-primitives</id>
   <name>Commons Primitives</name>
   <currentVersion>1.1-dev</currentVersion>
+  <organization>
+    <name>Apache Software Foundation</name>
+    <url>http://www.apache.org</url>
+    <logo>http://jakarta.apache.org/images/jakarta-logo.gif</logo>
+  </organization>
+
   <inceptionYear>2002</inceptionYear>
+  <logo>/images/logo.png</logo>
 
   <package>org.apache.commons.collections.primitives</package>
   <url>http://jakarta.apache.org/commons/primitives/index.html</url>
