@@ -13,7 +13,7 @@
 <p>
 Apache Jakarta Commons Primitives provides a collection of types and utilities optimized
 for working with Java primitives (boolean, byte, char, double, float, int, long, short).
-Generally, the Commons-Primitives classes are faster, smaller and easier to work with than
+Generally, the Commons-Primitives classes are smaller, faster and easier to work with than
 their purely Object based alternatives.
 </p>
 </section>
@@ -75,6 +75,7 @@ java.util collections adapted for the primitive types.
 
 <p>
 For more information on Commons Primitives, you might like to visit the 
+<a href="faq.html">FAQ</a>,
 <a href="./apidocs/index.html">JavaDocs</a>, <a href="./project-info.html">project information</a>
 or <a href="./maven-reports.html">project reports</a>.
 </p>
