@@ -1,5 +1,5 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.6 2003/10/29 19:39:13 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/PackageTestSuite.java,v 1.7 2003/10/29 20:07:54 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
@@ -63,7 +63,7 @@ import junit.framework.TestSuite;
 /**
  * Test this package.
  * 
- * @version $Revision: 1.6 $ $Date: 2003/10/29 19:39:13 $
+ * @version $Revision: 1.7 $ $Date: 2003/10/29 20:07:54 $
  * @author Rodney Waldhoff
  */
 public class PackageTestSuite extends TestCase {
@@ -96,6 +96,12 @@ public class PackageTestSuite extends TestCase {
         suite.addTest(TestUnmodifiableDoubleList.suite());
         suite.addTest(TestUnmodifiableDoubleIterator.suite());
         suite.addTest(TestUnmodifiableDoubleListIterator.suite());
+
+        suite.addTest(TestBaseProxyFloatCollection.suite());
+        suite.addTest(TestBaseProxyFloatList.suite());
+        suite.addTest(TestUnmodifiableFloatList.suite());
+        suite.addTest(TestUnmodifiableFloatIterator.suite());
+        suite.addTest(TestUnmodifiableFloatListIterator.suite());
 
         suite.addTest(TestBaseProxyShortCollection.suite());
         suite.addTest(TestBaseProxyShortList.suite());

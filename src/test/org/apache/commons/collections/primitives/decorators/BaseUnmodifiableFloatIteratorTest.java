@@ -1,9 +1,9 @@
 /*
- * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/PackageTestSuite.java,v 1.7 2003/10/29 20:07:55 rwaldhoff Exp $
+ * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//primitives/src/test/org/apache/commons/collections/primitives/decorators/BaseUnmodifiableFloatIteratorTest.java,v 1.1 2003/10/29 20:07:54 rwaldhoff Exp $
  * ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2002-2003 The Apache Software Foundation.  All rights
+ * Copyright (c) 2003 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,70 +54,63 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.commons.collections.primitives;
 
-import junit.framework.Test;
+package org.apache.commons.collections.primitives.decorators;
+
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+import org.apache.commons.collections.primitives.ArrayFloatList;
+import org.apache.commons.collections.primitives.FloatIterator;
+import org.apache.commons.collections.primitives.FloatList;
 
 /**
- * Test this package.
- * 
- * @version $Revision: 1.7 $ $Date: 2003/10/29 20:07:55 $
+ * @version $Revision: 1.1 $ $Date: 2003/10/29 20:07:54 $
  * @author Rodney Waldhoff
  */
-public class PackageTestSuite extends TestCase {
-    public PackageTestSuite(String testName) {
+public abstract class BaseUnmodifiableFloatIteratorTest extends TestCase {
+
+    // conventional
+    // ------------------------------------------------------------------------
+
+    public BaseUnmodifiableFloatIteratorTest(String testName) {
         super(testName);
     }
+    
 
-    public static void main(String args[]) {
-        String[] testCaseName = { PackageTestSuite.class.getName() };
-        junit.textui.TestRunner.main(testCaseName);
+    // framework
+    // ------------------------------------------------------------------------
+    protected abstract FloatIterator makeUnmodifiableFloatIterator();
+
+    protected FloatIterator makeFloatIterator() {
+        FloatList list = new ArrayFloatList();
+        for(float i=0;i<10;i++) {
+            list.add(i);
+        }
+        return list.iterator();
     }
 
-    public static Test suite() {
-        TestSuite suite = new TestSuite();
+    // tests
+    // ------------------------------------------------------------------------
 
-        suite.addTest(TestByteCollections.suite());
-        suite.addTest(TestAbstractByteCollection.suite());
-        suite.addTest(TestRandomAccessByteList.suite());
-        suite.addTest(TestArrayByteList.suite());
-
-        suite.addTest(TestShortCollections.suite());
-        suite.addTest(TestAbstractShortCollection.suite());
-        suite.addTest(TestRandomAccessShortList.suite());
-        suite.addTest(TestArrayShortList.suite());
-        suite.addTest(TestArrayUnsignedByteList.suite());
-
-        suite.addTest(TestCharCollections.suite());
-        suite.addTest(TestAbstractCharCollection.suite());
-        suite.addTest(TestRandomAccessCharList.suite());
-        suite.addTest(TestArrayCharList.suite());
-
-        suite.addTest(TestIntCollections.suite());
-        suite.addTest(TestAbstractIntCollection.suite());
-        suite.addTest(TestRandomAccessIntList.suite());
-        suite.addTest(TestArrayIntList.suite());
-        suite.addTest(TestArrayUnsignedShortList.suite());
-
-        suite.addTest(TestLongCollections.suite());
-		suite.addTest(TestAbstractLongCollection.suite());
-		suite.addTest(TestRandomAccessLongList.suite());
-        suite.addTest(TestArrayLongList.suite());
-        suite.addTest(TestArrayUnsignedIntList.suite());
-
-        suite.addTest(TestFloatCollections.suite());
-        suite.addTest(TestAbstractFloatCollection.suite());
-        suite.addTest(TestRandomAccessFloatList.suite());
-        suite.addTest(TestArrayFloatList.suite());
-
-        suite.addTest(TestDoubleCollections.suite());
-        suite.addTest(TestAbstractDoubleCollection.suite());
-        suite.addTest(TestRandomAccessDoubleList.suite());
-        suite.addTest(TestArrayDoubleList.suite());
-
-        return suite;
+    public final void testFloatIteratorNotModifiable() {
+        FloatIterator iter = makeUnmodifiableFloatIterator();
+        assertTrue(iter.hasNext());
+        iter.next();
+        try {
+            iter.remove();
+            fail("Expected UnsupportedOperationException");
+        } catch(UnsupportedOperationException e) {
+            // expected
+        }
     }
+
+    public final void testIterateFloatIterator() {        
+        FloatIterator iter = makeUnmodifiableFloatIterator();
+        for(FloatIterator expected = makeFloatIterator(); expected.hasNext(); ) {
+            assertTrue(iter.hasNext());
+            assertEquals(expected.next(),iter.next(),(float)0);
+        }
+        assertTrue(! iter.hasNext() );
+    }
+
 }
-
