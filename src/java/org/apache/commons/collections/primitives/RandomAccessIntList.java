@@ -283,14 +283,19 @@ public abstract class RandomAccessIntList extends AbstractIntCollection implemen
     
         public void remove() {
             assertNotComodified();
-            if(-1 == _lastReturnedIndex) {
+            if (_lastReturnedIndex == -1) {
                 throw new IllegalStateException();
-            } else {
-                getList().removeElementAt(_lastReturnedIndex);
-                _lastReturnedIndex = -1;
-                _nextIndex--;
-                resyncModCount();
             }
+            if (_lastReturnedIndex == _nextIndex) {
+                // remove() following previous()
+                getList().removeElementAt(_lastReturnedIndex);
+            } else {
+                // remove() following next()
+                getList().removeElementAt(_lastReturnedIndex);
+                _nextIndex--;
+            }
+            _lastReturnedIndex = -1;
+            resyncModCount();
         }
         
         public void set(int value) {
