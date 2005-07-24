@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2004 The Apache Software Foundation
+ * Copyright 2002-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,7 +89,7 @@ public interface ByteList extends ByteCollection {
      * Returns <code>true</code> iff <i>that</i> is an <code>ByteList</code>
      * that contains the same elements in the same order as me.
      * In other words, returns <code>true</code> iff <i>that</i> is
-     * an <code>ByteList</code> that has the same {@link #size size} as me,
+     * a <code>ByteList</code> that has the same {@link #size() size} as me,
      * and for which the elements returned by its 
      * {@link ByteList#iterator iterator} are equal (<code>==</code>) to
      * the corresponding elements within me.
