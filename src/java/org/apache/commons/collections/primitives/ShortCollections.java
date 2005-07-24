@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2004 The Apache Software Foundation
+ * Copyright 2003-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ public final class ShortCollections {
      * Returns an unmodifiable version of the given non-null ShortList.
      * @param list the non-null ShortList to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null ShortList
-     * @throws NullPoShorterException if the given ShortList is null
+     * @throws NullPointerException if the given ShortList is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableShortList#wrap
      */    
     public static ShortList unmodifiableShortList(ShortList list) throws NullPointerException {
@@ -80,7 +80,7 @@ public final class ShortCollections {
      * Returns an unmodifiable version of the given non-null ShortIterator.
      * @param iter the non-null ShortIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null ShortIterator
-     * @throws NullPoShorterException if the given ShortIterator is null
+     * @throws NullPointerException if the given ShortIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableShortIterator#wrap
      */    
     public static ShortIterator unmodifiableShortIterator(ShortIterator iter) {
@@ -94,7 +94,7 @@ public final class ShortCollections {
      * Returns an unmodifiable version of the given non-null ShortListIterator.
      * @param iter the non-null ShortListIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null ShortListIterator
-     * @throws NullPoShorterException if the given ShortListIterator is null
+     * @throws NullPointerException if the given ShortListIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableShortListIterator#wrap
      */    
     public static ShortListIterator unmodifiableShortListIterator(ShortListIterator iter) {

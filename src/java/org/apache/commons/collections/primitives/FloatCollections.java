@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2004 The Apache Software Foundation
+ * Copyright 2003-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ public final class FloatCollections {
      * Returns an unmodifiable version of the given non-null FloatList.
      * @param list the non-null FloatList to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null FloatList
-     * @throws NullPoFloaterException if the given FloatList is null
+     * @throws NullPointerException if the given FloatList is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableFloatList#wrap
      */    
     public static FloatList unmodifiableFloatList(FloatList list) throws NullPointerException {
@@ -80,7 +80,7 @@ public final class FloatCollections {
      * Returns an unmodifiable version of the given non-null FloatIterator.
      * @param iter the non-null FloatIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null FloatIterator
-     * @throws NullPoFloaterException if the given FloatIterator is null
+     * @throws NullPointerException if the given FloatIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableFloatIterator#wrap
      */    
     public static FloatIterator unmodifiableFloatIterator(FloatIterator iter) {
@@ -94,7 +94,7 @@ public final class FloatCollections {
      * Returns an unmodifiable version of the given non-null FloatListIterator.
      * @param iter the non-null FloatListIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null FloatListIterator
-     * @throws NullPoFloaterException if the given FloatListIterator is null
+     * @throws NullPointerException if the given FloatListIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableFloatListIterator#wrap
      */    
     public static FloatListIterator unmodifiableFloatListIterator(FloatListIterator iter) {

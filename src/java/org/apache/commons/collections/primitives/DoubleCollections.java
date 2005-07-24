@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2004 The Apache Software Foundation
+ * Copyright 2003-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ public final class DoubleCollections {
      * Returns an unmodifiable version of the given non-null DoubleList.
      * @param list the non-null DoubleList to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null DoubleList
-     * @throws NullPoDoubleerException if the given DoubleList is null
+     * @throws NullPointerException if the given DoubleList is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableDoubleList#wrap
      */    
     public static DoubleList unmodifiableDoubleList(DoubleList list) throws NullPointerException {
@@ -80,7 +80,7 @@ public final class DoubleCollections {
      * Returns an unmodifiable version of the given non-null DoubleIterator.
      * @param iter the non-null DoubleIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null DoubleIterator
-     * @throws NullPoDoubleerException if the given DoubleIterator is null
+     * @throws NullPointerException if the given DoubleIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableDoubleIterator#wrap
      */    
     public static DoubleIterator unmodifiableDoubleIterator(DoubleIterator iter) {
@@ -94,7 +94,7 @@ public final class DoubleCollections {
      * Returns an unmodifiable version of the given non-null DoubleListIterator.
      * @param iter the non-null DoubleListIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null DoubleListIterator
-     * @throws NullPoDoubleerException if the given DoubleListIterator is null
+     * @throws NullPointerException if the given DoubleListIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableDoubleListIterator#wrap
      */    
     public static DoubleListIterator unmodifiableDoubleListIterator(DoubleListIterator iter) {

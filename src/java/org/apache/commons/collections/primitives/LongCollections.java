@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2004 The Apache Software Foundation
+ * Copyright 2003-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ public final class LongCollections {
      * Returns an unmodifiable version of the given non-null LongList.
      * @param list the non-null LongList to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null LongList
-     * @throws NullPoLongerException if the given LongList is null
+     * @throws NullPointerException if the given LongList is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableLongList#wrap
      */    
     public static LongList unmodifiableLongList(LongList list) throws NullPointerException {
@@ -80,7 +80,7 @@ public final class LongCollections {
      * Returns an unmodifiable version of the given non-null LongIterator.
      * @param iter the non-null LongIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null LongIterator
-     * @throws NullPoLongerException if the given LongIterator is null
+     * @throws NullPointerException if the given LongIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableLongIterator#wrap
      */    
     public static LongIterator unmodifiableLongIterator(LongIterator iter) {
@@ -94,7 +94,7 @@ public final class LongCollections {
      * Returns an unmodifiable version of the given non-null LongListIterator.
      * @param iter the non-null LongListIterator to wrap in an unmodifiable decorator
      * @return an unmodifiable version of the given non-null LongListIterator
-     * @throws NullPoLongerException if the given LongListIterator is null
+     * @throws NullPointerException if the given LongListIterator is null
      * @see org.apache.commons.collections.primitives.decorators.UnmodifiableLongListIterator#wrap
      */    
     public static LongListIterator unmodifiableLongListIterator(LongListIterator iter) {
