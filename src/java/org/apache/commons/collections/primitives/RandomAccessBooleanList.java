@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2004 The Apache Software Foundation
+ * Copyright 2002-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import java.util.NoSuchElementException;
  * <p />
  * Read-only subclasses must override {@link #get} and {@link #size}.
  * Mutable subclasses should also override {@link #set}.  Variably-sized
- * subclasses should also override {@link #add} and {@link #removeElementAt}.
+ * subclasses should also override {@link #add(boolean)} and {@link #removeElementAt}.
  * All other methods have at least some base implementation derived from
  * these.  Subclasses may choose to override these methods to provide a
  * more efficient implementation.

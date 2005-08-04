@@ -1,5 +1,5 @@
 /*
- * Copyright 2002-2004 The Apache Software Foundation
+ * Copyright 2002-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import java.util.NoSuchElementException;
  * Read-only subclasses must override {@link #get}
  * and {@link #size}.  Mutable subclasses
  * should also override {@link #set}.  Variably-sized
- * subclasses should also override {@link #add} 
+ * subclasses should also override {@link #add(byte)} 
  * and {@link #removeElementAt}.  All other methods
  * have at least some base implementation derived from 
  * these.  Subclasses may choose to override these methods
@@ -155,7 +155,7 @@ public abstract class RandomAccessByteList extends AbstractByteCollection implem
     public int hashCode() {
         int hash = 1;
         for(ByteIterator iter = iterator(); iter.hasNext(); ) {
-            hash = 31*hash + ((int)(iter.next()));
+            hash = 31*hash + iter.next();
         }
         return hash;
     }
