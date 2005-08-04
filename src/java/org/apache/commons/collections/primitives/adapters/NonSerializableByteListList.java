@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2004 The Apache Software Foundation
+ * Copyright 2003-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.ByteList;
 final class NonSerializableByteListList extends AbstractByteListList {
     
     /**
-     * Creates a {@link List List} wrapping
+     * Creates a {@link java.util.List List} wrapping
      * the specified {@link ByteList ByteList}.
      */
     public NonSerializableByteListList(ByteList list) {

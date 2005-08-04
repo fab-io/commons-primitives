@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2004 The Apache Software Foundation
+ * Copyright 2003-2005 The Apache Software Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.FloatCollection;
 final class NonSerializableFloatCollectionCollection extends AbstractFloatCollectionCollection {
     
     /**
-     * Creates a {@link Collection Collection} wrapping
+     * Creates a {@link java.util.Collection Collection} wrapping
      * the specified {@link FloatCollection FloatCollection}.
      */
     public NonSerializableFloatCollectionCollection(FloatCollection collection) {
