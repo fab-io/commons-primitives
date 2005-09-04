@@ -233,7 +233,7 @@ public class ArrayUnsignedShortList extends RandomAccessIntList implements IntLi
     //-------------------------------------------------------------------------
 
     private final int toInt(short value) { 
-        return ((int)value)&MAX_VALUE;
+        return value & MAX_VALUE;
     }
 
     private final short fromInt(int value) {

@@ -233,7 +233,7 @@ public class ArrayUnsignedByteList extends RandomAccessShortList implements Shor
     //-------------------------------------------------------------------------
 
     private final short toShort(byte value) { 
-        return (short)(((short)value)&MAX_VALUE);
+        return (short)(value & MAX_VALUE);
     }
 
     private final byte fromShort(short value) {

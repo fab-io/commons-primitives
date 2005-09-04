@@ -233,7 +233,7 @@ public class ArrayUnsignedIntList extends RandomAccessLongList implements LongLi
     //-------------------------------------------------------------------------
 
     private final long toLong(int value) { 
-        return ((long)value)&MAX_VALUE;
+        return value & MAX_VALUE;
     }
 
     private final int fromLong(long value) {
