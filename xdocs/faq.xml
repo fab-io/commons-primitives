@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-   Copyright 2003-2004 The Apache Software Foundation
+   Copyright 2003-2005 The Apache Software Foundation
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
 <document>
 
  <properties>
-  <title>Commons Primitives: FAQ</title>
+  <title>FAQ</title>
   <author email="commons-dev@jakarta.apache.org">Commons Documentation Team</author>
  </properties>
 
  <body>
 
-<section name="The Primitives Component">
+<section name="FAQ">
 <dl>
 <dt>Q: Why would I use the primitive collections?</dt>
 <dd>
@@ -130,7 +130,7 @@ collections of primitive types, or that process them very frequently.
 </p>
 </dd>
 
-<dt>Q: Won't this functionality be available in JDK 1.5 using auto-boxing and generics?</dt>
+<dt>Q: Isn't this functionality available in JDK 1.5 using auto-boxing and generics?</dt>
 <dd>
 <p>
 No.
@@ -140,7 +140,7 @@ implementation, for instance, a List of Integers or a List of Strings from the s
 implemenation.  Since the distinction between Java primitives and Java Objects is not going away, it will
 not be possible to, for example, instantiate a List of ints from that same prototype.
 </p><p>
-Using autoboxing, it will be possible to emulate the syntax of using the primitive collections.
+Using autoboxing, it is possible to emulate the syntax of using the primitive collections.
 For example, <code>list.add(19)</code> will work equally well whether <code>list</code> is a List or IntList,
 since the compiler will automatically convert <code>list.add(19)</code> into <code>list.add(new Integer(19))</code>.
 </p><p>

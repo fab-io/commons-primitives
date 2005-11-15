@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+   Copyright 2005 The Apache Software Foundation
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<document>
+ <properties>
+  <title>User guide</title>
+  <author email="commons-dev@jakarta.apache.org">Commons Documentation Team</author>
+ </properties>
+<body>
+<!-- ================================================== -->
+<section name="User guide">
+<p>
+Commons Primitives provides collections implementations and utilities
+for each of the primitive types.
+This guide outlines the naming convention used.
+</p>
+<!-- ================================================== -->
+<blockquote>
+<dl>
+<!-- ================================================== -->
+<dt>org.apache.commons.collections.primitives</dt>
+<dd>
+<p>Contains interfaces, base classes and concrete implementations for primitive collections.</p>
+<dl>
+<dt>&lt;Type&gt;Collection</dt><dd>The java.util.Collection interface adapted for the primitive type &lt;Type&gt;</dd>
+<dt>&lt;Type&gt;Iterator</dt><dd>The java.util.Iterator interface adapted for the primitive type &lt;Type&gt;</dd>
+<dt>&lt;Type&gt;List</dt><dd>The java.util.List interface adapted for the primitive type &lt;Type&gt;</dd>
+<dt>&lt;Type&gt;ListIterator</dt><dd>The java.util.ListIterator interface adapted for the primitive type &lt;Type&gt;</dd>
+<dt>Abstract&lt;Type&gt;Collection</dt><dd>An abstract base for &lt;Type&gt;Collection implementations</dd>
+<dt>RandomAccess&lt;Type&gt;List</dt><dd>An abstract base for &lt;Type&gt;List implementations backed by random access data structures like arrays</dd>
+<dt>Array&lt;Type&gt;List</dt><dd>A &lt;Type&gt;List backed by an array</dd>
+<dt>&lt;Type&gt;Collections</dt><dd>Static utility methods for working with &lt;Type&gt;Collection instances</dd>
+</dl>  	
+</dd>
+<!-- ================================================== -->
+<dt>org.apache.commons.collections.primitives.adapters</dt>
+<dd>
+<p>Contains adapters between the Object-based and primitive collections.</p>
+</dd>
+
+<dt>org.apache.commons.collections.primitives.adapters.io</dt>
+<dd>
+<p>Contains adapters that convert between I/O Streams/Readers and byte/char iterators.</p>
+</dd>
+<!-- ================================================== -->
+<dt>org.apache.commons.collections.primitives.decorators</dt>
+<dd>
+<dl>
+<dt>Umodifiable&lt;Type&gt;List</dt><dd>Makes a &lt;Type&gt;List unmodifiable</dd>
+<dt>Umodifiable&lt;Type&gt;Iterator</dt><dd>Makes a &lt;Type&gt;Iterator unmodifiable</dd>
+<dt>Umodifiable&lt;Type&gt;ListIterator</dt><dd>Makes a &lt;Type&gt;ListIterator unmodifiable</dd>
+</dl>
+</dd>
+<!-- ================================================== -->
+</dl>
+</blockquote>
+<!-- ================================================== -->
+<p>
+For more information on Commons Primitives, you might like to visit the 
+<a href="faq.html">FAQ</a> or <a href="api-release/index.html">javadoc</a>.
+</p>
+</section>
+<!-- ================================================== -->
+</body>
+</document>

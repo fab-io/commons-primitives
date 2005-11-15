@@ -16,12 +16,13 @@
 -->
 <project>
   <pomVersion>3</pomVersion>
-  
-  <id>commons-primitives</id>
+
+  <groupId>commons-primitives</groupId>
+  <artifactId>commons-primitives</artifactId>
   <name>Commons Primitives</name>
-  <currentVersion>1.1-dev</currentVersion>
+  <currentVersion>1.1-SNAPSHOT</currentVersion>
   <inceptionYear>2002</inceptionYear>
-  <shortDescription>Apache Jakarta Commons Primitives</shortDescription>
+  <shortDescription>Commons Primitives</shortDescription>
   <description>
     Commons Primitives is a set of collection and utility classes for primitive types.
     The Java language has a clear distinction between Object and primitive types.
@@ -30,9 +31,9 @@
     This package addresses this by providing a set of utility and collection classes for primitives.
   </description>
   <logo>/images/logo.png</logo>
-  
-  <url>http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</url>
-  <package>org.apache.commons.${pom.artifactId.substring(8)}</package>
+
+  <url>http://jakarta.apache.org/commons/primitives/</url>
+  <package>org.apache.commons.collections.primitives</package>
 
   <organization>
     <name>The Apache Software Foundation</name>
@@ -50,13 +51,13 @@
   
   <gumpRepositoryId>jakarta</gumpRepositoryId>
   <issueTrackingUrl>http://issues.apache.org/bugzilla/</issueTrackingUrl>
-  <siteAddress>jakarta.apache.org</siteAddress>
-  <siteDirectory>/www/jakarta.apache.org/commons/${pom.artifactId.substring(8)}/</siteDirectory>
-  <distributionDirectory>/www/jakarta.apache.org/builds/jakarta-commons/${pom.artifactId.substring(8)}/</distributionDirectory>
+  <siteAddress>people.apache.org</siteAddress>
+  <siteDirectory>/www/jakarta.apache.org/commons/primitives/</siteDirectory>
+  <distributionDirectory>/www/jakarta.apache.org/builds/jakarta-commons/primitives/</distributionDirectory>
   
   <repository>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/${pom.artifactId.substring(8)}/trunk</connection>
-    <url>http://svn.apache.org/repos/asf/jakarta/commons/proper/${pom.artifactId.substring(8)}/trunk</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/commons/proper/primitives/trunk</connection>
+    <url>http://svn.apache.org/repos/asf/jakarta/commons/proper/primitives/trunk</url>
   </repository>
   
   <mailingLists>
@@ -104,25 +105,31 @@
   </contributors>
 
   <dependencies>
-    <!-- compile time dependencies -->
     <dependency>
-      <id>junit</id>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <url>http://www.junit.org/</url>
+      <properties>
+        <scope>test</scope>
+          <comment>
+              &lt;strong&gt;Test Only&lt;/strong&gt; - required only for
+              running the Primitives unit tests
+          </comment>
+      </properties>
     </dependency>
     <dependency>
-      <id>commons-collections:commons-collections-testframework</id>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections-testframework</artifactId>
       <version>3.1</version>
       <url>http://jakarta.apache.org/commons/collections/</url>
-    </dependency>
-
-    <!-- run time dependencies -->
-    <!-- none currently -->
-    
-    <!-- maven dependencies -->
-    <dependency>
-      <id>jdepend</id>
-      <version>2.5</version>
+      <properties>
+        <scope>test</scope>
+          <comment>
+              &lt;strong&gt;Test Only&lt;/strong&gt; - required only for
+              running the Primitives unit tests
+          </comment>
+      </properties>
     </dependency>
   </dependencies>
 
@@ -149,6 +156,6 @@
     <report>maven-license-plugin</report>
     <report>maven-tasklist-plugin</report>
   </reports>
-  
+
 </project>
 
