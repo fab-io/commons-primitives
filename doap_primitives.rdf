@@ -8,7 +8,7 @@
     <license rdf:resource="http://usefulinc.com/doap/licenses/asl20"/>
     <bug-database rdf:resource="http://issues.apache.org/bugzilla/buglist.cgi?product=Commons&amp;component=primitives"/>
     <download-page rdf:resource="http://jakarta.apache.org/site/downloads/downloads_commons-primitives.cgi"/>
-    <asfext:pmc rdf:resource="Jakarta"/>
+    <asfext:pmc rdf:resource="http://jakarta.apache.org/"/>
     <shortdesc xml:lang="en">Commons Primitives</shortdesc>
     <description xml:lang="en">
     Commons Primitives is a set of collection and utility classes for primitive types.
