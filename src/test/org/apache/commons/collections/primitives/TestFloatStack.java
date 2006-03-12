@@ -82,8 +82,7 @@ public class TestFloatStack extends TestCase
         try
         {
             stack.peek() ;
-            throw new AssertionError( 
-                    "Peek should have thrown an EmptyStackException" ) ;
+            fail("Peek should have thrown an EmptyStackException" ) ;
         }
         catch( EmptyStackException e )
         {
@@ -103,8 +102,7 @@ public class TestFloatStack extends TestCase
         try
         {
             stack.pop() ;
-            throw new AssertionError( 
-                    "Pop should have thrown an EmptyStackException" ) ;
+            fail("Pop should have thrown an EmptyStackException" ) ;
         }
         catch( EmptyStackException e )
         {
