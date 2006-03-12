@@ -14,7 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<!DOCTYPE org.apache.commons.menus SYSTEM '../../commons-build/menus/menus.dtd'>
+<!DOCTYPE org.apache.commons.menus SYSTEM 'http://jakarta.apache.org/commons/build/maven-build.dtd'>
 <project name="Primitives">
 
   <title>Primitives</title>
@@ -42,7 +42,7 @@
       <item name="Javadoc (SVN latest)" href="apidocs/index.html"/>
     </menu>
 
-    &common-menus;
+    &commons;
 
   </body>
 </project>

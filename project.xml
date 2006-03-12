@@ -112,10 +112,10 @@
       <url>http://www.junit.org/</url>
       <properties>
         <scope>test</scope>
-          <comment>
+        <comment>
               &lt;strong&gt;Test Only&lt;/strong&gt; - required only for
               running the Primitives unit tests
-          </comment>
+        </comment>
       </properties>
     </dependency>
     <dependency>
@@ -125,10 +125,21 @@
       <url>http://jakarta.apache.org/commons/collections/</url>
       <properties>
         <scope>test</scope>
-          <comment>
+        <comment>
               &lt;strong&gt;Test Only&lt;/strong&gt; - required only for
               running the Primitives unit tests
-          </comment>
+        </comment>
+      </properties>
+    </dependency>
+    <dependency>
+      <groupId>maven-plugins</groupId>
+      <artifactId>maven-cobertura-plugin</artifactId>
+      <version>1.1.1</version>
+      <url>http://maven-plugins.sourceforge.net/maven-cobertura-plugin/</url>
+      <type>plugin</type>
+      <properties>
+       <scope>test</scope>
+       <comment>Required only for generating test coverage reports.</comment>
       </properties>
     </dependency>
   </dependencies>
@@ -145,16 +156,21 @@
   </build>
 
   <reports>
-  	<report>maven-changelog-plugin</report>
-   	<report>maven-changes-plugin</report>
-    <report>maven-developer-activity-plugin</report>
-    <report>maven-file-activity-plugin</report>
-    <report>maven-javadoc-plugin</report>
-    <report>maven-jdepend-plugin</report>
-    <report>maven-junit-report-plugin</report>
-    <report>maven-jxr-plugin</report>
-    <report>maven-license-plugin</report>
-    <report>maven-tasklist-plugin</report>
+      <!--report>maven-changelog-plugin</report-->
+      <!--report>maven-developer-activity-plugin</report-->
+      <!--report>maven-file-activity-plugin</report-->
+      <report>maven-changes-plugin</report>
+      <report>maven-checkstyle-plugin</report>
+      <report>maven-javadoc-plugin</report>
+      <report>maven-jdepend-plugin</report>
+      <report>maven-junit-report-plugin</report>
+      <report>maven-jxr-plugin</report>
+      <report>maven-license-plugin</report>
+      <report>maven-cobertura-plugin</report>
+      <report>maven-jdiff-plugin</report>
+      <report>maven-pmd-plugin</report>
+      <!--report>maven-linkcheck-plugin</report-->
+      <!--report>maven-tasklist-plugin</report-->
   </reports>
 
 </project>
