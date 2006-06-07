@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-   Copyright 2003-2005 The Apache Software Foundation
+   Copyright 2003-2006 The Apache Software Foundation
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -82,17 +82,9 @@ Please remember that the lists are shared between all commons components,
 so prefix your email by [primitives].
 </p>
 <p>
-Issues may be reported via <a href="issue-tracking.html">ASF Bugzilla</a>.
-Please remember that Bugzilla is shared between all commons components,
-so prefix your issue by [primitives].
+Issues may be reported via <a href="issue-tracking.html">ASF Jira</a>.
 </p>
 </section>
 <!-- ================================================== -->
 </body>
 </document>
-
-
-
-
-
-
