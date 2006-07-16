@@ -24,8 +24,8 @@ Releases:
   Development:
     1.1-dev 
       CVS Tag: HEAD
-      Binaries: http://cvs.apache.org/builds/jakarta-commons/nightly/commons-primitives/
-      Source: http://cvs.apache.org/builds/jakarta-commons/nightly/commons-primitives/
+      Binaries: http://people.apache.org/builds/jakarta-commons/nightly/commons-primitives/
+      Source: http://people.apache.org/builds/jakarta-commons/nightly/commons-primitives/
 
 Assets:
 
@@ -35,7 +35,7 @@ Assets:
                     commons-user@jakarta.apache.org (users)
 
   Repositories:     jakarta-commons/primitives
-                    http://cvs.apache.org/viewcvs.cgi/jakarta-commons/primitives/
+                    http://people.apache.org/viewcvs.cgi/jakarta-commons/primitives/
                     Also see http://jakarta.apache.org/commons/primitives/cvs-usage.html
 
 Committers:
