@@ -31,8 +31,8 @@ Assets:
 
   Web site:         http://jakarta.apache.org/commons/primitives
 
-  Mailing lists:    commons-dev@jakarta.apache.org  (developers)
-                    commons-user@jakarta.apache.org (users)
+  Mailing lists:    dev@commons.apache.org  (developers)
+                    user@commons.apache.org (users)
 
   Repositories:     jakarta-commons/primitives
                     http://people.apache.org/viewcvs.cgi/jakarta-commons/primitives/

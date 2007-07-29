@@ -19,7 +19,7 @@ limitations under the License.
 <document>
  <properties>
   <title>Proposal</title>
-  <author email="commons-dev@jakarta.apache.org">Commons Documentation Team</author>
+  <author email="dev@commons.apache.org">Commons Documentation Team</author>
  </properties>
 <body>
 <!-- ================================================== -->
@@ -79,7 +79,7 @@ The proposed package name for the new component is
 <li>CVS Repository - New directory <code>primitives</code> in the
     <code>jakarta-commons</code> CVS repository.</li>
 <li>Mailing List - Discussions will take place on the general
-    <em>commons-dev@jakarta.apache.org</em> mailing list.  To help
+    <em>dev@commons.apache.org</em> mailing list.  To help
     list subscribers identify messages of interest, it is suggested that
     the message subject of messages about this component be prefixed with
     [primitives].</li>
