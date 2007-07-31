@@ -19,8 +19,8 @@
   </description>
     <repository>
       <SVNRepository>
-        <browse rdf:resource="http://svn.apache.org/repos/asf/jakarta/commons/proper/primitives/trunk"/>
-        <location rdf:resource="http://svn.apache.org/repos/asf/jakarta/commons/proper/primitives"/>
+        <browse rdf:resource="http://svn.apache.org/repos/asf/commons/proper/primitives/trunk"/>
+        <location rdf:resource="http://svn.apache.org/repos/asf/commons/proper/primitives"/>
       </SVNRepository>
     </repository>
     <release>
