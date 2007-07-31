@@ -55,7 +55,7 @@
   <release version="1.0" date="2003-11-05">
     <action dev="rwaldhoff" type="add">
       Initial release, containing types initially developed (and unofficially released) as part of
-      the Jakarta Commons Collections component.
+      the Apache Commons Collections component.
     </action>              
   </release>
   

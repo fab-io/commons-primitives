@@ -17,7 +17,7 @@
 -->
 <document>
  <properties>
-  <title>Apache Jakarta Commons Primitives</title>
+  <title>Apache Apache Commons Primitives</title>
   <author email="dev@commons.apache.org">Commons Documentation Team</author>
  </properties>
 <body>
@@ -55,7 +55,7 @@ The JavaDoc API documents are available online:
 </ul>
 <p>
 The <a href="cvs-usage.html">subversion repository</a> can be
-<a href="http://svn.apache.org/viewcvs.cgi/jakarta/commons/proper/primitives/trunk/">browsed</a>.
+<a href="http://svn.apache.org/viewvc/commons/proper/primitives/trunk/">browsed</a>.
 </p>
 </section>
 <!-- ================================================== -->
