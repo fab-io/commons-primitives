@@ -10,32 +10,31 @@ Summary:
   Relatively little functionality is provided by the JDK for primitives.
   This package addresses this by providing a set of utility and collection classes for primitives.
 
-  Commons Primitives is a component developed by Apache Commons, 
-  a subproject of the Apache Jakarta project.
+  Commons Primitives is a component developed by Apache Commons.
  
 Releases:
 
   Stable:
     1.0.
       CVS Tag: PRIMITIVES_1_0
-      Binaries: http://jakarta.apache.org/site/binindex.cgi#commons-primitives
-      Source: http://jakarta.apache.org/site/sourceindex.cgi#commons-primitives
+      Binaries: http://commons.apache.org/downloads/download_primitives.cgi
+      Source: http://commons.apache.org/downloads/download_primitives.cgi
 
   Development:
     1.1-dev 
       CVS Tag: HEAD
-      Binaries: http://people.apache.org/builds/jakarta-commons/nightly/commons-primitives/
-      Source: http://people.apache.org/builds/jakarta-commons/nightly/commons-primitives/
+      Binaries: http://people.apache.org/builds/commons/nightly/commons-primitives/
+      Source: http://people.apache.org/builds/commons/nightly/commons-primitives/
 
 Assets:
 
-  Web site:         http://commons.apache.org/primitives
+  Web site:         http://commons.apache.org/primitives/
 
   Mailing lists:    dev@commons.apache.org  (developers)
                     user@commons.apache.org (users)
 
-  Repositories:     jakarta-commons/primitives
-                    http://people.apache.org/viewcvs.cgi/jakarta-commons/primitives/
+  Repositories:     commons/primitives
+                    http://svn.apache.org/viewvc/commons/proper/primitives/
                     Also see http://commons.apache.org/primitives/cvs-usage.html
 
 Committers:
