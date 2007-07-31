@@ -27,7 +27,7 @@
 
     <menu name="Commons Primitives">
       <item name="Overview" href="/index.html"/>
-      <item name="Download" href="http://jakarta.apache.org/site/downloads/downloads_commons-primitives.cgi"/>
+      <item name="Download" href="http://commons.apache.org/downloads/download_primitives.cgi"/>
       <item name="Users guide" href="/userguide.html"/>
       <item name="FAQ" href="/faq.html"/>
       <item name="Javadoc (1.0 release)" href="api-release/index.html"/>
