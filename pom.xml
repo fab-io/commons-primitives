@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-parent</artifactId>
+    <version>4</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>commons-primitives</groupId>
+  <artifactId>commons-primitives</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <name>Commons Primitives</name>
+
+  <inceptionYear>2002</inceptionYear>
+  <description>
+    Commons Primitives is a set of collection and utility classes for primitive types.
+    The Java language has a clear distinction between Object and primitive types.
+    A lot of functionality is provided for Object types, including the Java Collection Framework.
+    Relatively little functionality is provided by the JDK for primitives.
+    This package addresses this by providing a set of utility and collection classes for primitives.
+  </description>
+
+  <url>http://commons.apache.org/primitives/</url>
+
+  <issueManagement>
+    <system>jira</system>
+    <url>http://issues.apache.org/jira/browse/PRIMITIVES</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/primitives/trunk</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/primitives/trunk</developerConnection>
+    <url>http://svn.apache.org/viewvc/commons/proper/primitives/trunk</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Stephen Colebourne</name>
+      <id>scolebourne</id>
+      <email>scolebourne@apache.org</email>
+    </developer>
+    <developer>
+      <name>Rodney Waldhoff</name>
+      <id>rwaldhoff</id>
+      <email>rwaldhoff@apache.org</email>
+    </developer>
+    <developer>
+      <name>Matthew Hawthorne</name>
+      <id>matth</id>
+      <email>matth@apache.org</email>
+    </developer>
+    <developer>
+      <name>Alex Karasulu</name>
+      <id>akarasulu</id>
+      <email>akarasulu@apache.org</email>
+    </developer>
+  </developers>
+
+  <contributors>
+    <contributor>
+      <name>Robert Fischer</name>
+    </contributor>
+  </contributors>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections-testframework</artifactId>
+      <version>3.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/java</sourceDirectory>
+    <testSourceDirectory>src/test</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>.</directory>
+        <targetPath>META-INF</targetPath>
+          <includes>
+            <include>NOTICE.txt</include>
+            <include>LICENSE.txt</include>
+          </includes>
+        </resource>
+      </resources>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>org/apache/commons/collections/primitives/AllTestSuite.java</include>
+              </includes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+
+</project>
