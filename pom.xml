@@ -22,9 +22,10 @@
   <parent>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-parent</artifactId>
-    <version>7</version>
+    <version>8</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
+  <packaging>bundle</packaging>
   <groupId>commons-primitives</groupId>
   <artifactId>commons-primitives</artifactId>
   <version>1.1-SNAPSHOT</version>
@@ -95,6 +96,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <properties>
+    <commons.componentid>primitives</commons.componentid>
+    <commons.release.version>1.0</commons.release.version>
+    <commons.binary.suffix></commons.binary.suffix>
+    <commons.jira.id>PRIMITIVES</commons.jira.id>
+    <commons.jira.pid>12310489</commons.jira.pid>
+  </properties> 
 
   <build>
     <sourceDirectory>src/java</sourceDirectory>
