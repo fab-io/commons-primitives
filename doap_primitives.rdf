@@ -24,11 +24,11 @@
       </SVNRepository>
     </repository>
     <release>
-      <revision>
+      <Version>
         <name>commons-primitives</name>
         <created>2003-11-05</created>
-        <version>1.0</version>
-      </revision>
+        <revision>1.0</revision>
+      </Version>
     </release>
     <mailing-list rdf:resource="http://commons.apache.org/mail-lists.html"/>
   </Project>
