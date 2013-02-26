@@ -39,7 +39,7 @@
     This package addresses this by providing a set of utility and collection classes for primitives.
   </description>
 
-  <url>http://commons.apache.org/primitives/</url>
+  <url>http://commons.apache.org/proper/commons-primitives/</url>
 
   <issueManagement>
     <system>jira</system>
@@ -102,7 +102,15 @@
     <commons.binary.suffix></commons.binary.suffix>
     <commons.jira.id>PRIMITIVES</commons.jira.id>
     <commons.jira.pid>12310489</commons.jira.pid>
-  </properties> 
+  </properties>
+
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <name>Apache Commons Site</name>
+      <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-primitives</url>
+    </site>
+  </distributionManagement>
 
   <build>
     <sourceDirectory>src/java</sourceDirectory>
