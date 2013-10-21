@@ -28,11 +28,11 @@
   <groupId>commons-primitives</groupId>
   <artifactId>commons-primitives</artifactId>
   <version>1.1-SNAPSHOT</version>
-  <name>Commons Primitives</name>
+  <name>Apache Commons Primitives</name>
 
   <inceptionYear>2002</inceptionYear>
   <description>
-    Commons Primitives is a set of collection and utility classes for primitive types.
+    Apache Commons Primitives is a set of collection and utility classes for primitive types.
     The Java language has a clear distinction between Object and primitive types.
     A lot of functionality is provided for Object types, including the Java Collection Framework.
     Relatively little functionality is provided by the JDK for primitives.
