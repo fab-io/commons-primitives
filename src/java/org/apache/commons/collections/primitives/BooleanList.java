@@ -32,7 +32,7 @@ public interface BooleanList extends BooleanCollection {
      * <p/>
      * If a collection refuses to add the specified element for any reason
      * other than that it already contains the element, it <i>must</i>
-     * throw an exception (rather than simply returning <tt>false</tt>).
+     * throw an exception (rather than simply returning {@code false}).
      * This preserves the invariant that a collection always contains the
      * specified element after this call returns.
      * 

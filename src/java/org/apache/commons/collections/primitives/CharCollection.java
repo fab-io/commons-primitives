@@ -36,7 +36,7 @@ public interface CharCollection {
      * If a collection refuses to add the specified
      * element for any reason other than that it already contains
      * the element, it <i>must</i> throw an exception (rather than
-     * simply returning <tt>false</tt>).  This preserves the invariant
+     * simply returning {@code false}).  This preserves the invariant
      * that a collection always contains the specified element after 
      * this call returns. 
      * 
