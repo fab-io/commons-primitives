@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.ByteIterator;
 /**
  * Adapts an {@link ByteIterator ByteIterator} to the
  * {@link java.util.Iterator Iterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ByteIterator ByteIterator} 
  * implementation in the "obvious" way.

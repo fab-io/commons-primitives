@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.CharList;
 /**
  * Adapts an {@link CharList CharList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link CharList CharList} 
  * implementation in the "obvious" way.

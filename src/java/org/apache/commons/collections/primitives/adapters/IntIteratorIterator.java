@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.IntIterator;
 /**
  * Adapts an {@link IntIterator IntIterator} to the
  * {@link java.util.Iterator Iterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link IntIterator IntIterator} 
  * implementation in the "obvious" way.

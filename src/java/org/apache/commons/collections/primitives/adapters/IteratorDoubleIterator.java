@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.DoubleIterator;
  * {@link Iterator Iterator} 
  * to the {@link DoubleIterator DoubleIterator} 
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link Iterator Iterator} 
  * implementation in the "obvious" way.

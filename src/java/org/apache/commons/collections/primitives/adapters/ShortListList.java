@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.ShortList;
 /**
  * Adapts an {@link ShortList ShortList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ShortList ShortList} 
  * implementation in the "obvious" way.

@@ -20,7 +20,6 @@ package org.apache.commons.collections.primitives;
  * A bi-directional iterator over <code>boolean</code> values.
  *
  * @see org.apache.commons.collections.primitives.adapters.BooleanListIteratorListIterator
- * @see org.apache.commons.collections.primitives.adapters.BooleanIteratorBooleanListIterator
  *
  * @since Commons Primitives 1.1
  * @version $Revision$ $Date$
@@ -33,7 +32,7 @@ public interface BooleanListIterator extends BooleanIterator {
      * that would have been returned by {@link #next}, if any,
      * and immediately after the next element that would have been 
      * returned by {@link #previous}, if any.
-     * <p/>
+     * <p>
      * The new element is inserted immediately before the implied
      * cursor. A subsequent call to {@link #previous} will return
      * the added element, a subsequent call to {@link #next} will

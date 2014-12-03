@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.FloatList;
 /**
  * Adapts an {@link FloatList FloatList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link FloatList FloatList} 
  * implementation in the "obvious" way.

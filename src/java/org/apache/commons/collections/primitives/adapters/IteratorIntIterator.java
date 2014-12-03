@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.IntIterator;
  * {@link Iterator Iterator} 
  * to the {@link IntIterator IntIterator} 
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link Iterator Iterator} 
  * implementation in the "obvious" way.

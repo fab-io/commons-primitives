@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.LongList;
 /**
  * Adapts an {@link LongList LongList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link LongList LongList} 
  * implementation in the "obvious" way.

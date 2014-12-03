@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.FloatListIterator;
 /**
  * Adapts a {@link Number}-valued {@link ListIterator ListIterator} 
  * to the {@link FloatListIterator FloatListIterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link FloatListIterator FloatListIterator} 
  * implementation in the "obvious" way.

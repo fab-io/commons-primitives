@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.IntList;
 /**
  * Adapts an {@link IntList IntList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link IntList IntList} 
  * implementation in the "obvious" way.

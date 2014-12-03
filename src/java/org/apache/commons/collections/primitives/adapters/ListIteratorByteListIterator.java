@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.ByteListIterator;
 /**
  * Adapts a {@link Number}-valued {@link ListIterator ListIterator} 
  * to the {@link ByteListIterator ByteListIterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ByteListIterator ByteListIterator} 
  * implementation in the "obvious" way.

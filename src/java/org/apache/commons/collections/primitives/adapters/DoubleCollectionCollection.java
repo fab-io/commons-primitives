@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.DoubleCollection;
  * Adapts an {@link DoubleCollection DoubleCollection}
  * to the {@link java.util.Collection Collection}
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link DoubleCollection DoubleCollection} 
  * implementation in the "obvious" way.

@@ -26,7 +26,7 @@ import org.apache.commons.collections.primitives.BooleanCollection;
  * Collection} to the {@link
  * org.apache.commons.collections.primitives.BooleanCollection
  * BooleanCollection} interface.
- * <p/>
+ * <p>
  * This implementation delegates most methods to the provided
  * {@link java.util.Collection Collection} implementation in the "obvious" way.
  * 

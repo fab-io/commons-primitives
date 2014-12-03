@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.DoubleList;
 /**
  * Adapts an {@link DoubleList DoubleList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link DoubleList DoubleList} 
  * implementation in the "obvious" way.

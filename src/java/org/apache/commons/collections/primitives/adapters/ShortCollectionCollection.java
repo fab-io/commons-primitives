@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.ShortCollection;
  * Adapts an {@link ShortCollection ShortCollection}
  * to the {@link java.util.Collection Collection}
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ShortCollection ShortCollection} 
  * implementation in the "obvious" way.

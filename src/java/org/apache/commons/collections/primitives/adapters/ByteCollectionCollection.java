@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.ByteCollection;
  * Adapts an {@link ByteCollection ByteCollection}
  * to the {@link java.util.Collection Collection}
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ByteCollection ByteCollection} 
  * implementation in the "obvious" way.

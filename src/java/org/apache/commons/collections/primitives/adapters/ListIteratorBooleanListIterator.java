@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.BooleanListIterator;
 /**
  * Adapts a {@link Number}-valued {@link ListIterator ListIterator} 
  * to the {@link BooleanListIterator BooleanListIterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link BooleanListIterator BooleanListIterator} 
  * implementation in the "obvious" way.

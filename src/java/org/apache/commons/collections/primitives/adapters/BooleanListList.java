@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.BooleanList;
 /**
  * Adapts an {@link BooleanList BooleanList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link BooleanList BooleanList} 
  * implementation in the "obvious" way.

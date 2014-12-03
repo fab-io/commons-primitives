@@ -32,7 +32,7 @@ public interface FloatList extends FloatCollection {
      * Appends the specified element to the end of me
      * (optional operation).  Returns <code>true</code>
      * iff I changed as a result of this call.
-     * <p/>
+     * <p>
      * If a collection refuses to add the specified
      * element for any reason other than that it already contains
      * the element, it <i>must</i> throw an exception (rather than
@@ -115,15 +115,15 @@ public interface FloatList extends FloatCollection {
         
     /**
      * Returns my hash code.
-     * <p />
+     * <p>
      * The hash code of an <code>FloatList</code> is defined to be the
      * result of the following calculation:
      * <pre> int hash = 1;
      * for(FloatIterator iter = iterator(); iter.hasNext(); ) {
      *   float value = iter.next();
-     *   hash = 31*hash + (int)(value ^ (value >>> 32));
+     *   hash = 31*hash + (int)(value ^ (value &gt;&gt;&gt; 32));
      * }</pre>
-     * <p />
+     * <p>
      * This contract ensures that this method is consistent with 
      * {@link #equals equals} and with the 
      * {@link java.util.List#hashCode hashCode}
@@ -226,12 +226,12 @@ public interface FloatList extends FloatCollection {
      * the returned list are reflected in me, and vice-versa.
      * The returned list supports all of the optional operations
      * that I support.
-     * <p/>
+     * <p>
      * Note that when <code><i>fromIndex</i> == <i>toIndex</i></code>,
      * the returned list is initially empty, and when 
-     * <code><i>fromIndex</i> == 0 && <i>toIndex</i> == {@link #size() size()}</code>
+     * <code><i>fromIndex</i> == 0 &amp;&amp; <i>toIndex</i> == {@link #size() size()}</code>
      * the returned list is my "improper" sublist, containing all my elements.
-     * <p/>
+     * <p>
      * The semantics of the returned list become undefined
      * if I am structurally modified in any way other than 
      * via the returned list.

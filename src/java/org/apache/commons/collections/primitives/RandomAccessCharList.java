@@ -22,7 +22,7 @@ import java.util.NoSuchElementException;
 /**
  * Abstract base class for {@link CharList}s backed 
  * by random access structures like arrays.
- * <p />
+ * <p>
  * Read-only subclasses must override {@link #get}
  * and {@link #size}.  Mutable subclasses
  * should also override {@link #set}.  Variably-sized

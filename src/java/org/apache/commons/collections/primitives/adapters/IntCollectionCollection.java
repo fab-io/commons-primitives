@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.IntCollection;
  * Adapts an {@link IntCollection IntCollection}
  * to the {@link java.util.Collection Collection}
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link IntCollection IntCollection} 
  * implementation in the "obvious" way.

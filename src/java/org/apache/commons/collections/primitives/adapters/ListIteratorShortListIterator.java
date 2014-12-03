@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.ShortListIterator;
 /**
  * Adapts a {@link Number}-valued {@link ListIterator ListIterator} 
  * to the {@link ShortListIterator ShortListIterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ShortListIterator ShortListIterator} 
  * implementation in the "obvious" way.

@@ -30,7 +30,7 @@ public interface BooleanCollection
     /** 
      * Ensures that I contain the specified element (optional operation).
      * Returns <code>true</code> iff I changed as a result of this call.
-     * <p/>
+     * <p>
      * If a collection refuses to add the specified element for any reason
      * other than that it already contains the element, it <i>must</i>
      * throw an exception (rather than simply returning {@code false}).
@@ -158,10 +158,10 @@ public interface BooleanCollection
     /** 
      * Returns an array containing all of my elements.  The length of the
      * returned array will be equal to my {@link #size size}.
-     * <p/>
+     * <p>
      * The returned array will be independent of me, so that callers may
      * modify that returned array without modifying this collection.
-     * <p/>
+     * <p>
      * When I guarantee the order in which elements are returned by an
      * {@link #iterator iterator}, the returned array will contain elements
      * in the same order.
@@ -175,10 +175,10 @@ public interface BooleanCollection
      * if it is large enough.  When the length of the given array is larger
      * than the number of elements I contain, values outside of my range will
      * be unchanged.
-     * <p/>
+     * <p>
      * The returned array will be independent of me, so that callers may modify
      * that returned array without modifying this collection.
-     * <p/>
+     * <p>
      * When I guarantee the order in which elements are returned by an {@link
      * #iterator iterator}, the returned array will contain elements in the
      * same order.

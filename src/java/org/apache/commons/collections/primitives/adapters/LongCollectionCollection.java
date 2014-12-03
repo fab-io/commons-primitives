@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.LongCollection;
  * Adapts an {@link LongCollection LongCollection}
  * to the {@link java.util.Collection Collection}
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link LongCollection LongCollection} 
  * implementation in the "obvious" way.

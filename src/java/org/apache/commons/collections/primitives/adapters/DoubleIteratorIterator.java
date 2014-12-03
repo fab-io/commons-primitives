@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.DoubleIterator;
 /**
  * Adapts an {@link DoubleIterator DoubleIterator} to the
  * {@link java.util.Iterator Iterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link DoubleIterator DoubleIterator} 
  * implementation in the "obvious" way.

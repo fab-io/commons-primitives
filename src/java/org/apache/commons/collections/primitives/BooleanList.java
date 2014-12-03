@@ -20,7 +20,6 @@ package org.apache.commons.collections.primitives;
  * An ordered collection of <code>byte</code> values.
  *
  * @see org.apache.commons.collections.primitives.adapters.BooleanListList
- * @see org.apache.commons.collections.primitives.adapters.BooleanByteList
  *
  * @since Commons Primitives 1.1
  * @version $Revision$ $Date$
@@ -29,7 +28,7 @@ public interface BooleanList extends BooleanCollection {
     /** 
      * Appends the specified element to the end of me (optional operation).
      * Returns <code>true</code> iff I changed as a result of this call.
-     * <p/>
+     * <p>
      * If a collection refuses to add the specified element for any reason
      * other than that it already contains the element, it <i>must</i>
      * throw an exception (rather than simply returning {@code false}).
@@ -110,17 +109,17 @@ public interface BooleanList extends BooleanCollection {
     boolean get(int index);
         
     /**
-     * @todo figure something out for this
+     * TODO: figure something out for this
      * Returns my hash code.
-     * <p />
+     * <p>
      * The hash code of an <code>BooleanList</code> is defined to be the
      * result of the following calculation:
      * <pre> int hash = 1;
      * for(BooleanIterator iter = iterator(); iter.hasNext(); ) {
      *   boolean value = iter.next();
-     *   hash = 31*hash + (int)(value ^ (value >>> 32));
+     *   hash = 31*hash + (int)(value ^ (value &gt;&gt;&gt; 32));
      * }</pre>
-     * <p />
+     * <p>
      * This contract ensures that this method is consistent with 
      * {@link #equals equals} and with the 
      * {@link java.util.List#hashCode hashCode}
@@ -211,12 +210,12 @@ public interface BooleanList extends BooleanCollection {
      * returned <code>BooleanList</code> is backed by me, so that any changes
      * in the returned list are reflected in me, and vice-versa. The returned
      * list supports all of the optional operations that I support.
-     * <p/>
+     * <p>
      * Note that when <code><i>fromIndex</i> == <i>toIndex</i></code>, the
      * returned list is initially empty, and when <code><i>fromIndex</i> == 0
-     * && <i>toIndex</i> == {@link #size() size()}</code> the returned list is
+     * &amp;&amp; <i>toIndex</i> == {@link #size() size()}</code> the returned list is
      * my "improper" sublist, containing all my elements.
-     * <p/>
+     * <p>
      * The semantics of the returned list become undefined if I am structurally
      * modified in any way other than via the returned list.
      * 

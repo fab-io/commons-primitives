@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.CharListIterator;
 /**
  * Adapts a {@link Number}-valued {@link ListIterator ListIterator} 
  * to the {@link CharListIterator CharListIterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link CharListIterator CharListIterator} 
  * implementation in the "obvious" way.

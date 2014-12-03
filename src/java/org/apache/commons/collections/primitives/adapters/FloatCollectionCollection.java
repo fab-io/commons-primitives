@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.FloatCollection;
  * Adapts an {@link FloatCollection FloatCollection}
  * to the {@link java.util.Collection Collection}
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link FloatCollection FloatCollection} 
  * implementation in the "obvious" way.

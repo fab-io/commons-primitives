@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.CharIterator;
 /**
  * Adapts an {@link CharIterator CharIterator} to the
  * {@link java.util.Iterator Iterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link CharIterator CharIterator} 
  * implementation in the "obvious" way.

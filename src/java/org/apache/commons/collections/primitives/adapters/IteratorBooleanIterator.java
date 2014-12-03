@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.BooleanIterator;
  * Adapts a {@link Boolean Boolean}-valued {@link java.util.Iterator Iterator}
  * to the {@link org.apache.commons.collections.primitives.BooleanIterator
  * BooleanIterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods to the provided {@link
  * java.util.Iterator Iterator} implementation in the "obvious" way.
  *

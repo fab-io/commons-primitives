@@ -25,7 +25,7 @@ import org.apache.commons.collections.primitives.CharCollection;
  * Adapts an {@link CharCollection CharCollection}
  * to the {@link java.util.Collection Collection}
  * interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link CharCollection CharCollection} 
  * implementation in the "obvious" way.

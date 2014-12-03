@@ -18,7 +18,7 @@ package org.apache.commons.collections.primitives;
 
 /**
  * Abstract base class for {@link DoubleCollection}s.
- * <p />
+ * <p>
  * Read-only subclasses must override {@link #iterator}
  * and {@link #size}.  Mutable subclasses
  * should also override {@link #add} and 

@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.ByteList;
 /**
  * Adapts an {@link ByteList ByteList} to the
  * {@link List List} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ByteList ByteList} 
  * implementation in the "obvious" way.

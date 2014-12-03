@@ -31,7 +31,7 @@ import java.io.Serializable;
  * range may cause an 
  * {@link IllegalArgumentException IllegalArgumentException} 
  * to be thrown.
- * <p />
+ * <p>
  * This implementation supports all optional methods.
  * 
  * @since Commons Primitives 1.0

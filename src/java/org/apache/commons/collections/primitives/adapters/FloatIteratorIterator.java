@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.FloatIterator;
 /**
  * Adapts an {@link FloatIterator FloatIterator} to the
  * {@link java.util.Iterator Iterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link FloatIterator FloatIterator} 
  * implementation in the "obvious" way.

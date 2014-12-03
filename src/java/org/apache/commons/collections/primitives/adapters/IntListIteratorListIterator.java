@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.IntListIterator;
 /**
  * Adapts an {@link IntListIterator IntListIterator} to the
  * {@link ListIterator ListIterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link IntListIterator IntListIterator} 
  * implementation in the "obvious" way.

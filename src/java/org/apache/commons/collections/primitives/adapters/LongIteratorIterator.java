@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.LongIterator;
 /**
  * Adapts an {@link LongIterator LongIterator} to the
  * {@link java.util.Iterator Iterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link LongIterator LongIterator} 
  * implementation in the "obvious" way.

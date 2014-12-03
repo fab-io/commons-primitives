@@ -24,7 +24,7 @@ import org.apache.commons.collections.primitives.BooleanCollection;
 /**
  * Adapts an {@link org.apache.commons.collections.primitives.BooleanCollection
  * BooleanCollection} to the {@link java.util.Collection Collection} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods to the provided {@link
  * org.apache.commons.collections.primitives.BooleanCollection
  * BooleanCollection} implementation in the "obvious" way.

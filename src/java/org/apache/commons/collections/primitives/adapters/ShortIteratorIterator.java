@@ -23,7 +23,7 @@ import org.apache.commons.collections.primitives.ShortIterator;
 /**
  * Adapts an {@link ShortIterator ShortIterator} to the
  * {@link java.util.Iterator Iterator} interface.
- * <p />
+ * <p>
  * This implementation delegates most methods
  * to the provided {@link ShortIterator ShortIterator} 
  * implementation in the "obvious" way.
